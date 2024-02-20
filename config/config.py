@@ -18,11 +18,11 @@ API_HASH = getenv("API_HASH", "2b012ec696983799d2835514d4bc9ba1")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN", "6817228132:AAHh8duoDqMApoNKQPugFx2n4mTHgV0TKC0")
+BOT_TOKEN = getenv("BOT_TOKEN", "6876097941:AAEMSSV8a4Q-hUs1eiklbMx83Gcgt2CbcCY")
 
 # Database to save your chats and stats.
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Seko3421:Seko3421@cluster0.r0jtquq.mongodb.net/test?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://yuki3434:yuki3434@cluster0.khithey.mongodb.net/test?retryWrites=true&w=majority")
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 
@@ -184,9 +184,9 @@ SET_CMDS = getenv("SET_CMDS", False)
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
 
-STRING1 = getenv("STRING_SESSION", "BAG29MoAV3pt25XHAMQDswrtav4IokBG333Qgvewutjw4aln6PJUJ7jvRVPbR5AUP5hUgWyTOCKQVqclfr25lkz5zEewZNudZseBhSh-mZ-mA00EhElLTT5vLhi2Iuo3wC2_hTyqVDUk3RAYyFSdej0BZojmetwDe-aioGHiR73Wj8aLD6e6UwhwCtPtYE2HtkZBKLllh-cf8UW-ZWgJeX78rcAqyoDjKECOClquFwrDeDKS6IH4sgy6M496d5bK_ZhQmXa-f5ZD9nDGfyag6H7CPWs-SGLseahr-tQ4n06vpZsPdAI1dMVO_Xi11A7dHjpOGPT_QwRLUJ8JlNORNwv8jYgnzgAAAAFTWo3oAA")
+STRING1 = getenv("STRING_SESSION", "AQCHwcxO-cD96C1YoNhLpy1nDjlZutO6oBP6hOeCCZDve-JO_UtJEYG4wDUbNwRh1X83v91dsQyPUierZcLeBaq7jGvjfrpQedn2nhLw9uTRznQ1xPKf_IVN9LAGK9uVlQoB3dUR3oh2N_wrpW3woCjfnY0p3Jthh1_ywAiweCSZZMb1d1WCspj7ZoZ7Bbjg6T_u9Uen7yyA3n_RxYfMP5ty0zII53p3UfGu8vQUoL4V7OCyQc3RoVIeOsxKPR0xngw5wNUdlTr4Ii3B942aVPy4lKdIYmqvsGeMQnSzscQggG9Q5z21xtiySgQjw7sQkEh66-qoqyXgPllrpU7YJbq1AAAAAZQUyKoA")
 
-STRING2 = getenv("STRING_SESSION2", None)
+STRING2 = getenv("STRING_SESSION2", "BACEusR7jyWj4ql1cmF6mOayl0jwWuH3An6VS-nvWaCRArW2hZz75EH-ekwBmGNQCTo_k3Dbn9WqaQ3GyFHaJbZ_S-UgnoldZDJ9RdGw9127O2UE0JSKNUjRO6RhC4F6HjPzKRojUZo4q5FcqwXXLfa4tVbw9cqlQFwSwyP7GNEkIj5d9Gb9g9Ya05dwBqqcOjkvtcQCK03XHRWRndB9TGUM1fLdRV9Bgvo9Uoz-vu5TfwP8cgRHsdjunpQBQuhx2nPaHdQEdtwhz1r1tG_aEgEIFyJV7G1v1XWYvSvA5KQD7NzAfYNvq3xMRVrdmOFjyDLMquAW-6ee0MjGXHwlT1nuAAAAAYgLxfEA")
 
 STRING3 = getenv("STRING_SESSION3", None)
 
