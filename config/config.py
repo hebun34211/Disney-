@@ -12,23 +12,23 @@ load_dotenv()
 
 # Get it from my.telegram.org
 
-API_ID = int(getenv("API_ID", ""))
+API_ID = int(getenv("API_ID", "28767434"))
 
-API_HASH = getenv("API_HASH", "")
+API_HASH = getenv("API_HASH", "2b012ec696983799d2835514d4bc9ba1")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "6817228132:AAHh8duoDqMApoNKQPugFx2n4mTHgV0TKC0")
 
 # Database to save your chats and stats.
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Seko3421:Seko3421@cluster0.r0jtquq.mongodb.net/test?retryWrites=true&w=majority")
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 
 DURATION_LIMIT_MIN = int(
 
-    getenv("DURATION_LIMIT", "50000000")
+    getenv("DURATION_LIMIT", "300")
 
 )  # Remember to give value in Minutes
 
@@ -36,23 +36,23 @@ DURATION_LIMIT_MIN = int(
 
 SONG_DOWNLOAD_DURATION = int(
 
-    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "50000000")
+    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "300")
 
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002142515860"))
 
 # A name for your Music bot.
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","Disney")
 
 # Your User ID.
 
 OWNER_ID = list(
 
-    map(int, getenv("OWNER_ID", "").split())
+    map(int, getenv("OWNER_ID", "5693410792").split())
 
 )  # Input type must be interger
 
@@ -70,7 +70,7 @@ UPSTREAM_REPO = getenv(
 
     "UPSTREAM_REPO",
 
-    "",
+    "https://github.com/Yukki21090/Deneme",
 
 )
 
@@ -184,7 +184,7 @@ SET_CMDS = getenv("SET_CMDS", False)
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
 
-STRING1 = getenv("STRING_SESSION", "")
+STRING1 = getenv("STRING_SESSION", "BAG29MoAV3pt25XHAMQDswrtav4IokBG333Qgvewutjw4aln6PJUJ7jvRVPbR5AUP5hUgWyTOCKQVqclfr25lkz5zEewZNudZseBhSh-mZ-mA00EhElLTT5vLhi2Iuo3wC2_hTyqVDUk3RAYyFSdej0BZojmetwDe-aioGHiR73Wj8aLD6e6UwhwCtPtYE2HtkZBKLllh-cf8UW-ZWgJeX78rcAqyoDjKECOClquFwrDeDKS6IH4sgy6M496d5bK_ZhQmXa-f5ZD9nDGfyag6H7CPWs-SGLseahr-tQ4n06vpZsPdAI1dMVO_Xi11A7dHjpOGPT_QwRLUJ8JlNORNwv8jYgnzgAAAAFTWo3oAA")
 
 STRING2 = getenv("STRING_SESSION2", None)
 
