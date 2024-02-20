@@ -50,12 +50,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     bar += line*(10-len(bar))
 
     buttons = [
-        [
-            InlineKeyboardButton(
-                text=f"{played} {bar} {dur}",
-                callback_data="GetTimer",
-            )
-        ],
+        
         [
         InlineKeyboardButton(
                 text="✚ ᴘᴀʀᴄ̧ᴀʏɪ ᴛᴇᴋʀᴀʀʟᴀ ✚", callback_data=f"ADMIN Loop|{chat_id}"
@@ -94,6 +89,12 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 text="30 ▸▸",
                 callback_data=f"ADMIN 4|{chat_id}",
             ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
         ],
     ]
     return buttons
