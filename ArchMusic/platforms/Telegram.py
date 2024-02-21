@@ -150,11 +150,12 @@ class TeleAPI:
                     text = f"""
 **{MUSIC_BOT_NAME} Telegram Medya İndiricisi**
 
-**Toplam Dosya Boyutu:** {total_size}
-**Tamamlandı:** {completed_size}
-**Yüzde:** %{percentage[:5]}
 
-**Hız:** {hız}/s
+**Total FileSize:** {total_size}
+**Completed:** {completed_size} 
+**Percentage:** {percentage[:5]}%
+
+**Speed:** {speed}/s
 **ETA:** {eta}"""
                     try:
                         await mystic.edit_text(text, reply_markup=upl)
