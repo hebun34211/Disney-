@@ -1,73 +1,66 @@
-#
-# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
+#.
 
 HELP_1 = """✅**<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:</u>**
 
-**Burdaki Komutları Normal Üyelerin De Kullanabilmesi İçin İstediğiniz Kişinin Mesajını Yanıtlayarak /yetkilendir Yazmanız Yeterlidir.**
+╰☞**Burdaki Komutları Normal Üyelerin De Kullanabilmesi İçin İstediğiniz Kişinin Mesajını Yanıtlayarak /yetkilendir Yazmanız Yeterlidir.**
 
-**/duraklat :** Müziği Duraklatır.
-**/devam :** Müziği Devam Ettirir.
-**/atla :** Çalan Müziği Atlar.
-**/dur veya /son :** Müziği Tamamen Durdurur.
-**/karistir :** Sıraya Aldığınız Parçaları Karışık Şekilde Oynatır.
-**/ilerisar :** Müziği İleri Sarar. (Örnek: /ilerisar 15 İle Çalan Müziği 15 Saniye İleri Alabilirsiniz.)
-**/seekback :** Müziği Geri Sarar. (Örnek: /seekback 15 İle Çalan Müziği 15 Saniye Geri Alabilirsiniz.)
-**/restart :** Botu Yeniden Başlatır.
+╰☞**/duraklat :** Müziği Duraklatır.
+╰☞**/devam :** Müziği Devam Ettirir.
+╰☞**/atla :** Çalan Müziği Atlar.
+╰☞**/dur veya /son :** Müziği Tamamen Durdurur.
+╰☞**/karistir :** Sıraya Aldığınız Parçaları Karışık Şekilde Oynatır.
+╰☞**/ilerisar :** Müziği İleri Sarar. (Örnek: /ilerisar 15 İle Çalan Müziği 15 Saniye İleri Alabilirsiniz.)
+╰☞**/seekback :** Müziği Geri Sarar. (Örnek: /seekback 15 İle Çalan Müziği 15 Saniye Geri Alabilirsiniz.)
+╰☞**/restart :** Botu Yeniden Başlatır.
 
 ✅<u>**Döngü Modu:**</u>
-**/dongu :** Çalan Müziği Döngüye Alıp Tekrar Oynatır. 
+╰☞**/dongu :** Çalan Müziği Döngüye Alıp Tekrar Oynatır. 
 (Örnek: /dongu 3 İle Seste Çalan Müziği 3 Kere Daha Oynatır.)"""
 
 
 HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 
-**/oynat veya /play :** Müziği Oynatmaya Yarar.
-**-Örnek Kullanım:** /oynat şarkı İsmi // Veya Oynatmak İstediğiniz Şarkıyı Yanıtlayarak /oynat Yazabilirsiniz.
-(**Örnek:** /oynat Neşet Ertaş Gönül Dağı)
+╰☞**/oynat veya /play :** Müziği Oynatmaya Yarar.
+╰☞**-Örnek Kullanım:** /oynat şarkı İsmi // Veya Oynatmak İstediğiniz Şarkıyı Yanıtlayarak /oynat Yazabilirsiniz.
+(╰☞**Örnek:** /oynat Neşet Ertaş Gönül Dağı)
 
-**/vplay :** Videoyu Seste Oynatmaya Yarar.
-**-Örnek Kullanım:** /vplay Video İsmi // Veya Oynatmak İstediğiniz Videoyu Yanıtlayarak /vplay Yazabilirsiniz.
+╰☞**/vplay :** Videoyu Seste Oynatmaya Yarar.
+╰☞**-Örnek Kullanım:** /vplay Video İsmi // Veya Oynatmak İstediğiniz Videoyu Yanıtlayarak /vplay Yazabilirsiniz.
 
-**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
-(**Örnek:** /indir Neşet Ertaş Gönül Dağı)
+╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
+(╰☞**Örnek:** /indir Neşet Ertaş Gönül Dağı)
 
 
 ✅**<u>Oynatma Listeleri:</u>**
-**/playlist :** Oynatma Listenizde Hangi Müziklerin Olduğuna Bakabilirsiniz.
-**/listemisil :** Oynatma Listenizden Silmek İstediğiniz Müziği Seçebilirsiniz.
-**/oynat Komutunu Tek Başına Kullanırsanız:** Oynatma Listeleri Ekranına Ulaşırsınız. """
+╰☞**/playlist :** Oynatma Listenizde Hangi Müziklerin Olduğuna Bakabilirsiniz.
+╰☞**/listemisil :** Oynatma Listenizden Silmek İstediğiniz Müziği Seçebilirsiniz.
+╰☞**/oynat Komutunu Tek Başına Kullanırsanız:** Oynatma Listeleri Ekranına Ulaşırsınız. """
 
 
 HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 
-**/stat :** Bottaki Tüm İstatistikleri Görebilirsiniz. En Çok Müzik Oynatan Gruplar, Kullanıcılar, En Çok Oynatılan Müzikler Ve Daha Fazlası...
+╰☞**/stat :** Bottaki Tüm İstatistikleri Görebilirsiniz. En Çok Müzik Oynatan Gruplar, Kullanıcılar, En Çok Oynatılan Müzikler Ve Daha Fazlası...
 
-**/sudolist :** Yardım İstemek İçin Bottaki Sudo Kullanıcılarına Ulaşabilirsiniz.
+╰☞**/sudolist :** Yardım İstemek İçin Bottaki Sudo Kullanıcılarına Ulaşabilirsiniz.
 
-**/sarkisozu [Müzik Adı] :** Sözlerine Bakmak İstediğiniz Şarkıyı Arayabilirsiniz.
+╰☞**/sarkisozu [Müzik Adı] :** Sözlerine Bakmak İstediğiniz Şarkıyı Arayabilirsiniz.
 
-**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
+╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
 
-**/videoindir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Videoyu İndirebilirsiniz.
-(**Örnek:** /videoindir Neşet Ertaş Gönül Dağı)
+╰☞**/videoindir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Videoyu İndirebilirsiniz.
+(╰☞**Örnek:** /videoindir Neşet Ertaş Gönül Dağı)
 
-**/sira :** Sırada Olan Müzikler Listesini Görebilirsiniz."""
+╰☞**/sira :** Sırada Olan Müzikler Listesini Görebilirsiniz."""
 
 HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
 
-**/start :** Botun Başlatma Panelini Gösterir. 
+╰☞**/start :** Botun Başlatma Panelini Gösterir. 
 
-**/ayarlar :** Ayarlar Menüsüne Ulaşabilirsiniz.
+╰☞**/ayarlar :** Ayarlar Menüsüne Ulaşabilirsiniz.
 
-**/yardim :** Botun Yardım Menüsüne Ulaşırsınız.
+╰☞**/yardim :** Botun Yardım Menüsüne Ulaşırsınız.
 
-**/ping :** Ping Süresini CPU Ve RAM Kullanımına Bakabilirsiniz."""
+╰☞**/ping :** Ping Süresini CPU Ve RAM Kullanımına Bakabilirsiniz."""
 
 HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ İÇİN BİR REHBER:</u>**
 
@@ -93,12 +86,12 @@ HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ �
 /whitelistchat [CHAT_ID] - Whitelist any blacklisted chat from using Music Bot
 /blacklistedchat veya /engelliler- Check all blacklisted chats.
 
-👤**<u>BLOCKED FUNCTION:</u>**
+👤╰☞**<u>BLOCKED FUNCTION:</u>**
 /block [Username or Reply to a user] - Prevents a user from using bot commands.
 /unblock [Username or Reply to a user] - Remove a user from Bot's Blocked List.
 /blockedusers - Check blocked Users Lists
 
-👤**<u>GBAN FUNCTION:</u>**
+👤╰☞**<u>GBAN FUNCTION:</u>**
 /gban [Username or Reply to a user] - Gban a user from bot's served chat and stop him from using your bot.
 /ungban [Username or Reply to a user] - Remove a user from Bot's gbanned List and allow him for using your bot
 /gbannedusers - Check Gbanned Users Lists
@@ -116,12 +109,12 @@ HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ �
 /broadcast [Message or Reply to a Message] - Broadcast any message to Bot's Served Chats.
 
 <u>Options for broadcast:</u>
-**-pin** : This will pin your message 
-**-pinloud** : This will pin your message with loud notification
-**-user** : This will broadcast your message to the users who have started your bot.
-**-assistant** : This will broadcast your message from assistant account of your bot.
-**-nobot** : This will force your bot to not broadcast message
+╰☞**-pin** : This will pin your message 
+╰☞**-pinloud** : This will pin your message with loud notification
+╰☞**-user** : This will broadcast your message to the users who have started your bot.
+╰☞**-assistant** : This will broadcast your message from assistant account of your bot.
+╰☞**-nobot** : This will force your bot to not broadcast message
 
-**Example:** `/broadcast -user -assistant -pin Hello Testing`
+**Example:╰☞** `/broadcast -user -assistant -pin Hello Testing`
 
 """
