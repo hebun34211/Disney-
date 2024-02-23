@@ -1,6 +1,7 @@
 aiofiles
 aiohttp
 asyncio
+numpy
 dnspython
 ffmpeg-python
 gitpython
