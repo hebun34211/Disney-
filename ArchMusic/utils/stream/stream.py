@@ -28,7 +28,7 @@ from ArchMusic.utils.inline.play import (stream_markup,
 from ArchMusic.utils.inline.playlist import close_markup
 from ArchMusic.utils.pastebin import ArchMusicbin
 from ArchMusic.utils.stream.queue import put_queue, put_queue_index
-from ArchMusic.utils.thumbnails import gen_thumb
+
 
 
 async def stream(
