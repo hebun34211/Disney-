@@ -45,7 +45,7 @@ from ArchMusic.utils.exceptions import AssistantErr
 from ArchMusic.utils.inline.play import (stream_markup,
                                           telegram_markup)
 from ArchMusic.utils.stream.autoclear import auto_clean
-from ArchMusic.utils.thumbnails import gen_thumb
+
 
 autoend = {}
 counter = {}
@@ -384,7 +384,7 @@ class Call(PyTgCalls):
                         original_chat_id,
                         text=_["call_9"],
                     )
-                img = await gen_thumb(videoid)
+                img = None
                 button = telegram_markup(_, chat_id)
                 run = await app.send_message(
                     chat_id=original_chat_id,
@@ -434,7 +434,7 @@ class Call(PyTgCalls):
                         original_chat_id,
                         text=_["call_9"],
                     )
-                img = await gen_thumb(videoid)
+                img = None
                 button = stream_markup(_, videoid, chat_id)
                 await mystic.delete()
                 run = await app.send_message(
@@ -523,7 +523,7 @@ class Call(PyTgCalls):
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "tg"
                 else:
-                    img = await gen_thumb(videoid)
+                    img = None
                     button = stream_markup(_, videoid, chat_id)
                     run = await app.send_message(
                     chat_id=original_chat_id,
