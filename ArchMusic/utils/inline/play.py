@@ -88,11 +88,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
 def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_sec(played)
     total_sec = time_to_sec(dur)
-    
 
-x, y = str(round(played_sec/total_sec,1)).split(".")
-    
-    
     buttons = [
         [
             InlineKeyboardButton(
