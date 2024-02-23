@@ -89,15 +89,9 @@ def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_sec(played)
     total_sec = time_to_sec(dur)
     
-    
+
 x, y = str(round(played_sec/total_sec,1)).split(".")
     
-
-    
-
-    bar = line*(pos-1)
-    bar += circle
-    bar += line*(10-len(bar))
     
     buttons = [
         [
