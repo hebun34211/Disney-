@@ -21,7 +21,7 @@ from ArchMusic.utils.decorators import AdminRightsCheck
 from ArchMusic.utils.inline.play import (stream_markup,
                                           telegram_markup)
 from ArchMusic.utils.stream.autoclear import auto_clean
-from ArchMusic.utils.thumbnails import gen_thumb
+
 
 # Commands
 SKIP_COMMAND = get_command("SKIP_COMMAND")
