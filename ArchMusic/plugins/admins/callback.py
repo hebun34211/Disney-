@@ -32,7 +32,7 @@ from ArchMusic.utils.inline.play import (panel_markup_1,
                                           stream_markup,
                                           telegram_markup)
 from ArchMusic.utils.stream.autoclear import auto_clean
-from ArchMusic.utils.thumbnails import gen_thumb
+
 
 wrong = {}
 
