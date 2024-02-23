@@ -91,7 +91,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
     
     
 x, y = str(round(played_sec/total_sec,1)).split(".")
-    pos = int()
+    
 
     line = "─"
     circle = "●"
