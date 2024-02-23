@@ -114,7 +114,7 @@ async def stream(
                     "video" if video else "audio",
                     forceplay=forceplay,
                 )
-                img = await gen_thumb(vidid)
+                img = None
                 button = stream_markup(_, vidid, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
@@ -194,7 +194,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            img = await gen_thumb(vidid)
+            img = None
             button = stream_markup(_, vidid, chat_id)
             run = await app.send_message(
                 original_chat_id,
@@ -360,7 +360,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            img = await gen_thumb(vidid)
+            img = None
             button = telegram_markup(_, chat_id)
             run = await app.send_message(
                 original_chat_id,
