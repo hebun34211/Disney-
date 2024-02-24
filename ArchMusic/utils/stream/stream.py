@@ -116,15 +116,16 @@ async def stream(
                 )
                 img = None
                 button = stream_markup(_, vidid, chat_id)
-                run = await app.send_photo(
-                    original_chat_id,
-                    photo=img,
-                    caption=_["stream_1"].format(
-                        user_name,
-                        f"https://t.me/{app.username}?start=info_{vidid}",
-                    ),
-                    reply_markup=InlineKeyboardMarkup(button),
-                )
+                run = await app.send_message(
+                original_chat_id,
+                text=_["stream_1"].format(
+                    title,
+                    f"https://t.me/{app.username}?start=info_{vidid}",
+                    duration_min,
+                    user_name
+                ),
+                reply_markup=InlineKeyboardMarkup(button),
+            )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
         if count == 0:
