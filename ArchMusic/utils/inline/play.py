@@ -36,11 +36,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
 
     buttons = [
         
-        [
-        InlineKeyboardButton(
-                text="✚ ᴘᴀʀᴄ̧ᴀʏɪ ᴛᴇᴋʀᴀʀʟᴀ ✚", callback_data=f"ADMIN Loop|{chat_id}"
-            ),
-        ],
+        
         [
             InlineKeyboardButton(
                 text="▷",
@@ -56,6 +52,11 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             InlineKeyboardButton(
                 text="▢", callback_data=f"ADMIN Stop|{chat_id}"
             ), 
+        ],
+        [
+        InlineKeyboardButton(
+                text="✚ ᴘᴀʀᴄ̧ᴀʏɪ ᴛᴇᴋʀᴀʀʟᴀ ✚", callback_data=f"ADMIN Loop|{chat_id}"
+            ),
         ],
         [
             InlineKeyboardButton(
