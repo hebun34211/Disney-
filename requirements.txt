@@ -1,7 +1,7 @@
+
 aiofiles
 aiohttp
 asyncio
-beautifulsoup4
 dnspython
 ffmpeg-python
 gitpython
@@ -9,7 +9,7 @@ hachoir
 heroku3
 motor
 numpy
-pillow==9.5.0
+pillow
 psutil
 py-tgcalls==0.9.7
 pykeyboard
@@ -17,10 +17,13 @@ pyrogram==2.0.106
 python-dotenv
 pyyaml
 requests
-speedtest-cli
 spotipy
+speedtest-cli
 tgcrypto
 unidecode
-yt-dlp
+lyricsgenius
 youtube-search
-youtube-search-python
+git+https://github.com/alexmercerind/youtube-search-python
+git+https://github.com/Amahocaam/Muzik
+git+https://github.com/MonsterBos/sello-
+git+https://github.com/Amahocaam/Hizk
