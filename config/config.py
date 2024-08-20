@@ -12,9 +12,9 @@ load_dotenv()
 
 # Get it from my.telegram.org
 
-API_ID = int(getenv("API_ID", "28767434"))
+API_ID = int(getenv("API_ID", "21194358"))
 
-API_HASH = getenv("API_HASH", "2b012ec696983799d2835514d4bc9ba1")
+API_HASH = getenv("API_HASH", "9623f07eca023e4e3c561c966513a642")
 
 ## Get it from @Botfather in Telegram.
 
@@ -22,13 +22,13 @@ BOT_TOKEN = getenv("BOT_TOKEN", "")
 
 # Database to save your chats and stats.
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://aysen3434:aysen3434@cluster0.jisamwa.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Che4721:Che4721@cluster0.88srl.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0")
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 
 DURATION_LIMIT_MIN = int(
 
-    getenv("DURATION_LIMIT", "300")
+    getenv("DURATION_LIMIT", "180")
 
 )  # Remember to give value in Minutes
 
@@ -36,23 +36,23 @@ DURATION_LIMIT_MIN = int(
 
 SONG_DOWNLOAD_DURATION = int(
 
-    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "300")
+    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
 
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002194674713"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002167878868"))
 
 # A name for your Music bot.
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","disnep")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","disnepmuzik")
 
 # Your User ID.
 
 OWNER_ID = list(
 
-    map(int, getenv("OWNER_ID", "7528457262").split())
+    map(int, getenv("OWNER_ID", "5902575361").split())
 
 )  # Input type must be interger
 
@@ -70,7 +70,7 @@ UPSTREAM_REPO = getenv(
 
     "UPSTREAM_REPO",
 
-    "https://github.com/olurunabirak/Benimdunyam",
+    "https://github.com/Oguz442/Eskiche",
 
 )
 
@@ -184,9 +184,9 @@ SET_CMDS = getenv("SET_CMDS", False)
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
 
-STRING1 = getenv("STRING_SESSION", "AQG29MoAQg-8z9-alFgms1Ua1dtZV9dlBqHdmv6uG2ztWUDOMFay3rRJSA_UZ2_yK95PqK2c1sZ8uY3698qwIJ7JIk9sNsABbOQHnArFxXt-o2qeZKm3yLNme-03Qqq_Mcu97iMScrav-2I2vxqSWtue1LLrNFd-4AzC57ftVC7Kr4XEEd2KB8uLXat2ReEEBPOfgm3j9Viani0fNurTzEimyn7fz7fqpo1mZzEPdqdtv5A1BYROma2YiOmBJ8nKTsicpSK6d0XkZkTc-xeRUmUNHpQcXWiZZJx3P-SI31fy5qZjdLbK8IdvAEFbTD7CmH_e52LrUqhjLbPLjOE6cpmAzDbw0QAAAAGp-JdxAA")
+STRING1 = getenv("STRING_SESSION", "")
 
-STRING2 = getenv("STRING_SESSION2", "")
+STRING2 = getenv("STRING_SESSION2", None)
 
 STRING3 = getenv("STRING_SESSION3", None)
 
