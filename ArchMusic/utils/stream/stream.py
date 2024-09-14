@@ -124,8 +124,7 @@ async def stream(
                     duration_min,
                     user_name
                 ),
-                reply_markup=InlineKeyboardMarkup(button),
-            )
+                )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
         if count == 0:
@@ -205,7 +204,6 @@ async def stream(
                     duration_min,
                     user_name
                 ),
-                reply_markup=InlineKeyboardMarkup(button),
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
@@ -256,7 +254,6 @@ async def stream(
                 text=_["stream_3"].format(
                     title, duration_min, user_name
                 ),
-                reply_markup=InlineKeyboardMarkup(button),
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
@@ -311,7 +308,6 @@ async def stream(
                 text=_["stream_4"].format(
                     title, link, duration_min, user_name
                 ),
-                reply_markup=InlineKeyboardMarkup(button),
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
@@ -371,7 +367,7 @@ async def stream(
                     duration_min,
                     user_name
                 ),
-                reply_markup=InlineKeyboardMarkup(button),
+                
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
@@ -425,7 +421,7 @@ async def stream(
                     duration_min,
                     user_name
                 ),
-                reply_markup=InlineKeyboardMarkup(button),
+                
             )
                 
             db[chat_id][0]["mystic"] = run
