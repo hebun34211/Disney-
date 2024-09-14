@@ -518,7 +518,7 @@ class Call(PyTgCalls):
                         text=_["stream_3"].format(
                             title, check[0]["dur"], user
                         ),
-                        reply_markup=InlineKeyboardMarkup(button),
+                        
                     )
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "tg"
