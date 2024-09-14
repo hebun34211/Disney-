@@ -283,7 +283,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         duration,
                         user,
                     ),
-                    reply_markup=InlineKeyboardMarkup(button),
+                    
                 )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
@@ -316,7 +316,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         duration,
                         user,
                     ),
-                    reply_markup=InlineKeyboardMarkup(button),
+                    
                 )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
@@ -339,7 +339,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         duration,
                         user,
                     ),
-                    reply_markup=InlineKeyboardMarkup(button),
+                    
                 )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
@@ -357,7 +357,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     text=_["stream_3"].format(
                         title, check[0]["dur"], user
                     ),
-                    reply_markup=InlineKeyboardMarkup(button),
+                    
                 )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
@@ -367,7 +367,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     text=_["stream_3"].format(
                         title, check[0]["dur"], user
                     ),
-                    reply_markup=InlineKeyboardMarkup(button),
+                    
                 )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
@@ -381,7 +381,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         duration,
                         user,
                     ),
-                    reply_markup=InlineKeyboardMarkup(button),
+                    
                 )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
