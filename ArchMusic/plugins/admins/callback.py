@@ -13,9 +13,7 @@ import random
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
 
-from config import (AUTO_DOWNLOADS_CLEAR, BANNED_USERS,
-                    SOUNCLOUD_IMG_URL, STREAM_IMG_URL,
-                    TELEGRAM_AUDIO_URL, TELEGRAM_VIDEO_URL, adminlist)
+from config import (AUTO_DOWNLOADS_CLEAR, BANNED_USERS, adminlist)
 from ArchMusic import YouTube, app
 from ArchMusic.core.call import ArchMusic
 from ArchMusic.misc import SUDOERS, db
@@ -26,9 +24,7 @@ from ArchMusic.utils.database import (is_active_chat,
                                        set_loop)
 from ArchMusic.utils.decorators.language import languageCB
 from ArchMusic.utils.formatters import seconds_to_min
-from ArchMusic.utils.inline.play import (panel_markup_1,
-                                          panel_markup_2,
-                                          panel_markup_3,
+from ArchMusic.utils.inline.play import (
                                           stream_markup,
                                           telegram_markup)
 from ArchMusic.utils.stream.autoclear import auto_clean
