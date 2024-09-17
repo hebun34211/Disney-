@@ -167,35 +167,11 @@ def slider_markup(
     return buttons
 
 
-## Cpanel Markup
 
 
-def panel_markup_1(_, videoid, chat_id):
-    buttons = [
-        [
-            
-        ],
-        
-    ]
-    return buttons
 
 
-def panel_markup_2(_, videoid, chat_id):
-    buttons = [
-        [
-            
-        ],
-        
-        
-    ]
-    return buttons
 
 
-def panel_markup_3(_, videoid, chat_id):
-    buttons = [
-        [
-        
-            
-        ],
-    ]
-    return buttons
+
+
