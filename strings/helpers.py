@@ -2,7 +2,7 @@
 
 HELP_1 = """✅**<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:</u>**
 ╔═════════════════════════
-║╰☞**Burdaki Komutları Normal Üyelerin De Kullanabilmesi İçin İstediğiniz Kişinin Mesajını Yanıtlayarak /yetkilendir Yazmanız Yeterlidir.**
+║╰☞**Burdaki Komutları Normal Üyelerin ║De Kullanabilmesi İçin İstediğiniz Kişinin ║Mesajını Yanıtlayarak /yetkilendir Yazmanız ║Yeterlidir.**
 ║
 ║ ╰☞**/duraklat :** Müziği Duraklatır.
 ║ ╰☞**/devam :** Müziği Devam Ettirir.
