@@ -24,8 +24,8 @@ HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ║    ╰☞**-Örnek Kullanım:** /oynat şarkı ║İsmi // Veya Oynatmak İstediğiniz Şarkıyı ║Yanıtlayarak /oynat Yazabilirsiniz.
 ║    ╰☞**Örnek:** /oynat Neşet Ertaş Gönül ║Dağı)
 ║
-║    ╰☞**/vplay :** Videoyu Seste Oynatmaya Yarar.
-║    ╰☞**-Örnek Kullanım:** /vplay Video İsmi // Veya Oynatmak İstediğiniz Videoyu Yanıtlayarak /vplay Yazabilirsiniz.
+║    ╰☞**/vplay :** Videoyu Seste Oynatmaya ║Yarar.
+║    ╰☞**-Örnek Kullanım:** /vplay Video ║İsmi // Veya Oynatmak İstediğiniz Videoyu ║Yanıtlayarak /vplay Yazabilirsiniz.
 ║
 ║    ╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
 ║    ╰☞**Örnek:** /indir Neşet Ertaş Gönül Dağı)
