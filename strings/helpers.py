@@ -28,12 +28,12 @@ HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ║    ╰☞**-Örnek Kullanım:** /vplay Video ║İsmi // Veya Oynatmak İstediğiniz Videoyu ║Yanıtlayarak /vplay Yazabilirsiniz.
 ║
 ║    ╰☞**/indir [Müzik Adı] veya [Youtube ║Linki] :** Youtubedan İndirmek İstediğiniz ║Şarkıyı İndirebilirsiniz.
-║    ╰☞**Örnek:** /indir Neşet Ertaş Gönül Dağı)
+║    ╰☞**Örnek:** /indir Neşet Ertaş Gönül ║Dağı)
 ║
 ║   ✅**<u>Oynatma Listeleri:</u>**
-║    ╰☞**/playlist :** Oynatma Listenizde Hangi Müziklerin Olduğuna Bakabilirsiniz.
-║    ╰☞**/listemisil :** Oynatma Listenizden Silmek İstediğiniz Müziği Seçebilirsiniz.
-║    ╰☞**/oynat Komutunu Tek Başına Kullanırsanız:** Oynatma Listeleri Ekranına Ulaşırsınız. 
+║    ╰☞**/playlist :** Oynatma Listenizde Hangi ║Müziklerin Olduğuna Bakabilirsiniz.
+║    ╰☞**/listemisil :** Oynatma Listenizden ║Silmek İstediğiniz Müziği Seçebilirsiniz.
+║    ╰☞**/oynat Komutunu Tek Başına ║Kullanırsanız:** Oynatma Listeleri Ekranına ║Ulaşırsınız. 
 ╚══════════════════════════"""
 HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 ╔═════════════════════════
@@ -52,13 +52,13 @@ HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 ╚══════════════════════════"""
 HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
 ╔═════════════════════════
-║ ╰☞**/start :** Botun Başlatma Panelini Gösterir. 
-║
-║  ╰☞**/ayarlar :** Ayarlar Menüsüne Ulaşabilirsiniz.
-║
+║ ╰☞**/start :** Botun Başlatma Panelini ║Gösterir. 
+║      ══════════════════════════
+║  ╰☞**/ayarlar :** Ayarlar Menüsüne ║Ulaşabilirsiniz.
+║        ══════════════════════════
 ║ ╰☞**/yardim :** Botun Yardım Menüsüne Ulaşırsınız.
-║
-║ ╰☞**/ping :** Ping Süresini CPU Ve RAM Kullanımına Bakabilirsiniz.
+║       ══════════════════════════
+║ ╰☞**/ping :** Ping Süresini CPU Ve RAM ║Kullanımına Bakabilirsiniz.
 ╚══════════════════════════"""
 HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ İÇİN BİR REHBER:</u>**
 
