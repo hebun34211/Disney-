@@ -20,20 +20,20 @@ HELP_1 = """✅<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:</
 """
 HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ╔═════════════════════════
-║ ╰☞**/oynat veya /play :** Müziği Oynatmaya ║Yarar.
-║ ╰☞**-Örnek Kullanım:** /oynat ║şarkı İsmi // Veya Oynatmak İstediğiniz Şarkıyı Yanıtlayarak /oynat Yazabilirsiniz.
-║ ╰☞**Örnek:** /oynat Neşet Ertaş ║Gönül Dağı)
+║    ╰☞**/oynat veya /play :** Müziği Oynatmaya Yarar.
+║    ╰☞**-Örnek Kullanım:** /oynat şarkı İsmi // Veya Oynatmak İstediğiniz Şarkıyı Yanıtlayarak /oynat Yazabilirsiniz.
+║    ╰☞**Örnek:** /oynat Neşet Ertaş Gönül Dağı)
 ║
-║ ╰☞**/vplay :** Videoyu Seste Oynatmaya ║Yarar.
-║ ╰☞**-Örnek Kullanım:** /vplay Video ║İsmi // Veya Oynatmak İstediğiniz Videoyu ║Yanıtlayarak /vplay Yazabilirsiniz.
+║    ╰☞**/vplay :** Videoyu Seste Oynatmaya Yarar.
+║    ╰☞**-Örnek Kullanım:** /vplay Video İsmi // Veya Oynatmak İstediğiniz Videoyu Yanıtlayarak /vplay Yazabilirsiniz.
 ║
-║ ╰☞**/indir [Müzik Adı] veya [Youtube ║Linki] :** Youtubedan İndirmek İstediğiniz ║Şarkıyı İndirebilirsiniz.
-║ ╰☞**Örnek:** /indir Neşet Ertaş Gönül Dağı)
+║    ╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
+║    ╰☞**Örnek:** /indir Neşet Ertaş Gönül Dağı)
 ║
-║ ✅**<u>Oynatma Listeleri:</u>**
-║ ╰☞**/playlist :** Oynatma Listenizde Hangi ║Müziklerin Olduğuna Bakabilirsiniz.
-║ ╰☞**/listemisil :** Oynatma Listenizden ║Silmek İstediğiniz Müziği Seçebilirsiniz.
-║ ╰☞**/oynat Komutunu Tek Başına ║Kullanırsanız:** Oynatma Listeleri Ekranına ║Ulaşırsınız. 
+║   ✅**<u>Oynatma Listeleri:</u>**
+║    ╰☞**/playlist :** Oynatma Listenizde Hangi Müziklerin Olduğuna Bakabilirsiniz.
+║    ╰☞**/listemisil :** Oynatma Listenizden Silmek İstediğiniz Müziği Seçebilirsiniz.
+║    ╰☞**/oynat Komutunu Tek Başına Kullanırsanız:** Oynatma Listeleri Ekranına Ulaşırsınız. 
 ╚══════════════════════════"""
 HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 ╔═════════════════════════
