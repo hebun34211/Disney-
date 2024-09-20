@@ -27,13 +27,13 @@ HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ║    ╰☞**/vplay :** Videoyu Seste Oynatmaya ║Yarar.
 ║    ╰☞**-Örnek Kullanım:** /vplay Video ║İsmi // Veya Oynatmak İstediğiniz Videoyu ║Yanıtlayarak /vplay Yazabilirsiniz.
 ║     ║═════════════════════════
-║    ╰☞**/indir [Müzik Adı] veya [Youtube ║Linki] :** Youtubedan İndirmek İstediğiniz ║Şarkıyı İndirebilirsiniz.
+║    ╰☞**/indir [Müzik Adı] veya [Youtube║Linki] :** Youtubedan İndirmek İstediğiniz ║Şarkıyı İndirebilirsiniz.
 ║    ╰☞**Örnek:** /indir Neşet Ertaş Gönül ║Dağı)
 ║     ║═════════════════════════
 ║   ✅**<u>Oynatma Listeleri:</u>**
 ║    ╰☞**/playlist :** Oynatma Listenizde Hangi ║Müziklerin Olduğuna Bakabilirsiniz.
 ║    ╰☞**/listemisil :** Oynatma Listenizden ║Silmek İstediğiniz Müziği Seçebilirsiniz.
-║    ╰☞**/oynat Komutunu Tek Başına ║Kullanırsanız:** Oynatma Listeleri Ekranına ║Ulaşırsınız. 
+║    ╰☞**/oynat Komutunu Tek Başına║Kullanırsanız:** Oynatma Listeleri Ekranına ║Ulaşırsınız. 
 ╚══════════════════════════"""
 HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 ╔═════════════════════════
@@ -56,7 +56,7 @@ HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
 ║      ║═════════════════════════
 ║  ╰☞**/ayarlar :** Ayarlar Menüsüne ║Ulaşabilirsiniz.
 ║        ║═════════════════════════
-║ ╰☞**/yardim :** Botun Yardım Menüsüne Ulaşırsınız.
+║ ╰☞**/yardim :** Botun Yardım Menüsüne ║Ulaşırsınız.
 ║       ║═════════════════════════
 ║ ╰☞**/ping :** Ping Süresini CPU Ve RAM ║Kullanımına Bakabilirsiniz.
 ╚══════════════════════════"""
