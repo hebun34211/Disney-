@@ -104,13 +104,13 @@ HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ �
 ║ /prolar - Check all allowed chats of your ║bot.
 ║═════════════════════════
 ║ 🌐**<u>BROADCAST FUNCTION:</u>**
-║ /broadcast [Message or Reply to a ║Message] - Broadcast any message to Bot's ║Served Chats.
+║ /broadcast [Message or Reply to a ║Message] - Broadcast any message to ║Bot's Served Chats.
 ║═════════════════════════
 ║ <u>Options for broadcast:</u>
 ║ ╰☞**-pin** : This will pin your message 
 ║ ╰☞**-pinloud** : This will pin your message ║with loud notification
 ║ ╰☞**-user** : This will broadcast your ║message to the users who have started ║your bot.
-║ ╰☞**-assistant** : This will broadcast your message from assistant account of your ║bot.
+║ ╰☞**-assistant** : This will broadcast your ║message from assistant account of your ║bot.
 ║ ╰☞**-nobot** : This will force your bot to not ║broadcast message
 ║═════════════════════════
 ║ **Example:╰☞** `/broadcast -user ║-assistant -pin Hello Testing`
