@@ -10,7 +10,7 @@ HELP_1 = """✅**<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:
 ║ ╰☞**/dur veya /son :** Müziği Tamamen ║Durdurur.
 ║ ╰☞**/karistir :** Sıraya Aldığınız Parçaları ║Karışık Şekilde Oynatır.
 ║ ╰☞**/ilerisar :** Müziği İleri Sarar. (Örnek:  ║/ilerisar 15 İle Çalan Müziği 15 Saniye İleri ║Alabilirsiniz.)
-║ ╰☞**/seekback :** Müziği Geri Sarar. ║(Örnek: /seekback 15 İle Çalan Müziği ║15 Saniye Geri Alabilirsiniz.)
+║ ╰☞**/seekback :** Müziği Geri Sarar. ║(Örnek: /seekback 15 İle Çalan Müziği  ║15 Saniye Geri Alabilirsiniz.)
 ║ ╰☞**/restart :** Botu Yeniden Başlatır.
 ║
 ║  ✅<u>**Döngü Modu:**</u>
