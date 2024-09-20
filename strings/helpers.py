@@ -20,7 +20,7 @@ HELP_1 = """✅<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:</
 """
 HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ╔═════════════════════════
-║    ╰☞**/oynat veya /play :** Müziği Oynatmaya Yarar.
+║    ╰☞**/oynat veya /play :** Müziği║ Oynatmaya Yarar.
 ║    ╰☞**-Örnek Kullanım:** /oynat şarkı İsmi // Veya Oynatmak İstediğiniz Şarkıyı Yanıtlayarak /oynat Yazabilirsiniz.
 ║    ╰☞**Örnek:** /oynat Neşet Ertaş Gönül Dağı)
 ║
