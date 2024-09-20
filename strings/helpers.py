@@ -85,18 +85,18 @@ HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ �
 ║ /blacklistedchat veya /engelliler- Check ║all blacklisted chats.
 ║═════════════════════════
 ║ 👤╰☞**<u>BLOCKED FUNCTION:</u>**
-║ /block [Username or Reply to a user] - ║Prevents a user from using bot commands.
+║ /block [Username or Reply to a user] ║- Prevents a user from using bot ║commands.
 ║ /unblock [Username or Reply to a user] - ║Remove a user from Bot's Blocked List.
 ║ /blockedusers - Check blocked Users ║Lists
 ║═════════════════════════
 ║ 👤╰☞**<u>GBAN FUNCTION:</u>**
 ║ /gban [Username or Reply to a user] - ║Gban a user from bot's served chat and ║stop him from using your bot.
-║ /ungban [Username or Reply to a user] - ║Remove a user from Bot's gbanned List and ║allow him for using your bot
+║ /ungban [Username or Reply to a user] - ║Remove a user from Bot's gbanned List ║and allow him for using your bot
 ║ /gbannedusers - Check Gbanned Users ║Lists
 ║═════════════════════════
 ║ 🎥**<u>VIDEOCALLS FUNCTION:</u>**
 ║ /videolimit [Number of Chats] - Set a ║maximum Number of Chats allowed for ║Video Calls at a time. Default to 3 chats.
-║ /videomode [download|m3u8] - If ║download mode is enabled, Bot will ║download videos instead of playing them ║in M3u8 form. ByDefault to M3u8. You can ║use download mode when any query doesnt ║plays in m3u8 mode.
+║ /videomode [download|m3u8] - If ║download mode is enabled, Bot will ║download videos instead of playing them ║in M3u8 form. ByDefault to M3u8. You ║can use download mode when any query ║doesnt plays in m3u8 mode.
 ║═════════════════════════
 ║ ⚡️**<u>PRIVATE BOT FUNCTION:</u>**
 ║ /pro [CHAT_ID] - Allow a chat for using ║your bot.
@@ -109,8 +109,8 @@ HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ �
 ║ <u>Options for broadcast:</u>
 ║ ╰☞**-pin** : This will pin your message 
 ║ ╰☞**-pinloud** : This will pin your message ║with loud notification
-║ ╰☞**-user** : This will broadcast your message to the ║users who have started ║your bot.
-║ ╰☞**-assistant** : This will broadcast your message from assistant account of your bot.
+║ ╰☞**-user** : This will broadcast your ║message to the users who have started ║your bot.
+║ ╰☞**-assistant** : This will broadcast your message from assistant account of your ║bot.
 ║ ╰☞**-nobot** : This will force your bot to not ║broadcast message
 ║═════════════════════════
 ║ **Example:╰☞** `/broadcast -user ║-assistant -pin Hello Testing`
