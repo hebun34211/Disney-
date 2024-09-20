@@ -47,19 +47,19 @@ HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 ║
 ║ ╰☞**/videoindir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Videoyu İndirebilirsiniz.
 ║ ╰☞**Örnek:** /videoindir Neşet Ertaş Gönül Dağı)
-
+║
 ║ ╰☞**/sira :** Sırada Olan Müzikler Listesini Görebilirsiniz.
 ╚══════════════════════════"""
 HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
 ╔═════════════════════════
-╰☞**/start :** Botun Başlatma Panelini Gösterir. 
-
-╰☞**/ayarlar :** Ayarlar Menüsüne Ulaşabilirsiniz.
-
-╰☞**/yardim :** Botun Yardım Menüsüne Ulaşırsınız.
-
-╰☞**/ping :** Ping Süresini CPU Ve RAM Kullanımına Bakabilirsiniz."""
-
+║ ╰☞**/start :** Botun Başlatma Panelini Gösterir. 
+║
+║  ╰☞**/ayarlar :** Ayarlar Menüsüne Ulaşabilirsiniz.
+║
+║ ╰☞**/yardim :** Botun Yardım Menüsüne Ulaşırsınız.
+║
+║ ╰☞**/ping :** Ping Süresini CPU Ve RAM Kullanımına Bakabilirsiniz.
+╚══════════════════════════"""
 HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ İÇİN BİR REHBER:</u>**
 
 /addsudo [Username or Reply to a user]
