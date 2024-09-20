@@ -37,18 +37,18 @@ HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ╚══════════════════════════"""
 HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 ╔═════════════════════════
-║╰☞**/stat :** Bottaki Tüm İstatistikleri Görebilirsiniz. En Çok Müzik Oynatan Gruplar, Kullanıcılar, En Çok Oynatılan Müzikler Ve Daha Fazlası...
-║
-║ ╰☞**/sudolist :** Yardım İstemek İçin Bottaki Sudo Kullanıcılarına Ulaşabilirsiniz.
-║
-║ ╰☞**/sarkisozu [Müzik Adı] :** Sözlerine Bakmak İstediğiniz Şarkıyı Arayabilirsiniz.
-║
-║ ╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
-║
+║╰☞**/stat :** Bottaki Tüm İstatistikleri ║Görebilirsiniz. En Çok Müzik Oynatan ║Gruplar, Kullanıcılar, En Çok Oynatılan ║Müzikler Ve Daha Fazlası...
+║     ║═════════════════════════
+║ ╰☞**/sudolist :** Yardım İstemek İçin ║Bottaki Sudo Kullanıcılarına Ulaşabilirsiniz.
+║     ║═════════════════════════
+║ ╰☞**/sarkisozu [Müzik Adı] :** Sözlerine ║Bakmak İstediğiniz Şarkıyı Arayabilirsiniz.
+║     ║═════════════════════════
+║ ╰☞**/indir [Müzik Adı] veya [Youtube ║Linki] :** Youtubedan İndirmek İstediğiniz ║Şarkıyı İndirebilirsiniz.
+║     ║═════════════════════════
 ║ ╰☞**/videoindir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Videoyu İndirebilirsiniz.
-║ ╰☞**Örnek:** /videoindir Neşet Ertaş Gönül Dağı)
-║
-║ ╰☞**/sira :** Sırada Olan Müzikler Listesini Görebilirsiniz.
+║ ╰☞**Örnek:** /videoindir Neşet Ertaş Gönül ║Dağı)
+║      ║═════════════════════════
+║ ╰☞**/sira :** Sırada Olan Müzikler Listesini ║Görebilirsiniz.
 ╚══════════════════════════"""
 HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
 ╔═════════════════════════
