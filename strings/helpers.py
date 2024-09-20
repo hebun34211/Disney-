@@ -16,7 +16,7 @@ HELP_1 = """✅**<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:
 ║  ✅<u>**Döngü Modu:**</u>
 ║ ╰☞**/dongu :** Çalan Müziği Döngüye Alıp ║Tekrar Oynatır. 
 ║ (Örnek: /dongu 3 İle Seste Çalan Müziği 3 ║Kere Daha Oynatır.)
-╚═══════════════════════════
+╚══════════════════════════
 """
 HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 
