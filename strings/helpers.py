@@ -22,7 +22,7 @@ HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ╔═════════════════════════
 ║    ╰☞**/oynat veya /play :** Müziği ║Oynatmaya Yarar.
 ║    ╰☞**-Örnek Kullanım:** /oynat şarkı ║İsmi // Veya Oynatmak İstediğiniz Şarkıyı ║Yanıtlayarak /oynat Yazabilirsiniz.
-║    ╰☞**Örnek:** /oynat Neşet Ertaş Gönül Dağı)
+║    ╰☞**Örnek:** /oynat Neşet Ertaş Gönül ║Dağı)
 ║
 ║    ╰☞**/vplay :** Videoyu Seste Oynatmaya Yarar.
 ║    ╰☞**-Örnek Kullanım:** /vplay Video İsmi // Veya Oynatmak İstediğiniz Videoyu Yanıtlayarak /vplay Yazabilirsiniz.
