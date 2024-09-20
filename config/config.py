@@ -42,7 +42,7 @@ SONG_DOWNLOAD_DURATION = int(
 
 # You'll need a Private Group ID for this.
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002167878868"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002397708146"))
 
 # A name for your Music bot.
 
@@ -52,7 +52,7 @@ MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","disnepmuzik")
 
 OWNER_ID = list(
 
-    map(int, getenv("OWNER_ID", "5902575361").split())
+    map(int, getenv("OWNER_ID", "7264498442").split())
 
 )  # Input type must be interger
 
@@ -70,7 +70,7 @@ UPSTREAM_REPO = getenv(
 
     "UPSTREAM_REPO",
 
-    "https://github.com/Omer3421/Ayaz",
+    "https://github.com/olurunabirak/1-disneydenem",
 
 )
 
