@@ -23,13 +23,13 @@ HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ║    ╰☞**/oynat veya /play :** Müziği ║Oynatmaya Yarar.
 ║    ╰☞**-Örnek Kullanım:** /oynat şarkı ║İsmi // Veya Oynatmak İstediğiniz Şarkıyı ║Yanıtlayarak /oynat Yazabilirsiniz.
 ║    ╰☞**Örnek:** /oynat Neşet Ertaş Gönül ║Dağı)
-║
+║        ║═════════════════════════
 ║    ╰☞**/vplay :** Videoyu Seste Oynatmaya ║Yarar.
 ║    ╰☞**-Örnek Kullanım:** /vplay Video ║İsmi // Veya Oynatmak İstediğiniz Videoyu ║Yanıtlayarak /vplay Yazabilirsiniz.
-║
+║     ║═════════════════════════
 ║    ╰☞**/indir [Müzik Adı] veya [Youtube ║Linki] :** Youtubedan İndirmek İstediğiniz ║Şarkıyı İndirebilirsiniz.
 ║    ╰☞**Örnek:** /indir Neşet Ertaş Gönül ║Dağı)
-║
+║     ║═════════════════════════
 ║   ✅**<u>Oynatma Listeleri:</u>**
 ║    ╰☞**/playlist :** Oynatma Listenizde Hangi ║Müziklerin Olduğuna Bakabilirsiniz.
 ║    ╰☞**/listemisil :** Oynatma Listenizden ║Silmek İstediğiniz Müziği Seçebilirsiniz.
@@ -53,11 +53,11 @@ HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
 ╔═════════════════════════
 ║ ╰☞**/start :** Botun Başlatma Panelini ║Gösterir. 
-║      ══════════════════════════
+║      ║═════════════════════════
 ║  ╰☞**/ayarlar :** Ayarlar Menüsüne ║Ulaşabilirsiniz.
-║        ══════════════════════════
+║        ║═════════════════════════
 ║ ╰☞**/yardim :** Botun Yardım Menüsüne Ulaşırsınız.
-║       ══════════════════════════
+║       ║═════════════════════════
 ║ ╰☞**/ping :** Ping Süresini CPU Ve RAM ║Kullanımına Bakabilirsiniz.
 ╚══════════════════════════"""
 HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ İÇİN BİR REHBER:</u>**
