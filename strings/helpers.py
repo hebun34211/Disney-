@@ -19,39 +19,37 @@ HELP_1 = """✅<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:</
 ╚══════════════════════════
 """
 HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
-
-╰☞**/oynat veya /play :** Müziği Oynatmaya Yarar.
-╰☞**-Örnek Kullanım:** /oynat şarkı İsmi // Veya Oynatmak İstediğiniz Şarkıyı Yanıtlayarak /oynat Yazabilirsiniz.
-(╰☞**Örnek:** /oynat Neşet Ertaş Gönül Dağı)
-
-╰☞**/vplay :** Videoyu Seste Oynatmaya Yarar.
-╰☞**-Örnek Kullanım:** /vplay Video İsmi // Veya Oynatmak İstediğiniz Videoyu Yanıtlayarak /vplay Yazabilirsiniz.
-
-╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
-(╰☞**Örnek:** /indir Neşet Ertaş Gönül Dağı)
-
-
-✅**<u>Oynatma Listeleri:</u>**
-╰☞**/playlist :** Oynatma Listenizde Hangi Müziklerin Olduğuna Bakabilirsiniz.
-╰☞**/listemisil :** Oynatma Listenizden Silmek İstediğiniz Müziği Seçebilirsiniz.
-╰☞**/oynat Komutunu Tek Başına Kullanırsanız:** Oynatma Listeleri Ekranına Ulaşırsınız. """
-
-
+╔═════════════════════════
+║ ╰☞**/oynat veya /play :** Müziği Oynatmaya Yarar.
+║ ╰☞**-Örnek Kullanım:** /oynat şarkı İsmi // Veya Oynatmak İstediğiniz Şarkıyı Yanıtlayarak /oynat Yazabilirsiniz.
+║ ╰☞**Örnek:** /oynat Neşet Ertaş Gönül Dağı)
+║
+║ ╰☞**/vplay :** Videoyu Seste Oynatmaya Yarar.
+║ ╰☞**-Örnek Kullanım:** /vplay Video İsmi // Veya Oynatmak İstediğiniz Videoyu Yanıtlayarak /vplay Yazabilirsiniz.
+║
+║ ╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
+║ ╰☞**Örnek:** /indir Neşet Ertaş Gönül Dağı)
+║
+║ ✅**<u>Oynatma Listeleri:</u>**
+║ ╰☞**/playlist :** Oynatma Listenizde Hangi Müziklerin Olduğuna Bakabilirsiniz.
+║ ╰☞**/listemisil :** Oynatma Listenizden Silmek İstediğiniz Müziği Seçebilirsiniz.
+║ ╰☞**/oynat Komutunu Tek Başına Kullanırsanız:** Oynatma Listeleri Ekranına Ulaşırsınız. 
+╚══════════════════════════"""
 HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
+╔═════════════════════════
+║╰☞**/stat :** Bottaki Tüm İstatistikleri Görebilirsiniz. En Çok Müzik Oynatan Gruplar, Kullanıcılar, En Çok Oynatılan Müzikler Ve Daha Fazlası...
+║
+║ ╰☞**/sudolist :** Yardım İstemek İçin Bottaki Sudo Kullanıcılarına Ulaşabilirsiniz.
+║
+║ ╰☞**/sarkisozu [Müzik Adı] :** Sözlerine Bakmak İstediğiniz Şarkıyı Arayabilirsiniz.
+║
+║ ╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
+║
+║ ╰☞**/videoindir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Videoyu İndirebilirsiniz.
+║ ╰☞**Örnek:** /videoindir Neşet Ertaş Gönül Dağı)
 
-╰☞**/stat :** Bottaki Tüm İstatistikleri Görebilirsiniz. En Çok Müzik Oynatan Gruplar, Kullanıcılar, En Çok Oynatılan Müzikler Ve Daha Fazlası...
-
-╰☞**/sudolist :** Yardım İstemek İçin Bottaki Sudo Kullanıcılarına Ulaşabilirsiniz.
-
-╰☞**/sarkisozu [Müzik Adı] :** Sözlerine Bakmak İstediğiniz Şarkıyı Arayabilirsiniz.
-
-╰☞**/indir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Şarkıyı İndirebilirsiniz.
-
-╰☞**/videoindir [Müzik Adı] veya [Youtube Linki] :** Youtubedan İndirmek İstediğiniz Videoyu İndirebilirsiniz.
-(╰☞**Örnek:** /videoindir Neşet Ertaş Gönül Dağı)
-
-╰☞**/sira :** Sırada Olan Müzikler Listesini Görebilirsiniz."""
-
+║ ╰☞**/sira :** Sırada Olan Müzikler Listesini Görebilirsiniz.
+╚══════════════════════════"""
 HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
 
 ╰☞**/start :** Botun Başlatma Panelini Gösterir. 
