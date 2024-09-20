@@ -33,7 +33,7 @@ HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
 ║   ✅**<u>Oynatma Listeleri:</u>**
 ║    ╰☞**/playlist :** Oynatma Listenizde Hangi ║Müziklerin Olduğuna Bakabilirsiniz.
 ║    ╰☞**/listemisil :** Oynatma Listenizden ║Silmek İstediğiniz Müziği Seçebilirsiniz.
-║    ╰☞**/oynat Komutunu Tek ║Başına Kullanırsanız:** Oynatma Listeleri ║Ekranına Ulaşırsınız. 
+║    ╰☞**/oynat Komutunu Tek Başına ║Kullanırsanız:** Oynatma Listeleri Ekranına ║Ulaşırsınız. 
 ╚══════════════════════════"""
 HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 ╔═════════════════════════
