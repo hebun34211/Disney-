@@ -51,7 +51,7 @@ HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
 ║ ╰☞**/sira :** Sırada Olan Müzikler Listesini Görebilirsiniz.
 ╚══════════════════════════"""
 HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
-
+╔═════════════════════════
 ╰☞**/start :** Botun Başlatma Panelini Gösterir. 
 
 ╰☞**/ayarlar :** Ayarlar Menüsüne Ulaşabilirsiniz.
