@@ -20,10 +20,35 @@ from config import BANNED_USERS
 from ArchMusic import LOGGER, app, userbot
 from ArchMusic.core.call import ArchMusic
 from ArchMusic.plugins import ALL_MODULES
-from ArchMusic.utils.database import get_banned_users, get_gbanned
+from ArchMusic.utils.database import get_banned_users, get_gbanned, get_active_chats
 
 loop = asyncio.get_event_loop_policy().get_event_loop()
 
+
+async def auto_restart(interval_minutes):
+    while True:
+        await asyncio.sleep(interval_minutes * 60)
+        await restart_bot()
+
+async def restart_bot():
+    served_chats = await get_active_chats()
+    for x in served_chats:
+        try:
+            await app.send_message(
+                x,
+                f"**{config.MUSIC_BOT_NAME} kendini yeniden başlattı. Sorun için özür dileriz.\n\n10-15 saniye sonra yeniden müzik çalmaya başlayabilirsiniz.**",
+            )
+        except Exception:
+            pass
+    try:
+        await app.send_message(
+            config.LOG_GROUP_ID,
+            f"**{config.MUSIC_BOT_NAME} kendini otomatik olarak yeniden başlatıyor.**",
+        )
+    except Exception:
+        pass
+    os.system(f"kill -9 {os.getpid()} && bash start")
+    
 
 async def init():
     if (
@@ -74,6 +99,11 @@ async def init():
         pass
     await ArchMusic.decorators()
     LOGGER("ArchMusic").info("Arch Music Bot Started Successfully")
+
+    interval_minutes = 21600
+    asyncio.create_task(auto_restart(interval_minutes))
+
+    
     await idle()
 
 
