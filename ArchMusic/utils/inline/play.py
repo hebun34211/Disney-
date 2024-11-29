@@ -2,7 +2,6 @@ import random
 
 from pyrogram.types import InlineKeyboardButton
 
-"LİNK","ZumreSohbetTR"
 
 def time_to_sec(time: str):
     x = time.split(":")
@@ -39,7 +38,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     
         [
             InlineKeyboardButton(
-                text="🤖 DESTEK", url="LİNK",
+                text="🤖 DESTEK", url="https://t.me/ZumreSohbetTR",
             )
             InlineKeyboardButton(
                 text=_["PL_B_3"],
@@ -59,9 +58,8 @@ def telegram_markup_timer(_, chat_id, played, dur):
     
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
-                callback_data=f"add_playlist {videoid}",
-            ),
+                text="🤖 DESTEK", url="https://t.me/ZumreSohbetTR",
+            )
             InlineKeyboardButton(
                 text=_["PL_B_3"],
                 callback_data=f"PanelMarkup None|{chat_id}",
@@ -77,11 +75,11 @@ def telegram_markup_timer(_, chat_id, played, dur):
 
 def stream_markup(_, videoid, chat_id):
     buttons = [
+        
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
-                callback_data=f"add_playlist {videoid}",
-            ),
+                text="🤖 DESTEK", url="https://t.me/ZumreSohbetTR",
+            )
             InlineKeyboardButton(
                 text=_["PL_B_3"],
                 callback_data=f"PanelMarkup None|{chat_id}",
@@ -94,11 +92,11 @@ def stream_markup(_, videoid, chat_id):
 
 def telegram_markup(_, chat_id):
     buttons = [
+    
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
-                callback_data=f"add_playlist {videoid}",
-            ),
+                text="🤖 DESTEK", url="https://t.me/ZumreSohbetTR",
+            )
             InlineKeyboardButton(
                 text=_["PL_B_3"],
                 callback_data=f"PanelMarkup None|{chat_id}",
@@ -127,12 +125,7 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
                 callback_data=f"ArchMusicPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"],
-                callback_data=f"forceclose {videoid}|{user_id}",
-            ),
-        ],
+        
     ]
     return buttons
 
@@ -147,10 +140,7 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
                 text=_["P_B_3"],
                 callback_data=f"LiveStream {videoid}|{user_id}|{mode}|{channel}|{fplay}",
             ),
-            InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"],
-                callback_data=f"forceclose {videoid}|{user_id}",
-            ),
+            
         ],
     ]
     return buttons
