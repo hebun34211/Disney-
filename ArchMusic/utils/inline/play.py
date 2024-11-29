@@ -121,10 +121,7 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
                 text=_["P_B_3"],
                 callback_data=f"LiveStream {videoid}|{user_id}|{mode}|{channel}|{fplay}",
             ),
-        ],
-            [
-            InlineKeyboardButton(text="🤖DESTEK", url="https://t.me/ZumreSohbetTR",),
-            InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
+       
         ],
     ]
     return buttons
