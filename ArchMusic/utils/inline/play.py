@@ -2,6 +2,21 @@ import random
 
 from pyrogram.types import InlineKeyboardButton
 
+selection = [
+    "▁▄▂▇▄▅▄▅▃",
+    "▁▃▇▂▅▇▄▅▃",
+    "▃▁▇▂▅▃▄▃▅",
+    "▃▄▂▄▇▅▃▅▁",
+    "▁▃▄▂▇▃▄▅▃",
+    "▃▁▄▂▅▃▇▃▅",
+    "▁▇▄▂▅▄▅▃▄",
+    "▁▃▅▇▂▅▄▃▇",
+    "▃▅▂▅▇▁▄▃▁",
+    "▇▅▂▅▃▄▃▁▃",
+    "▃▇▂▅▁▅▄▃▁",
+    "▅▄▇▂▅▂▄▇▁",
+    "▃▅▂▅▃▇▄▅▃",
+]
 
 def time_to_sec(time: str):
     x = time.split(":")
@@ -27,48 +42,62 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     x, y = str(round(played_sec/total_sec,1)).split(".")
     pos = int(y)
 
-    line = ""
-    circle = ""
+    line = "─"
+    circle = "●"
 
     bar = line*(pos-1)
     bar += circle
     bar += line*(10-len(bar))
 
     buttons = [
-            
-                
         [
-            
-            InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
+            InlineKeyboardButton(
+                text=_["PL_B_2"],
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
         ],
         
     ]
     return buttons
-
 
 def telegram_markup_timer(_, chat_id, played, dur):
-    played_sec = time_to_sec(played)
-    total_sec = time_to_sec(dur)
-
+    bar = random.choice(selection)
     buttons = [
-    
         [
-            InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
+            InlineKeyboardButton(
+                text=_["PL_B_2"],
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
         ],
         
     ]
     return buttons
-
 # Rest of the functions remain the same...
 
 
 
+## Inline without Timer Bar
+
+
 def stream_markup(_, videoid, chat_id):
     buttons = [
-        
         [
-            InlineKeyboardButton(text="🤖DESTEK", url="https://t.me/ZumreSohbetTR",),
-            
+            InlineKeyboardButton(
+                text=_["PL_B_2"],
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
         ],
         
     ]
@@ -77,15 +106,24 @@ def stream_markup(_, videoid, chat_id):
 
 def telegram_markup(_, chat_id):
     buttons = [
-    
         [
-            
-            InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
+            InlineKeyboardButton(
+                text=_["PL_B_2"],
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
+            ),
         ],
         
     ]
     return buttons
-    
+
+
+## Search Query Inline
+
+
 def track_markup(_, videoid, user_id, channel, fplay):
     buttons = [
         [
@@ -113,11 +151,11 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
+                callback_data=f"ArchMusicPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
-                callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
+                callback_data=f"ArchMusicPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
             ),
         ],
         [
@@ -128,8 +166,12 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         ],
     ]
     return buttons
-    
-    def livestream_markup(_, videoid, user_id, mode, channel, fplay):
+
+
+## Live Stream Markup
+
+
+def livestream_markup(_, videoid, user_id, mode, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
@@ -143,8 +185,12 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         ],
     ]
     return buttons
-    
-    def slider_markup(
+
+
+## Slider Query Markup
+
+
+def slider_markup(
     _, videoid, user_id, query, query_type, channel, fplay
 ):
     query = f"{query[:20]}"
@@ -176,7 +222,10 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     ]
     return buttons
 
-            
+
+## Cpanel Markup
+
+
 def panel_markup_1(_, videoid, chat_id):
     buttons = [
         [
@@ -212,6 +261,7 @@ def panel_markup_1(_, videoid, chat_id):
         ],
     ]
     return buttons
+
 
 def panel_markup_2(_, videoid, chat_id):
     buttons = [
@@ -249,8 +299,9 @@ def panel_markup_2(_, videoid, chat_id):
         ],
     ]
     return buttons
-    
-    def panel_markup_3(_, videoid, chat_id):
+
+
+def panel_markup_3(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
