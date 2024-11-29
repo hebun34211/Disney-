@@ -35,15 +35,9 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     bar += line*(10-len(bar))
 
     buttons = [
-    
-        [
-            InlineKeyboardButton(
-                text="🤖 DESTEK", url="https://t.me/ZumreSohbetTR",
-            )
-            InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f"PanelMarkup None|{chat_id}",
-            ),
+            [InlineKeyboardButton(    text="🤖 DESTEK", url="https://t.me/ZumreSohbetTR",)
+            InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
+            
         ],
         
     ]
