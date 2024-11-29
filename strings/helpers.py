@@ -1,65 +1,46 @@
 #.
 
 HELP_1 = """✅<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:</u>
-╔═════════════════════════
-║╰☞Burdaki Komutları Normal ║Üyelerin De Kullanabilmesi İçin ║İstediğinizKişinin Mesajını Yanıtlayarak /║yetkilendirYazmanız Yeterlidir.
-║
-║ ╰☞**/duraklat :** Müziği Duraklatır.
-║ ╰☞**/devam :** Müziği Devam Ettirir.
-║ ╰☞**/atla :** Çalan Müziği Atlar.
-║ ╰☞**/dur veya /son :** Müziği Tamamen ║Durdurur.
-║ ╰☞**/karistir :** Sıraya Aldığınız Parçaları ║Karışık Şekilde Oynatır.
-║ ╰☞**/ilerisar :** Müziği İleri Sarar. (Örnek:  ║/ilerisar 15 İle Çalan Müziği 15 Saniye İleri ║Alabilirsiniz.)
-║ ╰☞**/seekback :** Müziği Geri Sarar. ║(Örnek: /seekback 15 İle Çalan Müziği  ║15 Saniye Geri Alabilirsiniz.)
-║ ╰☞**/restart :** Botu Yeniden Başlatır.
-║     ║═════════════════════════
-║  ✅<u>**Döngü Modu:**</u>
-║ ╰☞**/dongu :** Çalan Müziği Döngüye Alıp ║Tekrar Oynatır. 
-║ (Örnek: /dongu 3 İle Seste Çalan Müziği 3 ║Kere Daha Oynatır.)
-╚══════════════════════════
+    
+Normal üyelerin kullanabilmesi için mesajlarını yanıtlayarak /yetkilendir yazmanız yeterlidir.
+
+⏸️ /duraklat: Müziği duraklatır.
+⏯️ /devam: Müziği devam ettirir.
+⏩ /atla: Çalan müziği atlar.
+⏹️ /dur: Müziği durdurur.
+🔀 /karistir: Parçaları karıştırır.
+⏭️ /ilerisar: Müziği ileri sarar (Ör: /ilerisar 15).
+⏮️ /gerisar: Müziği geri sarar (Ör: /gerisar 15).
+🔁 /dongu: Müziği döngüye alır (Ör: /dongu 3).
+ 🖲️/restart :Botu Yeniden Başlatır.
+    
 """
-HELP_2 = """✅<u>**OYNATMA KOMUTLARI:**</u>
-╔═════════════════════════
-║    ╰☞**/oynat veya /play :** Müziği ║Oynatmaya Yarar.
-║    ╰☞**-Örnek Kullanım:** /oynat şarkı ║İsmi // Veya Oynatmak İstediğiniz Şarkıyı ║Yanıtlayarak /oynat Yazabilirsiniz.
-║    ╰☞**Örnek:** /oynat Neşet Ertaş Gönül ║Dağı)
-║        ║═════════════════════════
-║    ╰☞**/vplay :** Videoyu Seste Oynatmaya ║Yarar.
-║    ╰☞**-Örnek Kullanım:** /vplay Video ║İsmi // Veya Oynatmak İstediğiniz Videoyu ║Yanıtlayarak /vplay Yazabilirsiniz.
-║     ║═════════════════════════
-║    ╰☞**/indir [Müzik Adı] veya [Youtube ║Linki] :** Youtubedan İndirmek İstediğiniz ║Şarkıyı İndirebilirsiniz.
-║    ╰☞**Örnek:** /indir Neşet Ertaş Gönül ║Dağı)
-║     ║═════════════════════════
-║   ✅**<u>Oynatma Listeleri:</u>**
-║    ╰☞**/playlist :** Oynatma Listenizde Hangi ║Müziklerin Olduğuna Bakabilirsiniz.
-║    ╰☞**/listemisil :** Oynatma Listenizden ║Silmek İstediğiniz Müziği Seçebilirsiniz.
-║    ╰☞**/oynat Komutunu Tek Başına ║Kullanırsanız:** Oynatma Listeleri Ekranına ║Ulaşırsınız. 
-╚══════════════════════════"""
-HELP_3 = """✅<u>**BOT KOMUTLARI**</u>
-╔═════════════════════════
-║╰☞**/stat :** Bottaki Tüm İstatistikleri ║Görebilirsiniz. En Çok Müzik Oynatan ║Gruplar, Kullanıcılar, En Çok Oynatılan ║Müzikler Ve Daha Fazlası...
-║     ║═════════════════════════
-║ ╰☞**/sudolist :** Yardım İstemek ║İçin Bottaki Sudo Kullanıcılarına ║Ulaşabilirsiniz.
-║     ║═════════════════════════
-║ ╰☞**/sarkisozu [Müzik Adı] :** Sözlerine ║Bakmak İstediğiniz Şarkıyı Arayabilirsiniz.
-║     ║═════════════════════════
-║ ╰☞**/indir [Müzik Adı] veya [Youtube ║Linki] :** Youtubedan İndirmek İstediğiniz ║Şarkıyı İndirebilirsiniz.
-║     ║═════════════════════════
-║ ╰☞**/videoindir [Müzik Adı] veya [Youtube ║Linki] :** Youtubedan İndirmek İstediğiniz ║Videoyu İndirebilirsiniz.
-║ ╰☞**Örnek:** /videoindir Neşet Ertaş Gönül ║Dağı)
-║      ║═════════════════════════
-║ ╰☞**/sira :** Sırada Olan Müzikler Listesini ║Görebilirsiniz.
-╚══════════════════════════"""
-HELP_4 = """✅<u>**EKSTRA KOMUTLAR:**</u>
-╔═════════════════════════
-║ ╰☞**/start :** Botun Başlatma Panelini ║Gösterir. 
-║      ║═════════════════════════
-║  ╰☞**/ayarlar :** Ayarlar Menüsüne ║Ulaşabilirsiniz.
-║        ║═════════════════════════
-║ ╰☞**/yardim :** Botun Yardım Menüsüne ║Ulaşırsınız.
-║       ║═════════════════════════
-║ ╰☞**/ping :** Ping Süresini CPU Ve RAM ║Kullanımına Bakabilirsiniz.
-╚══════════════════════════"""
+HELP_2 = """💥<u>**OYNATMA KOMUTLARI:**</u>
+▶️ /oynat /play: Müziği oynatır.
+-Örnek: /oynat /play şarkı ismi (Ör: /oynat Gönül Dağı).
+
+🎦 /vplay /voynat: Videoyu oynatır.
+-Örnek: /vplay /vplay video ismi.
+
+📥 /bul /indir [müzik adı] veya [Youtube linki]: Youtube'dan müzik indirir (Ör: /indir Enercii).
+
+✨Oynatma Listeleri:
+❤️‍🩹 /playlist: Oynatma listenizi gösterir.
+🆑 /listemisil: Listeden müzik siler.
+📃 /oynat: Oynatma listesi ekranı açar.
+"""
+HELP_3 = """🥏<u>**BOT KOMUTLARI**</u>
+🆘 /sudolist: Sudo kullanıcılarına ulaşır.
+🗨️ /sarkisozu [müzik adı]: Şarkı sözlerini arar.
+📥 /bul /indir [müzik adı] veya [Youtube linki]: Youtube'dan müzik indirir.
+📑 /sira: Sıradaki müzikleri gösterir.
+"""
+HELP_4 = """🌟<u>**EKSTRA KOMUTLAR:**</u>
+🌟 /start: Başlatma panelini gösterir.
+⚙️ /ayarlar: Ayarlar menüsüne ulaşır.
+🆘 /yardim: Yardım menüsüne ulaşır.
+📡 /ping: Ping süresini ve sistem durumunu gösterir.
+"""
 HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ İÇİN BİR REHBER:</u>**
 ╔═════════════════════════
 ║/addsudo [Username or Reply to a user]
