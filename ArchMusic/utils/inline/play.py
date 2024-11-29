@@ -35,7 +35,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     bar += line*(10-len(bar))
 
     buttons = [
-         buttons = [
+    
         [
             InlineKeyboardButton(
                 text=_["PL_B_2"],
@@ -56,7 +56,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
     total_sec = time_to_sec(dur)
 
     buttons = [
-        buttons = [
+    
         [
             InlineKeyboardButton(
                 text=_["PL_B_2"],
@@ -93,7 +93,7 @@ def stream_markup(_, videoid, chat_id):
 
 
 def telegram_markup(_, chat_id):
-    buttons = [
+    
         buttons = [
         [
             InlineKeyboardButton(
