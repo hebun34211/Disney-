@@ -53,7 +53,6 @@ def telegram_markup_timer(_, chat_id, played, dur):
     buttons = [
     
         [
-            InlineKeyboardButton(text="🤖DESTEK", url="https://t.me/ZumreSohbetTR",),
             InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
         ],
         
@@ -69,7 +68,7 @@ def stream_markup(_, videoid, chat_id):
         
         [
             InlineKeyboardButton(text="🤖DESTEK", url="https://t.me/ZumreSohbetTR",),
-            InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
+            
         ],
         
     ]
@@ -80,7 +79,7 @@ def telegram_markup(_, chat_id):
     buttons = [
     
         [
-            InlineKeyboardButton(text="🤖DESTEK", url="https://t.me/ZumreSohbetTR",),
+            
             InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
         ],
         
@@ -132,7 +131,7 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     
     def livestream_markup(_, videoid, user_id, mode, channel, fplay):
     buttons = [
-        
+        [
             InlineKeyboardButton(
                 text=_["P_B_3"],
                 callback_data=f"LiveStream {videoid}|{user_id}|{mode}|{channel}|{fplay}",
