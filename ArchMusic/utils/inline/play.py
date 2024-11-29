@@ -86,12 +86,27 @@ def telegram_markup(_, chat_id):
         
     ]
     return buttons
-
-
-## Search Query Inline
-
-
-
+    
+def track_markup(_, videoid, user_id, channel, fplay):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=_["P_B_1"],
+                callback_data=f"MusicStream {videoid}|{user_id}|a|{channel}|{fplay}",
+            ),
+            InlineKeyboardButton(
+                text=_["P_B_2"],
+                callback_data=f"MusicStream {videoid}|{user_id}|v|{channel}|{fplay}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=_["CLOSE_BUTTON"],
+                callback_data=f"forceclose {videoid}|{user_id}",
+            )
+        ],
+    ]
+    return buttons
 
 
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
@@ -99,22 +114,23 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"ArchMusicPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
+                callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
-                callback_data=f"ArchMusicPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
+                callback_data=f"YukkiPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
             ),
         ],
-        
+        [
+            InlineKeyboardButton(
+                text=_["CLOSE_BUTTON"],
+                callback_data=f"forceclose {videoid}|{user_id}",
+            ),
+        ],
     ]
     return buttons
-
-
-## Live Stream Markup
-
-
-def livestream_markup(_, videoid, user_id, mode, channel, fplay):
+    
+    def livestream_markup(_, videoid, user_id, mode, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
@@ -128,12 +144,8 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
         ],
     ]
     return buttons
-
-
-## Slider Query Markup
-
-
-def slider_markup(
+    
+    def slider_markup(
     _, videoid, user_id, query, query_type, channel, fplay
 ):
     query = f"{query[:20]}"
@@ -165,10 +177,7 @@ def slider_markup(
     ]
     return buttons
 
-
-## Cpanel Markup
-
-
+            
 def panel_markup_1(_, videoid, chat_id):
     buttons = [
         [
@@ -204,7 +213,6 @@ def panel_markup_1(_, videoid, chat_id):
         ],
     ]
     return buttons
-
 
 def panel_markup_2(_, videoid, chat_id):
     buttons = [
@@ -242,9 +250,8 @@ def panel_markup_2(_, videoid, chat_id):
         ],
     ]
     return buttons
-
-
-def panel_markup_3(_, videoid, chat_id):
+    
+    def panel_markup_3(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
@@ -282,4 +289,3 @@ def panel_markup_3(_, videoid, chat_id):
         ],
     ]
     return buttons
-                            
