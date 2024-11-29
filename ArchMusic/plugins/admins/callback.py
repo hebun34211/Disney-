@@ -24,7 +24,9 @@ from ArchMusic.utils.database import (is_active_chat,
                                        set_loop)
 from ArchMusic.utils.decorators.language import languageCB
 from ArchMusic.utils.formatters import seconds_to_min
-from ArchMusic.utils.inline.play import (
+from ArchMusic.utils.inline.play import (panel_markup_1,
+                                          panel_markup_2,
+                                          panel_markup_3,
                                           stream_markup,
                                           telegram_markup)
 from ArchMusic.utils.stream.autoclear import auto_clean
