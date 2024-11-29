@@ -2,7 +2,7 @@ import random
 
 from pyrogram.types import InlineKeyboardButton
 
-"LİNK","me/ZumreSohbetTR"
+"LİNK","ZumreSohbetTR"
 
 def time_to_sec(time: str):
     x = time.split(":")
