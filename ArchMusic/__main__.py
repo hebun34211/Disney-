@@ -100,7 +100,7 @@ async def init():
     await ArchMusic.decorators()
     LOGGER("ArchMusic").info("Arch Music Bot Started Successfully")
 
-    interval_minutes = 21600
+    interval_minutes = 360
     asyncio.create_task(auto_restart(interval_minutes))
 
     
