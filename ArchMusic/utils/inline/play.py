@@ -38,7 +38,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             
                 
         [
-            InlineKeyboardButton(text="🤖DESTEK", url="https://t.me/ZumreSohbetTR",),
+            
             InlineKeyboardButton(text=_["PL_B_3"],callback_data=f"PanelMarkup None|{chat_id}",),
         ],
         
