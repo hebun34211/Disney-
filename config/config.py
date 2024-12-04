@@ -18,7 +18,7 @@ API_HASH = getenv("API_HASH", "9623f07eca023e4e3c561c966513a642")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAHmgXBlh71IseJkcy-BprZumR8uGhCkH-s")
 
 # Database to save your chats and stats.
 
@@ -52,7 +52,7 @@ MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","disnepmuzik")
 
 OWNER_ID = list(
 
-    map(int, getenv("OWNER_ID", "7264498442").split())
+    map(int, getenv("OWNER_ID", "8048661070").split())
 
 )  # Input type must be interger
 
@@ -78,13 +78,13 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 
 # GIT TOKEN ( if your edited repo is private)
 
-GIT_TOKEN = getenv("GIT_TOKEN", None)
+GIT_TOKEN = getenv("GIT_TOKEN", "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")
 
 # Only  Links formats are  accepted for this Var value.
 
 SUPPORT_CHANNEL = getenv(
 
-    "SUPPORT_CHANNEL", None) # Example:- https://t.me/ArchBots
+    "SUPPORT_CHANNEL", "https://t.me/ZumreSohbetTR") # Example:- https://t.me/ArchBots
 
 SUPPORT_GROUP = getenv(
 
@@ -184,7 +184,7 @@ SET_CMDS = getenv("SET_CMDS", False)
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
 
-STRING1 = getenv("STRING_SESSION", "")
+STRING1 = getenv("STRING_SESSION", "BAAf70YAtzgw8nLJZp9km4F5_pr3aFgohB6y2-dWzv7xGmOkjB28fKAE0P0M2MLBSZedAJjjTQgY2hqrnhxxdf-jBldKMBKc9RyIpQw3nRRPjKtZ3rDPJZUZQa94wqBc-hKEUjgYyyyXiWQUe8lmDCMcvFh7YXsC-sytXXdm9AJ5jwhYnL2NqpiwTyQP_naAPGprKf8p_xwziqrfBNVD3AlCMFOTqqOYpmU620pxgNA7uxQOofpLuZmxX9q2Yq1F4yYDwZek2eTRoYL6kvlWfYku4wQdz-5DQYsVsLLWnGbbV4CupSKJ24fWPM7akrjGs8C6MtrT64ZbjLyMU8uTc0fbnGM-GwAAAAG6_Xh9AA")
 
 STRING2 = getenv("STRING_SESSION2", None)
 
