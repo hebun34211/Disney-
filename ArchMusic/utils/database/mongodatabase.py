@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2021-2023 by ArchBots@Github, < https://github.com/ArchBots >.
-#
-# This file is part of < https://github.com/ArchBots/ArchMusic > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/ArchBots/ArchMusic/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 
 from typing import Dict, List, Union
 
@@ -24,9 +15,39 @@ usersdb = mongodb.tgusersdb
 playlistdb = mongodb.playlist
 blockeddb = mongodb.blockedusers
 privatedb = mongodb.privatechats
+restart_db = mongodb.autorestart
+settings_collection = mongodb.settings
 
 
-# Playlist
+async def get_restart_settings() -> Dict[str, Union[bool, int]]:
+    settings = await restart_db.find_one({"_id": "restart_config"})
+    if not settings:
+        settings = {
+            "_id": "restart_config",
+            "enabled": True,
+            "interval": 360 
+        }
+        await restart_db.insert_one(settings)
+    return settings
+
+async def update_restart_settings(enabled: bool = None, interval: int = None) -> Dict[str, Union[bool, int]]:
+    settings = await get_restart_settings()
+    update_data = {}
+    
+    if enabled is not None:
+        update_data["enabled"] = enabled
+    if interval is not None:
+        update_data["interval"] = interval
+        
+    if update_data:
+        await restart_db.update_one(
+            {"_id": "restart_config"},
+            {"$set": update_data}
+        )
+        settings.update(update_data)
+    
+    return settings
+
 
 
 async def _get_playlists(chat_id: int) -> Dict[str, int]:
