@@ -16,8 +16,7 @@ from ArchMusic.utils.database import (
      get_gbanned, 
      get_active_chats,
      get_restart_settings, 
-     update_restart_settings,
-autorestart
+     update_restart_settings
 )
      
 
