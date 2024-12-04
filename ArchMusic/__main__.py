@@ -1,16 +1,7 @@
-#
-# Copyright (C) 2021-2023 by ArchBots@Github, < https://github.com/ArchBots >.
-#
-# This file is part of < https://github.com/ArchBots/ArchMusic > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/ArchBots/ArchMusic/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 import asyncio
 import importlib
 import sys
+import os
 
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
@@ -20,13 +11,24 @@ from config import BANNED_USERS
 from ArchMusic import LOGGER, app, userbot
 from ArchMusic.core.call import ArchMusic
 from ArchMusic.plugins import ALL_MODULES
-from ArchMusic.utils.database import get_banned_users, get_gbanned, get_active_chats
+from ArchMusic.utils.database import (
+     get_banned_users, 
+     get_gbanned, 
+     get_active_chats,
+     get_restart_settings, 
+     update_restart_settings
+)
+     
 
 loop = asyncio.get_event_loop_policy().get_event_loop()
-
+auto_restart_task = None
 
 async def auto_restart(interval_minutes):
     while True:
+        settings = await get_restart_settings()
+        if not settings["enabled"]:
+            break
+            
         await asyncio.sleep(interval_minutes * 60)
         await restart_bot()
 
@@ -48,7 +50,55 @@ async def restart_bot():
     except Exception:
         pass
     os.system(f"kill -9 {os.getpid()} && bash start")
+
+@app.on_message(filters.command("autorestart") & filters.user(config.OWNER_ID))
+async def auto_restart_command(_, message):
+    if len(message.command) == 1:
+        settings = await get_restart_settings()
+        status = "✅ Açık" if settings["enabled"] else "❌ Kapalı"
+        
+        interval_hours = settings["interval"] // 60 
+        await message.reply_text(
+            f"🔄 Otomatik Yeniden Başlatma: {status}\n"
+            f"⏰ Yeniden Başlatma Aralığı: {interval_hours} saat\n\n"
+            "Kullanım:\n"
+            "`/autorestart on` - Otomatik yeniden başlatmayı açar\n"
+            "`/autorestart off` - Otomatik yeniden başlatmayı kapatır\n"
+            "`/autorestart [saat]` - Yeniden başlatma aralığını ayarlar"
+        )
+        return
+
+    arg = message.command[1].lower()
     
+    if arg == "on":
+        settings = await update_restart_settings(enabled=True)
+        global auto_restart_task
+        if auto_restart_task is None or auto_restart_task.done():
+            auto_restart_task = asyncio.create_task(auto_restart(settings["interval"]))
+        await message.reply_text("✅ Otomatik yeniden başlatma açıldı.")
+        
+    elif arg == "off":
+        await update_restart_settings(enabled=False)
+        if auto_restart_task and not auto_restart_task.done():
+            auto_restart_task.cancel()
+        await message.reply_text("❌ Otomatik yeniden başlatma kapatıldı.")
+        
+    else:
+        try:
+            hours = int(float(arg))  
+            if hours <= 0:
+                raise ValueError
+            minutes = hours * 60
+            settings = await update_restart_settings(interval=minutes)
+            
+            if settings["enabled"]:
+                if auto_restart_task and not auto_restart_task.done():
+                    auto_restart_task.cancel()
+                auto_restart_task = asyncio.create_task(auto_restart(minutes))
+            
+            await message.reply_text(f"⏰ Yeniden başlatma aralığı {hours} saat olarak ayarlandı.")
+        except ValueError:
+            await message.reply_text("❌ Geçersiz değer! Lütfen geçerli bir saat değeri girin.")
 
 async def init():
     if (
@@ -59,7 +109,7 @@ async def init():
         and not config.STRING5
     ):
         LOGGER("ArchMusic").error(
-            "No Assistant Clients Vars Defined!.. Exiting Process."
+            "Hiçbir Asistan İstemci Değişkeni Tanımlanmamış!.. Süreç Sonlandırılıyor."
         )
         return
     if (
@@ -67,7 +117,7 @@ async def init():
         and not config.SPOTIFY_CLIENT_SECRET
     ):
         LOGGER("ArchMusic").warning(
-            "No Spotify Vars defined. Your bot won't be able to play spotify queries."
+            "Hiçbir Spotify Değişkeni tanımlanmamış. Botunuz spotify sorgularını çalamayacak."
         )
     try:
         users = await get_gbanned()
@@ -82,7 +132,7 @@ async def init():
     for all_module in ALL_MODULES:
         importlib.import_module("ArchMusic.plugins" + all_module)
     LOGGER("ArchMusic.plugins").info(
-        "Successfully Imported Modules "
+        "Modüller Başarıyla İthal Edildi"
     )
     await userbot.start()
     await ArchMusic.start()
@@ -92,21 +142,21 @@ async def init():
         )
     except NoActiveGroupCall:
         LOGGER("ArchMusic").error(
-            "[ERROR] - \n\nPlease turn on your Logger Group's Voice Call. Make sure you never close/end voice call in your log group"
+            "[HATA] - \n\nLütfen Günlük Grubunuzun Sesli Aramasını Açın. Günlük grubunuzda sesli aramayı asla kapatmadığınızdan emin olun"
         )
         sys.exit()
     except:
         pass
     await ArchMusic.decorators()
-    LOGGER("ArchMusic").info("Arch Music Bot Started Successfully")
-
-    interval_minutes = 360
-    asyncio.create_task(auto_restart(interval_minutes))
-
+    LOGGER("ArchMusic").info("Arch Music Bot Başarıyla Başlatıldı")
+    
+    settings = await get_restart_settings()
+    if settings["enabled"]:
+        global auto_restart_task
+        auto_restart_task = asyncio.create_task(auto_restart(settings["interval"]))
     
     await idle()
 
-
 if __name__ == "__main__":
     loop.run_until_complete(init())
-    LOGGER("ArchMusic").info("Stopping Arch Music Bot! GoodBye")
+    LOGGER("ArchMusic").info("Arch Music Bot Durduruluyor! Hoşçakalın")
