@@ -51,7 +51,6 @@ async def restart_bot():
         pass
     os.system(f"kill -9 {os.getpid()} && bash start")
 
-@app.on_message(filters.command("autorestart") & filters
 async def auto_restart_command(_, message):
     if len(message.command) == 1:
         settings = await get_restart_settings()
