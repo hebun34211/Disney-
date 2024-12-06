@@ -52,7 +52,7 @@ MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "Klas Muzik")
 
 OWNER_ID = list(
 
-    map(int, getenv("OWNER_ID", "8048661070").split())
+    map(int, getenv("OWNER_ID", "7432140925").split())
 
 )  # Input type must be interger
 
