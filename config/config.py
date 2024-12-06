@@ -18,7 +18,7 @@ API_HASH = getenv("API_HASH", "9623f07eca023e4e3c561c966513a642")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAFsmXF-GxSnZhUwoWOiQj4lQ6VPXUrw0rk")
+BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAGgo_DURMyJoxMZh1iHl0_clruOvevAiUU")
 
 # Database to save your chats and stats.
 
@@ -70,7 +70,7 @@ UPSTREAM_REPO = getenv(
 
     "UPSTREAM_REPO",
 
-    "https://github.com/olurunabirak/1-disneydenem",
+    "https://github.com/olurunabirak/klas",
 
 )
 
