@@ -22,3 +22,4 @@ unidecode
 youtube-search
 youtube-search-python
 lyricsgenius
+yt_dlp
