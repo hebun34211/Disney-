@@ -24,4 +24,3 @@ numpy
 yt_dlp
 youtube-search
 youtube-search-python
-https://github.com/alexmercerind/youtube-search-python
