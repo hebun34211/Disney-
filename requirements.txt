@@ -10,7 +10,7 @@ motor
 ntgcalls==1.1.2
 pillow 
 psutil
-py-tgcalls==0.9.7
+py-tgcalls==1.1.2
 pykeyboard
 pymongo
 python-dotenv
