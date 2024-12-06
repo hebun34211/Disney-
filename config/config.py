@@ -18,7 +18,7 @@ API_HASH = getenv("API_HASH", "9623f07eca023e4e3c561c966513a642")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAGgo_DURMyJoxMZh1iHl0_clruOvevAiUU")
+BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAHi_Q40-_wBrNKRxo8wgDiGhwkyasYa9SQ")
 
 # Database to save your chats and stats.
 
@@ -78,7 +78,7 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 
 # GIT TOKEN ( if your edited repo is private)
 
-GIT_TOKEN = getenv("GIT_TOKEN", "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")
+GIT_TOKEN = getenv("GIT_TOKEN", "")
 
 # Only  Links formats are  accepted for this Var value.
 
@@ -218,7 +218,7 @@ autoclean = []
 
 # Images
 
-START_IMG_URL = getenv("START_IMG_URL", None)
+START_IMG_URL = getenv("START_IMG_URL", "https://upload.wikimedia.org/wikipedia/commons/1/19/Apple_Music_logo.png")
 
 PING_IMG_URL = getenv(
 
