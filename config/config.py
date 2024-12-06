@@ -18,7 +18,7 @@ API_HASH = getenv("API_HASH", "9623f07eca023e4e3c561c966513a642")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAHi_Q40-_wBrNKRxo8wgDiGhwkyasYa9SQ")
+BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAHF000Flg3hJheKABX34Pa5wUpXTln_1CM")
 
 # Database to save your chats and stats.
 
@@ -42,11 +42,11 @@ SONG_DOWNLOAD_DURATION = int(
 
 # You'll need a Private Group ID for this.
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002367367386"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002367367386"))
 
 # A name for your Music bot.
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "Klas Muzik")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","disnepmuzik")
 
 # Your User ID.
 
@@ -78,13 +78,13 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 
 # GIT TOKEN ( if your edited repo is private)
 
-GIT_TOKEN = getenv("GIT_TOKEN", "")
+GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 # Only  Links formats are  accepted for this Var value.
 
 SUPPORT_CHANNEL = getenv(
 
-    "SUPPORT_CHANNEL", "https://t.me/ZumreSohbetTR") # Example:- https://t.me/ArchBots
+    "SUPPORT_CHANNEL", None) # Example:- https://t.me/ArchBots
 
 SUPPORT_GROUP = getenv(
 
@@ -184,7 +184,7 @@ SET_CMDS = getenv("SET_CMDS", False)
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
 
-STRING1 = getenv("STRING_SESSION", "BAFDZnYAQPPsAPSKRj0l90MGzXmnkPoTDeZxx1tjtddGn5AusT-v4Rwn8mlFUCgyJ_d1tlO4qc56dD0P9_iTphqa8gA_HBS5_J8OOp2hYyo35uG9DZo18K8C3ojIEINSM-IIIJiU1DwIR-X-WVcoQ8Gd-_O-cVxxxRMchwwFusZdngJWNr7wgOsPPln1_y5sjIu96qafHZYMKsxO6m6h-pDnF-JSHguqqpMX7-LJtqTjcp2wm6c5lYj08crOjHtSbpRlkEndHfSjKSGR1xNM4sQpphoAJ4j_Yi3Z6DFEU2e8ljjLqAHnawxzPCfrhULxjNjzIFqWD8uibaf6pN59kZMF0kbr9QAAAAHnkZqrAA")
+STRING1 = getenv("STRING_SESSION", "BADNvmIAmMmIdAbOWV4qb4qGPmPG7qYnwJ-W15V34savcSKEuuPKSzJ5EvaZKzprkTT_3ZOMiBA3eVdvo7d_2L-enyCNuKkuQ1msK0ZfpvNX0VOU4YgF13uhvX94-XnkaGtR2lMdjltR_GiHUqCtJt-iMFoHbYPv7AqJOfQbghMASXUv1IytDUAaNz8GkdqpRplVtfSjhqgPz5kIDhpumP1FJOCOxVS3UlUHLfBQ9vnwTxa8mT3TSda80_-Na9dZWNOaZMwHov5BFovHRb61tQzw9HL2Hkuzr3_eE1m622BQtZKpreS76IgnAB8dq108apZdWrbcBD-VRkMUDYuegPW1OmjQLgAAAAG6_Xh9AA")
 
 STRING2 = getenv("STRING_SESSION2", None)
 
@@ -218,7 +218,7 @@ autoclean = []
 
 # Images
 
-START_IMG_URL = getenv("START_IMG_URL", "https://upload.wikimedia.org/wikipedia/commons/1/19/Apple_Music_logo.png")
+START_IMG_URL = getenv("START_IMG_URL", None)
 
 PING_IMG_URL = getenv(
 
