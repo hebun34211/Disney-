@@ -3,7 +3,7 @@ import importlib
 import sys
 import os
 
-from pyrogram import idle
+from pyrogram import idle, filters
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
@@ -51,6 +51,7 @@ async def restart_bot():
         pass
     os.system(f"kill -9 {os.getpid()} && bash start")
 
+@app.on_message(filters.command("autorestart") & filters.user(config.OWNER_ID))
 async def auto_restart_command(_, message):
     if len(message.command) == 1:
         settings = await get_restart_settings()
@@ -159,3 +160,4 @@ async def init():
 if __name__ == "__main__":
     loop.run_until_complete(init())
     LOGGER("ArchMusic").info("Arch Music Bot Durduruluyor! Hoşçakalın")
+     
