@@ -20,8 +20,8 @@ requests
 speedtest-cli
 spotipy
 tgcrypto
-git+https://github.com/alexmercerind/youtube-search-python@main
-git+https://github.com/joetats/youtube_search@master
 numpy
 yt_dlp
+youtube-search
 youtube-search-python
+https://github.com/alexmercerind/youtube-search-python
