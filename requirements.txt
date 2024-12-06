@@ -24,3 +24,4 @@ https://github.com/rojvv/tgcrypto/archive/main.zip
 unidecode
 yt-dlp
 youtube-search-python
+yt_dlp
