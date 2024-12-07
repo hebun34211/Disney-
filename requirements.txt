@@ -19,9 +19,7 @@ speedtest-cli
 spotipy
 tgcrypto
 numpy
-yt_dlp
-youtube-search
-git+https://github.com/alexmercerind/youtube-search-python
-git+https://github.com/PlutoOwner/Muzikl
-git+https://github.com/MonsterBos/sello-
-git+https://github.com/Amahocaam/Hizk
+https://github.com/EchoGoktu/MSearchPy
+https://github.com/EchoGoktu/MSearch
+https://github.com/EchoGoktu/Muzik
+https://github.com/EchoGoktu/Hiz
