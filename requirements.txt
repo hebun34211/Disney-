@@ -7,9 +7,9 @@ ffmpeg-python
 gitpython
 hachoir
 heroku3
+httpx==0.27.2
 motor
-pillow==9.5.0
-numpy
+pillow
 psutil
 py-tgcalls==0.9.7
 pykeyboard
@@ -24,6 +24,3 @@ unidecode
 yt-dlp
 youtube-search
 youtube-search-python
-async_pymongo
-git+https://github.com/EchoGoktu/Hiz
-lyricsgenius
