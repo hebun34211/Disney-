@@ -26,3 +26,4 @@ youtube-search
 youtube-search-python
 async_pymongo
 git+https://github.com/EchoGoktu/Hiz
+lyricsgenius
