@@ -1,9 +1,10 @@
+""
 Auth: |
   <b>Yetkili kullanıcılar, sohbetinizde yönetici hakları olmadan yönetici komutlarını kullanabilir.</b>
   <b>✧ {0}</b> [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesine ekleyin.
   <b>✧ {1}</b> [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesinden çıkarın.
   <b>✧ {2}</b> - Grubun YETKİLİ listesini kontrol edin.
-
+""
 Admin: |
   <b>c, kanal oynatmayı ifade eder</b>
   <b>✧ {0}</b> - Çalan müziği duraklatın.
@@ -18,19 +19,19 @@ Admin: |
   <b>✧ {9}</b> - Botu sohbetiniz için yeniden başlatın.
   <b>✧ {4}</b> [Sayı (Örnek: 3)] - Müziği belirli bir sıraya atlayın. Örnek: <b>/skip 3</b>, üçüncü sıradaki müziğe atlayacak ve 1 ile 2'yi geçecektir.
   <b>✧ {10}</b> [enable/disable] veya [1-10 arasında bir sayı] - Etkinleştirildiğinde, bot mevcut müziği sesli sohbette 1-10 kez tekrar eder. Varsayılan döngü değeri 10'dur.
-
+""
 Active: |
   <b>✧ {0}</b> - Botta aktif sesli sohbetleri kontrol edin.
   <b>✧ {1}</b> - Botta aktif sesli ve görüntülü aramaları kontrol edin.
   <b>✧ {2}</b> - Botta aktif görüntülü aramaları kontrol edin.
   <b>✧ {3}</b> - Bot istatistiklerini kontrol edin.
-
+""
 Play: |
   <b>✧ {0}</b> - Bot, verilen sorguyu sesli sohbette çalmaya veya canlı bağlantıları yayınlamaya başlar.
   <b>✧ {1}</b> - Zorla Çalma, mevcut çalan parçayı durdurur ve aranan parçayı hemen çalmaya başlar, kuyruğu rahatsız etmeden/silmeden.
   <b>✧ {2}</b> - Bir kanalı bir gruba bağlayın ve grubunuzdan kanalın sesli sohbetinde müzik yayınlayın.
   <b>✧ {3}</b> - Doğrudan veya m3u8 olduğunu düşündüğünüz ve /play ile çalınamayan bir URL yayınlayın.
-
+""
 G-cast: |
   <b>{0} [Mesaj veya herhangi bir mesaja yanıt]</b> » Botun hizmet verdiği sohbetlere bir mesaj yayınlayın
   <u>Yayın Modları:</u>
@@ -40,7 +41,7 @@ G-cast: |
   <b><code>-assistant</code></b> » Mesajınızı botun tüm asistanları aracılığıyla yayınlayın
   <b><code>-nobot</code></b> » **Bot**'un mesajı yayınlamamasını sağlar [Mesajı gruplara yayınlamak istemediğinizde kullanışlıdır]
   > <b>Örnek:</b> <code>/{0} -user -assistant -pin Test yayını</code>
-
+""
 Bot: |
   <b>★ {0}</b> - En İyi 10 Parça Küresel İstatistikleri, Botun En İyi 10 Kullanıcısı, Botun En İyi 10 Sohbeti, Bir Sohbette En Çok Oynatılan 10 Parça vb.
   <b>★ {1}</b> - Botun Sudo kullanıcılarını kontrol edin.
@@ -51,13 +52,13 @@ Bot: |
   <b>✧ {5} [CHAT_ID]</b> - Bir sohbetin botunuzu kullanmasına izin verin.
   <b>✧ {6} [CHAT_ID]</b> - Bir sohbetin botunuzu kullanmasını engelleyin.
   <b>✧ {7}</b> - Botunuzu kullanmasına izin verilen tüm sohbetleri kontrol edin.
-
+""
 P-List: |
   <b>{0}</b> - Bot sunucusunda tüm oynatma listenizi kontrol edin
   <b>{1}</b> - Kaydedilmiş oynatma listenizden herhangi bir şarkıyı silin
   <b>{2}</b> - Kaydedilmiş oynatma listenizi **ses** olarak çalmaya başlayın
   <b>{3}</b> - Oynatma listenizi **video** olarak çalmaya başlayın
-
+""
 B-list: |
   <b>✧ {0}</b> [chat ID] - Herhangi bir sohbeti Müzik Botunu kullanmaktan engelleyin.
   <b>✧ {1}</b> [chat ID] - Kara listeye alınan herhangi bir sohbetin Müzik Botunu kullanmasına izin verin.
@@ -68,7 +69,7 @@ B-list: |
   <b>✧ {6}</b> [Kullanıcı adı veya bir kullanıcıya yanıt] - Kullanıcıyı tüm hizmet verilen sohbetlerden yasaklayın ve botunuzu kullanmasını engelleyin.
   <b>✧ {7}</b> [Kullanıcı adı veya bir kullanıcıya yanıt] - Kullanıcıyı küresel yasak listesinden çıkarın ve botunuzu kullanmasına izin verin.
   <b>✧ {8}</b> - Küresel yasaklı kullanıcıların listesini kontrol edin.
-
+""
 Dev: |
   <b><u>Sudoers ekleme ve kaldırma:</u></b>
   <b>{0} [Kullanıcı adı veya bir kullanıcıya yanıt] - Botunuza Sudo ekleyin</b>
@@ -87,3 +88,4 @@ Dev: |
   <b>{11} [enable/disable]</b> - Aranan sorguların log grubuna kaydedilmesini geçiş yapın
   <b>{12} [Satır sayısı]</b> - Sunucudan günlükleri alın
   <b>{13} [enable/disable]</b> - Eğer kimse şarkıyı dinlemiyorsa yayını 30 saniye sonra otomatik olarak bitirin
+""
