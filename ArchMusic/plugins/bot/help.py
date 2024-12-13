@@ -16,11 +16,6 @@ from typing import Union
 from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from config import BANNED_USERS, START_IMG_URL
-
-from YukkiMusic.utils.decorators.language import LanguageStart
-from YukkiMusic.utils.inline.help import private_help_panel
-
 COLUMN_SIZE = 4  # Number of button height
 NUM_COLUMNS = 3  # Number of button width
 
