@@ -17,7 +17,7 @@ from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from config import BANNED_USERS, START_IMG_URL
-from YukkiMusic.utils.database import get_lang, is_commanddelete_on
+
 from YukkiMusic.utils.decorators.language import LanguageStart
 from YukkiMusic.utils.inline.help import private_help_panel
 
