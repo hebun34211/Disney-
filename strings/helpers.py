@@ -63,7 +63,7 @@ HELP_6= """🥏<u>** EN İYİ OYNATİLAN 10 LİSTE
   <b>✧ {5} [CHAT_ID]</b> - Bir sohbetin botunuzu kullanmasına izin verin.
   <b>✧ {6} [CHAT_ID]</b> - Bir sohbetin botunuzu kullanmasını engelleyin.
   <b>✧ {7}</b> - Botunuzu kullanmasına izin verilen tüm sohbetleri kontrol edin.
-""""
+"""
 HELP_7=  """🥏<u>**PLAY LİSTESİ
 
   <b>{0}</b> - Bot sunucusunda tüm oynatma listenizi kontrol edin
