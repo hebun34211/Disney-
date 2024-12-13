@@ -1,99 +1,89 @@
-#.
+Auth: |
+  <b>Yetkili kullanıcılar, sohbetinizde yönetici hakları olmadan yönetici komutlarını kullanabilir.</b>
+  <b>✧ {0}</b> [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesine ekleyin.
+  <b>✧ {1}</b> [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesinden çıkarın.
+  <b>✧ {2}</b> - Grubun YETKİLİ listesini kontrol edin.
 
-HELP_1 = """✅<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:</u>
-    
-Normal üyelerin kullanabilmesi için mesajlarını yanıtlayarak /yetkilendir yazmanız yeterlidir.
+Admin: |
+  <b>c, kanal oynatmayı ifade eder</b>
+  <b>✧ {0}</b> - Çalan müziği duraklatın.
+  <b>✧ {1}</b> - Duraklatılmış müziği devam ettirin.
+  <b>✧ {2}</b> - Çalan müziğin sesini kapatın.
+  <b>✧ {3}</b> - Sessiz müziği tekrar açın.
+  <b>✧ {4}</b> - Şu anda çalan müziği atlayın.
+  <b>✧ {5}</b> - Çalan müziği durdurun.
+  <b>✧ {6}</b> - Kuyruktaki çalma listesini/şarkıları rastgele karıştırın.
+  <b>✧ {7}</b> - Müziği ileri sarın.
+  <b>✧ {8}</b> - Müziği geriye sararak belirtilen süreye dönün.
+  <b>✧ {9}</b> - Botu sohbetiniz için yeniden başlatın.
+  <b>✧ {4}</b> [Sayı (Örnek: 3)] - Müziği belirli bir sıraya atlayın. Örnek: <b>/skip 3</b>, üçüncü sıradaki müziğe atlayacak ve 1 ile 2'yi geçecektir.
+  <b>✧ {10}</b> [enable/disable] veya [1-10 arasında bir sayı] - Etkinleştirildiğinde, bot mevcut müziği sesli sohbette 1-10 kez tekrar eder. Varsayılan döngü değeri 10'dur.
 
-⏸️ /duraklat: Müziği duraklatır.
-⏯️ /devam: Müziği devam ettirir.
-⏩ /atla: Çalan müziği atlar.
-⏹️ /dur: Müziği durdurur.
-🔀 /karistir: Parçaları karıştırır.
-⏭️ /ilerisar: Müziği ileri sarar (Ör: /ilerisar 15).
-⏮️ /gerisar: Müziği geri sarar (Ör: /gerisar 15).
-🔁 /dongu: Müziği döngüye alır (Ör: /dongu 3).
- 🖲️/restart :Botu Yeniden Başlatır.
-    
-"""
-HELP_2 = """💥<u>**OYNATMA KOMUTLARI:**</u>
-▶️ /oynat /play: Müziği oynatır.
--Örnek: /oynat /play şarkı ismi (Ör: /oynat Gönül Dağı).
+Active: |
+  <b>✧ {0}</b> - Botta aktif sesli sohbetleri kontrol edin.
+  <b>✧ {1}</b> - Botta aktif sesli ve görüntülü aramaları kontrol edin.
+  <b>✧ {2}</b> - Botta aktif görüntülü aramaları kontrol edin.
+  <b>✧ {3}</b> - Bot istatistiklerini kontrol edin.
 
-🎦 /vplay /voynat: Videoyu oynatır.
--Örnek: /vplay /vplay video ismi.
+Play: |
+  <b>✧ {0}</b> - Bot, verilen sorguyu sesli sohbette çalmaya veya canlı bağlantıları yayınlamaya başlar.
+  <b>✧ {1}</b> - Zorla Çalma, mevcut çalan parçayı durdurur ve aranan parçayı hemen çalmaya başlar, kuyruğu rahatsız etmeden/silmeden.
+  <b>✧ {2}</b> - Bir kanalı bir gruba bağlayın ve grubunuzdan kanalın sesli sohbetinde müzik yayınlayın.
+  <b>✧ {3}</b> - Doğrudan veya m3u8 olduğunu düşündüğünüz ve /play ile çalınamayan bir URL yayınlayın.
 
-📥 /bul /indir [müzik adı] veya [Youtube linki]: Youtube'dan müzik indirir (Ör: /indir Enercii).
+G-cast: |
+  <b>{0} [Mesaj veya herhangi bir mesaja yanıt]</b> » Botun hizmet verdiği sohbetlere bir mesaj yayınlayın
+  <u>Yayın Modları:</u>
+  <b><code>-pin</code></b> » Yayınlanan mesajı hizmet verilen sohbetlerde sabitleyin
+  <b><code>-pinloud</code></b> » Yayınlanan mesajı sabitleyin ve üyelere bildirim gönderin
+  <b><code>-user</code></b> » Mesajı botu başlatan kullanıcılara yayınlayın [Mesajı sabitlemek için `-pin` veya `-pinloud` ekleyebilirsiniz]
+  <b><code>-assistant</code></b> » Mesajınızı botun tüm asistanları aracılığıyla yayınlayın
+  <b><code>-nobot</code></b> » **Bot**'un mesajı yayınlamamasını sağlar [Mesajı gruplara yayınlamak istemediğinizde kullanışlıdır]
+  > <b>Örnek:</b> <code>/{0} -user -assistant -pin Test yayını</code>
 
-✨Oynatma Listeleri:
-❤️‍🩹 /playlist: Oynatma listenizi gösterir.
-🆑 /listemisil: Listeden müzik siler.
-📃 /oynat: Oynatma listesi ekranı açar.
-"""
-HELP_3 = """🥏<u>**BOT KOMUTLARI**</u>
-🆘 /sudolist: Sudo kullanıcılarına ulaşır.
-🗨️ /sarkisozu [müzik adı]: Şarkı sözlerini arar.
-📥 /bul /indir [müzik adı] veya [Youtube linki]: Youtube'dan müzik indirir.
-📑 /sira: Sıradaki müzikleri gösterir.
-"""
-HELP_4 = """🌟<u>**EKSTRA KOMUTLAR:**</u>
-🌟 /start: Başlatma panelini gösterir.
-⚙️ /ayarlar: Ayarlar menüsüne ulaşır.
-🆘 /yardim: Yardım menüsüne ulaşır.
-📡 /ping: Ping süresini ve sistem durumunu gösterir.
-"""
-HELP_5 = """🔰**<u>BURASI ÇOK ÖNEMLİ DEĞİL, SADECE BOT YÖNETİCİLERİ İÇİN BİR REHBER:</u>**
-╔═════════════════════════
-║/addsudo [Username or Reply to a user]
-║/delsudo [Username or Reply to a user]
-║═════════════════════════
-║ 🤖**<u>BOT Komutları:</u>**
-║ /reboot - Reboot your Bot. 
-║ /update - Update Bot.
-║ /speedtest - Check server speeds
-║ /maintenance [enable / disable] 
-║  /logger [enable / disable] - Bot logs the ║searched queries in logger group.
-║ /get_log [Number of Lines] - Get log of ║your bot from heroku or vps. Works for ║both.
-║ /autoend [enable|disable] - Enable ║Auto stream end after 3 mins if no one is ║listening.
-║═════════════════════════
-║ 📈**<u>STATS COMMANDS:</u>**
-║ /aktifses - Check active voice chats on ║bot.
-║ /aktifvideo - Check active video calls on ║bot.
-║ /stat - Check Bots Stats
-║═════════════════════════
-║ ⚠️**<u>BLACKLIST CHAT FUNCTION:</u>**
-║ /blacklistchat veya /engelle [CHAT_ID] - ║Blacklist any chat from using Music Bot
-║ /whitelistchat [CHAT_ID] - Whitelist any ║blacklisted chat from using Music Bot
-║ /blacklistedchat veya /engelliler- Check ║all blacklisted chats.
-║═════════════════════════
-║ 👤╰☞**<u>BLOCKED FUNCTION:</u>**
-║ /block [Username or Reply to a user] ║- Prevents a user from using bot ║commands.
-║ /unblock [Username or Reply to a user] - ║Remove a user from Bot's Blocked List.
-║ /blockedusers - Check blocked Users ║Lists
-║═════════════════════════
-║ 👤╰☞**<u>GBAN FUNCTION:</u>**
-║ /gban [Username or Reply to a user] - ║Gban a user from bot's served chat and ║stop him from using your bot.
-║ /ungban [Username or Reply to a user] - ║Remove a user from Bot's gbanned List ║and allow him for using your bot
-║ /gbannedusers - Check Gbanned Users ║Lists
-║═════════════════════════
-║ 🎥**<u>VIDEOCALLS FUNCTION:</u>**
-║ /videolimit [Number of Chats] - Set a ║maximum Number of Chats allowed for ║Video Calls at a time. Default to 3 chats.
-║ /videomode [download|m3u8] - If ║download mode is enabled, Bot will ║download videos instead of playing them ║in M3u8 form. ByDefault to M3u8. You ║can use download mode when any query ║doesnt plays in m3u8 mode.
-║═════════════════════════
-║ ⚡️**<u>PRIVATE BOT FUNCTION:</u>**
-║ /pro [CHAT_ID] - Allow a chat for using ║your bot.
-║ /unpro [CHAT_ID] - Disallow a chat from ║using your bot.
-║ /prolar - Check all allowed chats of your ║bot.
-║═════════════════════════
-║ 🌐**<u>BROADCAST FUNCTION:</u>**
-║ /broadcast [Message or Reply to a ║Message] - Broadcast any message to ║Bot's Served Chats.
-║═════════════════════════
-║ <u>Options for broadcast:</u>
-║ ╰☞**-pin** : This will pin your message 
-║ ╰☞**-pinloud** : This will pin your message ║with loud notification
-║ ╰☞**-user** : This will broadcast your ║message to the users who have started ║your bot.
-║ ╰☞**-assistant** : This will broadcast your ║message from assistant account of your ║bot.
-║ ╰☞**-nobot** : This will force your bot to not ║broadcast message
-║═════════════════════════
-║ **Example:╰☞** `/broadcast -user ║-assistant -pin Hello Testing`
-╚══════════════════════════"""
+Bot: |
+  <b>★ {0}</b> - En İyi 10 Parça Küresel İstatistikleri, Botun En İyi 10 Kullanıcısı, Botun En İyi 10 Sohbeti, Bir Sohbette En Çok Oynatılan 10 Parça vb.
+  <b>★ {1}</b> - Botun Sudo kullanıcılarını kontrol edin.
+  <b>★ {2} [Şarkı Adı]</b> - Belirli bir müzik için web'de söz arayın.
+  <b>★ {3} [Parça Adı] veya [YouTube Bağlantısı]</b> - YouTube'dan herhangi bir parçayı MP3 veya MP4 formatında indirin.
+  <b>★ {4}</b> - Müzik kuyruğunu kontrol edin.
+  <u><b>⚡️Özel Bot:</b></u>
+  <b>✧ {5} [CHAT_ID]</b> - Bir sohbetin botunuzu kullanmasına izin verin.
+  <b>✧ {6} [CHAT_ID]</b> - Bir sohbetin botunuzu kullanmasını engelleyin.
+  <b>✧ {7}</b> - Botunuzu kullanmasına izin verilen tüm sohbetleri kontrol edin.
 
+P-List: |
+  <b>{0}</b> - Bot sunucusunda tüm oynatma listenizi kontrol edin
+  <b>{1}</b> - Kaydedilmiş oynatma listenizden herhangi bir şarkıyı silin
+  <b>{2}</b> - Kaydedilmiş oynatma listenizi **ses** olarak çalmaya başlayın
+  <b>{3}</b> - Oynatma listenizi **video** olarak çalmaya başlayın
+
+B-list: |
+  <b>✧ {0}</b> [chat ID] - Herhangi bir sohbeti Müzik Botunu kullanmaktan engelleyin.
+  <b>✧ {1}</b> [chat ID] - Kara listeye alınan herhangi bir sohbetin Müzik Botunu kullanmasına izin verin.
+  <b>✧ {2}</b> - Engellenen tüm sohbetleri kontrol edin.
+  <b>✧ {3}</b> [Kullanıcı adı veya bir kullanıcıya yanıt] - Kullanıcının bot komutlarını kullanmasını engelleyin.
+  <b>✧ {4}</b> [Kullanıcı adı veya bir kullanıcıya yanıt] - Kullanıcıyı botun engellenen listesinden çıkarın.
+  <b>✧ {5}</b> - Engellenen kullanıcıların listesini kontrol edin.
+  <b>✧ {6}</b> [Kullanıcı adı veya bir kullanıcıya yanıt] - Kullanıcıyı tüm hizmet verilen sohbetlerden yasaklayın ve botunuzu kullanmasını engelleyin.
+  <b>✧ {7}</b> [Kullanıcı adı veya bir kullanıcıya yanıt] - Kullanıcıyı küresel yasak listesinden çıkarın ve botunuzu kullanmasına izin verin.
+  <b>✧ {8}</b> - Küresel yasaklı kullanıcıların listesini kontrol edin.
+
+Dev: |
+  <b><u>Sudoers ekleme ve kaldırma:</u></b>
+  <b>{0} [Kullanıcı adı veya bir kullanıcıya yanıt] - Botunuza Sudo ekleyin</b>
+  <b>{1} [Kullanıcı adı veya kullanıcı kimliği veya bir kullanıcıya yanıt] - Kullanıcıyı bot sudoers'larından çıkarın</b>
+  <b>{2} - Tüm sudoers listesini alın</b>
+  <b><u>Heroku:</u></b>
+  <b>{3}</b> - Dyno kullanımı
+  <b>{4} [Değişken Adı]</b> - Bir yapılandırma değişkenini alın
+  <b>{5} [Değişken Adı]</b> - Bir yapılandırma değişkenini silin
+  <b>{6} [Değişken Adı] [Değer]</b> - Bir değişken ekleyin veya güncelleyin. Değişken ve değeri bir boşlukla ayırın
+  <b><u>Bot komutu:</u></b>
+  <b>{7}</b> - Botu yeniden başlatın (yalnızca SUDOERS)
+  <b>{8}</b> - Botu güncelleyin
+  <b>{9}</b> - Sunucu hızlarını kontrol edin
+  <b>{10} [enable/disable]</b> - Bot bakım modunu geçiş yapın
+  <b>{11} [enable/disable]</b> - Aranan sorguların log grubuna kaydedilmesini geçiş yapın
+  <b>{12} [Satır sayısı]</b> - Sunucudan günlükleri alın
+  <b>{13} [enable/disable]</b> - Eğer kimse şarkıyı dinlemiyorsa yayını 30 saniye sonra otomatik olarak bitirin
