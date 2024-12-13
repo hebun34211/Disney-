@@ -73,8 +73,8 @@ HELP_8=  """🥏<u>**BOT KOMUTLARİ
 /delsudo [Username or Reply to a user]
  
 """
-HELP_9= """🌟<u>**EKSTRA KOMUTLAR:**</u>
+HELP_9= """ <u>**EKSTRA KOMUTLAR:**</u>
 🌟 /start: Başlatma panelini gösterir.
 ⚙️ /ayarlar: Ayarlar menüsüne ulaşır.
 🆘 /yardim: Yardım menüsüne ulaşır.
-📡 /ping: Ping süresini ve 
+📡 /ping: Ping süresini  gösterir
