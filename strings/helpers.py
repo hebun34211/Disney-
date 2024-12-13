@@ -77,4 +77,6 @@ HELP_9= """ <u>**EKSTRA KOMUTLAR:**</u>
 🌟 /start: Başlatma panelini gösterir.
 ⚙️ /ayarlar: Ayarlar menüsüne ulaşır.
 🆘 /yardim: Yardım menüsüne ulaşır.
-📡 /ping: Ping süresini  gösterir
+📡 /ping: Ping süresini ve sistem durumunu gösterir.
+"""
+""
