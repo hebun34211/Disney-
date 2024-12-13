@@ -18,7 +18,7 @@ HELP_2 = """💥<u>**DEGİSTİRME KOMUTLARI:**</u>
 ⏭️ /ilerisar: Müziği ileri sarar (Ör: /ilerisar 15).
 ⏮️ /gerisar: Müziği geri sarar (Ör: /gerisar 15).
 🔁 /dongu: Müziği döngüye alır (Ör: /dongu 3).
- 🖲️/restart :Botu Yeniden Başlatır.
+ 
 
 """
 HELP_3 = """🥏<u>**💥OYNATMA KOMUTU
@@ -78,5 +78,6 @@ HELP_9= """ <u>**EKSTRA KOMUTLAR:**</u>
 ⚙️ /ayarlar: Ayarlar menüsüne ulaşır.
 🆘 /yardim: Yardım menüsüne ulaşır.
 📡 /ping: Ping süresini ve sistem durumunu gösterir.
+🖲️/restart :Botu Yeniden Başlatır.
 """
-""
+
