@@ -29,29 +29,18 @@ HELP_3 = """🥏<u>**💥OYNATMA KOMUTU
 -Örnek: /vplay /vplay video ismi.
 
 """
-HELP_4= """🥏<u>**MUZİK İNDİRME KOMUTU**</u>
+HELP_4= """🥏<u>** ✨Oynatma Listeleri:
+❤️‍🩹 /playlist: Oynatma listenizi gösterir.
+🆑 /listemisil: Listeden müzik siler.
+📃 /oynat: Oynatma listesi ekranı açar
+"""
+HELP_5= """🥏<u>**MUZİK İNDİRME KOMUTU**</u>
 
 🗨️ /sarkisozu [müzik adı]: Şarkı sözlerini arar.
 📥 /bul /indir [müzik adı] veya [Youtube linki]: Youtube'dan müzik indirir.
 
 """
-
-HELP_5= """🥏<u>**REKLAM KOMUTLARI BROADCAST FUNCTION </u>**
-
-/broadcast [Mesaj Gönderme veya Mesaja Cevap Verme] - Herhangi bir mesajı Bot'un Sunulan Sohbetlerine yayınlayın.
-╰☞**-pin** : Bu, mesajınızı sabitleyecektir
-╰☞**-pinloud** : Bu, mesajınızı yüksek sesli bildirimle sabitleyecektir
- ╰☞**-user** : Bu, mesajınızı botunuzu başlatan kullanıcılara yayınlayacaktır.
- ╰☞**-assistant** :Bu, mesajınızı botunuzun asistan hesabından yayınlayacaktır .
-  ╰☞**-nobot** : Bu, botunuzu mesaj yayınlamamaya zorlayacaktır
- **Example:╰☞** `/broadcast -user -assistant -pin Merhaba Testi
-"""
-HELP_6= """🥏<u>** ✨Oynatma Listeleri:
-❤️‍🩹 /playlist: Oynatma listenizi gösterir.
-🆑 /listemisil: Listeden müzik siler.
-📃 /oynat: Oynatma listesi ekranı açar
-"""
-HELP_7=  """🥏<u>**GRUP ENGELLE BLACKLIST CHAT FUNCTION </u>**
+HELP_6=  """🥏<u>**GRUP ENGELLE BLACKLIST CHAT FUNCTION </u>**
 
 /blacklistchat veya /engelle [CHAT_ID] - Music Bot'u kullanarak yapılan tüm sohbetleri kara listeye alın
 /whitelistchat [CHAT_ID] - Kara listeye alınmış herhangi bir sohbeti Music Bot kullanarak beyaz listeye alın
@@ -60,6 +49,16 @@ HELP_7=  """🥏<u>**GRUP ENGELLE BLACKLIST CHAT FUNCTION </u>**
  /ungban [Kullanıcı adı veya kullanıcıya yanıt] - Bir kullanıcıyı Bot'un yasaklı listesinden kaldırın ve onun botunuzu kullanmasına izin verin
 /gbannedusers - G Yasaklı Kullanıcı Listelerini Kontrol Edin
   """
+HELP_7= """🥏<u>**REKLAM KOMUTLARI BROADCAST FUNCTION </u>**
+/broadcast [Mesaj Gönderme veya Mesaja Cevap Verme] - Herhangi bir mesajı Bot'un Sunulan Sohbetlerine yayınlayın.
+╰☞**-pin** : Bu, mesajınızı sabitleyecektir
+╰☞**-pinloud** : Bu, mesajınızı yüksek sesli bildirimle sabitleyecektir
+ ╰☞**-user** : Bu, mesajınızı botunuzu başlatan kullanıcılara yayınlayacaktır.
+ ╰☞**-assistant** :Bu, mesajınızı botunuzun asistan hesabından yayınlayacaktır .
+  ╰☞**-nobot** : Bu, botunuzu mesaj yayınlamamaya zorlayacaktır
+ **Example:╰☞** `/broadcast -user -assistant -pin Merhaba Testi
+"""
+
 HELP_8=  """🥏<u>**BOT KOMUTLARİ
 
 /reboot - Botunuzu yeniden başlatın.
