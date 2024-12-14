@@ -83,8 +83,21 @@ async def help_com_group(client, message: Message, _):
     await message.reply_text(
         _["help_2"], reply_markup=InlineKeyboardMarkup(keyboard)
     )
-
-            
+@app.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
+@languageCB
+async def helper_cb(client, CallbackQuery, _):
+    callback_data = CallbackQuery.data.strip()
+    cb = callback_data.split(None, 1)[1]
+    keyboard = help_back_markup(_)
+    if cb == "hb6":
+        if CallbackQuery.from_user.id not in SUDOERS:
+            return await CallbackQuery.answer(
+                "Sadece Sudo Kullanıcıları İçin", show_alert=True
+            )
+          
+        else:
+            await CallbackQuery.edit_message_text(
+                helpers.HELP_6, reply_markup=keyboard
             return await CallbackQuery.answer()
     try:
         await CallbackQuery.answer()
@@ -106,13 +119,10 @@ async def help_com_group(client, message: Message, _):
         await CallbackQuery.edit_message_text(
             helpers.HELP_4, reply_markup=keyboard
         )
-      elif cb == "hb5":
+      
+    elif cb == "hb5":
         await CallbackQuery.edit_message_text(
             helpers.HELP_5, reply_markup=keyboard
-        )
-    elif cb == "hb6":
-        await CallbackQuery.edit_message_text(
-            helpers.HELP_6, reply_markup=keyboard
         )
     elif cb == "hb7":
         await CallbackQuery.edit_message_text(
