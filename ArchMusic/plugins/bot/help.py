@@ -94,7 +94,7 @@ async def helper_cb(client, CallbackQuery, _):
     if cb == "hb5":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
-                "Sen Sudo Kullanıcısı Değilsin 🥱", show_alert=True
+                "Sen Sudo Kullanıcısı Değilsin 🥱", show_alert=False
             )
         else:
             await CallbackQuery.edit_message_text(
