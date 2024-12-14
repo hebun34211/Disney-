@@ -1,4 +1,4 @@
-#
+
 # Copyright (C) 2021-2023 by ArchBots@Github, < https://github.com/ArchBots >.
 #
 # This file is part of < https://github.com/ArchBots/ArchMusic > project,
@@ -83,6 +83,8 @@ async def help_com_group(client, message: Message, _):
     await message.reply_text(
         _["help_2"], reply_markup=InlineKeyboardMarkup(keyboard)
     )
+
+
 @app.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
 @languageCB
 async def helper_cb(client, CallbackQuery, _):
@@ -94,10 +96,10 @@ async def helper_cb(client, CallbackQuery, _):
             return await CallbackQuery.answer(
                 "Sadece Sudo Kullanıcıları İçin", show_alert=True
             )
-          
         else:
             await CallbackQuery.edit_message_text(
                 helpers.HELP_6, reply_markup=keyboard
+            )
             return await CallbackQuery.answer()
     try:
         await CallbackQuery.answer()
