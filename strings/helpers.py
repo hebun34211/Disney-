@@ -1,8 +1,7 @@
 #.
 
-HELP_1 = """✅<u>BURDAKİ KOMUTLARI YALNIZCA GRUP ADMİNLERİ KULLANABİLİR:</u>
-- YETKİLİ:
-Yetkili kullanıcılar, sohbetinizde yönetici hakları olmadan yönetici komutlarını kullanabilir.
+HELP_1 = """<u>Yetkili kullanıcılar, sohbetinizde yönetici hakları olmadan yönetici komutlarını kullanabilir.</u>
+
 ✧ /yetkiver [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesine ekleyin.
 ✧ /yetkial [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesinden çıkarın.
 ✧ /yetkililer - Grubun YETKİLİ listesini kontrol edin.
@@ -15,6 +14,7 @@ HELP_2 = """💥<u>**DEGİSTİRME KOMUTLARI:**</u>
 ⏩ /atla: Çalan müziği atlar.
 ⏹️ /dur: Müziği durdurur.
 🔀 /karistir: Parçaları karıştırır.
+📑 /sira: Sıradaki müzikleri gösterir
 ⏭️ /ilerisar: Müziği ileri sarar (Ör: /ilerisar 15).
 ⏮️ /gerisar: Müziği geri sarar (Ör: /gerisar 15).
 🔁 /dongu: Müziği döngüye alır (Ör: /dongu 3).
@@ -33,7 +33,7 @@ HELP_4= """🥏<u>**MUZİK İNDİRME KOMUTU**</u>
 
 🗨️ /sarkisozu [müzik adı]: Şarkı sözlerini arar.
 📥 /bul /indir [müzik adı] veya [Youtube linki]: Youtube'dan müzik indirir.
-📑 /sira: Sıradaki müzikleri gösterir.
+
 """
 
 HELP_5= """🥏<u>**REKLAM KOMUTLARI BROADCAST FUNCTION </u>**
@@ -61,7 +61,7 @@ HELP_7=  """🥏<u>**GRUP ENGELLE BLACKLIST CHAT FUNCTION </u>**
 /gbannedusers - G Yasaklı Kullanıcı Listelerini Kontrol Edin
   """
 HELP_8=  """🥏<u>**BOT KOMUTLARİ
-🤖**<u>BOT Komutları:</u>**
+
 /reboot - Botunuzu yeniden başlatın.
  /update - Botu Güncelle.
 /speedtest - Sunucu hızlarını kontrol edin
