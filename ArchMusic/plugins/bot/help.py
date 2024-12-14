@@ -91,15 +91,12 @@ async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_back_markup(_)
-    if cb == "hb5":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
                 "Sen Sudo Kullanıcısı Değilsin 🥱", show_alert=False
             )
         else:
-            await CallbackQuery.edit_message_text(
-                helpers.HELP_5, reply_markup=keyboard
-            )
+            
             return await CallbackQuery.answer()
     try:
         await CallbackQuery.answer()
@@ -120,6 +117,10 @@ async def helper_cb(client, CallbackQuery, _):
     elif cb == "hb4":
         await CallbackQuery.edit_message_text(
             helpers.HELP_4, reply_markup=keyboard
+        )
+      elif cb == "hb5":
+        await CallbackQuery.edit_message_text(
+            helpers.HELP_5, reply_markup=keyboard
         )
     elif cb == "hb6":
         await CallbackQuery.edit_message_text(
