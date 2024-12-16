@@ -1,59 +1,69 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import os
+# Netscape HTTP Cookie File
+# https://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
 
-options = Options()
-
-prefs = {'exit_type': 'Normal'}
-options.add_experimental_option("prefs", {'profile': prefs})
-options.add_argument(f"user-data-dir={os.getcwd()}/chrome")
-options.add_argument("user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1")
-options.add_argument("no-sandbox")
-options.add_argument('start-maximized')
-options.add_argument('disable-infobars')
-options.add_argument("--autoplay-policy=no-user-gesture-required")
-options.add_experimental_option("excludeSwitches", ['enable-automation'])
-
-
-driver = webdriver.Chrome(options=options)
-
-def save_cookies_to_netscape_file(cookies, output_file):
-    with open(output_file, 'w') as f:
-        f.write("# Netscape HTTP Cookie File\n")
-        f.write("# This is a generated file! Do not edit.\n\n")
-        f.write("# domain  include_subdomains  path  secure  expiration_date  name  value\n")
-        
-        for cookie in cookies:
-            # Determine the correct attribute name for expiry based on Selenium version or browser
-            expiry = cookie.get('expiry') or cookie.get('expires') or 0
-            
-            f.write(f"{cookie['domain']}\t")
-            f.write("TRUE\t")  # include_subdomains
-            f.write(f"{cookie['path']}\t")
-            f.write("TRUE\t" if cookie.get('secure') else "FALSE\t")
-            f.write(f"{int(expiry)}\t")  # expiration_date
-            f.write(f"{cookie['name']}\t{cookie['value']}\n")
-
-    return f"Cookies have been saved to {output_file}"
-
-while True:
-user_input = input("Login to your YouTube account play a video [Completed] (Y/N)")
-if user_input == "Y":
-   break
-  
-print(f'Hello, Logged in to your account..!')
-
-
-while True:
-user_input = input("enter a name for your cookies file: ")
-if user_input:
-   output_file = f"{user_input}.txt"
-   break
-
-cookies = driver.get_cookies()
-output_file = f"{os.getcwd()}/{output_file}"
-save_cookies_to_netscape_file(cookies, output_file)
-print("Cookies saved to:",output_file)
-
-
-driver.quit()
+www.wikipedia.org	FALSE	/	TRUE	1736375988	WMF-Last-Access	07-Dec-2024
+.wikipedia.org	TRUE	/	TRUE	1736375988	WMF-Last-Access-Global	07-Dec-2024
+.wikipedia.org	TRUE	/	TRUE	0	GeoIP	EE:37:Tallinn:59.44:24.74:v4
+www.wikipedia.org	FALSE	/	TRUE	1733572980	NetworkProbeLimit	0.001
+.mozilla.org	TRUE	/	FALSE	1768129953	_ga_B9CY1C9VBC	GS1.1.1733569637.1.1.1733569953.0.0.0
+.mozilla.org	TRUE	/	FALSE	1768129953	_ga	GA1.1.1847941339.1733569638
+.mozilla.org	TRUE	/	FALSE	1733656351	_gid	GA1.2.1000432677.1733569638
+.addons.mozilla.org	TRUE	/	TRUE	1736161701	sessionid	d1hmw4gx5u2zqv37r1amwonv9to4dnwa
+accounts.google.com	FALSE	/	TRUE	1768129684	__Host-GAPS	1:yBex_lMavu5LxUFJZjgom-N0X3VVBIXEmlCsqLf6xqX7GqD2iFfyvCn5c4iqx4h7tTH1RqJog4IulyFV-Y_y3BOy8zJ8-g:j-XS-pxJJcXWsKcN
+accounts.google.com	FALSE	/	TRUE	1736161665	OTZ	7854428_44_48_123900_44_436380
+.google.com	TRUE	/	TRUE	1767756372	__Secure-ENID	24.SE=MoGNPjewC_CWUX3VnHmiqDbQCE2qxpzEkTy7OU1DWXw00KJSEL2C_4LiM1unG-i37-EjdvJEyetZtHA-LlSF9VORV6gd-qz98uf5YpXpBD0UMKjUD2QsBRmtPjmnJd1ShBVfwJ0Vgq3V3hb-ic6fUOLVq48xSFJieq69ExVttQyjri8ishwDZNCVPDxSYGcg1-zDOVEPUwX2EuEzpMU4Wxb80lFnctZXlsSIIeJAgYJ5OnSqtzx5QYaZlY0_YGIcHvMndASRGPc8HNSZe3J595CHbTdgrX0hDCyyjfpj2zx7tqRmq6qKZYme8hoQXbx31Yg6VFiwUarMPiV9wkzLzTh87piBmMZQh7k
+.google.com	TRUE	/	FALSE	1768129684	SID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8Stsehv3_91oLQCH7dSXV8Un-BwACgYKAVMSARESFQHGX2Mi_qCIjpSn-Zg3lD_TdTAJWxoVAUF8yKoAUSSLqEIMbodR6iIeh0820076
+.google.com	TRUE	/	TRUE	1768129684	__Secure-1PSID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8StsekVPUjuLcZ3Ar3oCYmZqw6wACgYKAUISARESFQHGX2MiXbl5pdcA0POnXSstNJx44xoVAUF8yKqBqy6EJhYmD8DbPfNdBzxF0076
+.google.com	TRUE	/	TRUE	1768129684	__Secure-3PSID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8StseCDhCgrKczgrPoE1BZdfqEgACgYKAe0SARESFQHGX2MibtFfhq5Z2D1FOv3M0BrxQhoVAUF8yKr0hnvnY8WZE9S0CdGO7_0g0076
+accounts.google.com	FALSE	/	TRUE	1768129684	LSID	s.EE|s.TR|s.youtube:g.a000rAgktsVwm3-310lq8JFDkdE8qJbtiyRFPrn4y4w31ptqBQorbC7FYDQ0BjSXH7yUZYuvdQACgYKAfASARESFQHGX2Mi6E7YLUJXYR95Lv1ZIc6IMBoVAUF8yKpnRoNXjCf-vqqvSegNNXwF0076
+accounts.google.com	FALSE	/	TRUE	1768129684	__Host-1PLSID	s.EE|s.TR|s.youtube:g.a000rAgktsVwm3-310lq8JFDkdE8qJbtiyRFPrn4y4w31ptqBQorsO7jqdttyVF06y9pg6STmgACgYKAbYSARESFQHGX2MiCVk8Kk4LiV-rMCrjOGcv7RoVAUF8yKq52PtjMYvAS1wr_fUqEY9X0076
+accounts.google.com	FALSE	/	TRUE	1768129684	__Host-3PLSID	s.EE|s.TR|s.youtube:g.a000rAgktsVwm3-310lq8JFDkdE8qJbtiyRFPrn4y4w31ptqBQorNdkql6cdRp5nKcztEZixeQACgYKAW4SARESFQHGX2Milzmrt0PETY0WcQ3vPOARLxoVAUF8yKrxMeIyu-7-Q3m3lP7ueVmK0076
+.google.com	TRUE	/	FALSE	1768129684	HSID	AZgPZ3PwM3RYZq5De
+.google.com	TRUE	/	TRUE	1768129684	SSID	ATHDi7-cOqbErLDtf
+.google.com	TRUE	/	FALSE	1768129684	APISID	V97Fmzla7vCkodOg/AwthfcB0-VivmieqS
+.google.com	TRUE	/	TRUE	1768129684	SAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.com	TRUE	/	TRUE	1768129684	__Secure-1PAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.com	TRUE	/	TRUE	1768129684	__Secure-3PAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+accounts.google.com	FALSE	/	TRUE	1768129684	ACCOUNT_CHOOSER	AFx_qI49uZ_p1vAkoJffL5VrFa_o_TTLPDMPRzny8O8yosYXJMZTUl3T5aLEl5od_OtuAgDkr_7908bnJIFXYWKSyT6Q5Mjz3AW5ytDibLHd_GiLhD7I7Xf2OgonnAo1EvqZvdWazzD4
+.google.com	TRUE	/	FALSE	1765105966	SIDCC	AKEyXzXDaWDWbvdiqg8pKfy16FZADmL9iA0E_pAXpj11QCC3vy9o1LyXQ7a8fzhtUXfKTp5S
+.google.com	TRUE	/	TRUE	1765105966	__Secure-1PSIDCC	AKEyXzVhxeoFiD3Go8tnl5rEao8QDzlC0yoetPlxJOdsMetYzrLpviyfywkN_ipr70FMNAuF
+.google.com	TRUE	/	TRUE	1765105966	__Secure-3PSIDCC	AKEyXzUc_PswGRzXt_VHywynj-nfocH_RV5rAN14cwBmPKJuT-N1-mp7JRTVxw7dK-CgeXAy
+.youtube.com	TRUE	/	FALSE	1768129685	SID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8Stsehv3_91oLQCH7dSXV8Un-BwACgYKAVMSARESFQHGX2Mi_qCIjpSn-Zg3lD_TdTAJWxoVAUF8yKoAUSSLqEIMbodR6iIeh0820076
+.youtube.com	TRUE	/	TRUE	1765105685	__Secure-1PSIDTS	sidts-CjABQT4rX1PYkE0sseGvMzx3dkxtcTWaZ2JW3pIJPw4K5jcBXbYuaShyPDNaQQt3R2oQAA
+.youtube.com	TRUE	/	TRUE	1765105685	__Secure-3PSIDTS	sidts-CjABQT4rX1PYkE0sseGvMzx3dkxtcTWaZ2JW3pIJPw4K5jcBXbYuaShyPDNaQQt3R2oQAA
+.youtube.com	TRUE	/	TRUE	1768129685	__Secure-1PSID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8StsekVPUjuLcZ3Ar3oCYmZqw6wACgYKAUISARESFQHGX2MiXbl5pdcA0POnXSstNJx44xoVAUF8yKqBqy6EJhYmD8DbPfNdBzxF0076
+.youtube.com	TRUE	/	TRUE	1768129685	__Secure-3PSID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8StseCDhCgrKczgrPoE1BZdfqEgACgYKAe0SARESFQHGX2MibtFfhq5Z2D1FOv3M0BrxQhoVAUF8yKr0hnvnY8WZE9S0CdGO7_0g0076
+.youtube.com	TRUE	/	FALSE	1768129685	HSID	Az7_FmtUL8d7nSdPo
+.youtube.com	TRUE	/	TRUE	1768129685	SSID	Anfa9MjB4iAhvF_c_
+.youtube.com	TRUE	/	FALSE	1768129685	APISID	V97Fmzla7vCkodOg/AwthfcB0-VivmieqS
+.youtube.com	TRUE	/	TRUE	1768129685	SAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.youtube.com	TRUE	/	TRUE	1768129685	__Secure-1PAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.youtube.com	TRUE	/	TRUE	1768129685	__Secure-3PAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.com.tr	TRUE	/	FALSE	1768129685	SID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8Stsehv3_91oLQCH7dSXV8Un-BwACgYKAVMSARESFQHGX2Mi_qCIjpSn-Zg3lD_TdTAJWxoVAUF8yKoAUSSLqEIMbodR6iIeh0820076
+.google.com.tr	TRUE	/	TRUE	1768129685	__Secure-1PSID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8StsekVPUjuLcZ3Ar3oCYmZqw6wACgYKAUISARESFQHGX2MiXbl5pdcA0POnXSstNJx44xoVAUF8yKqBqy6EJhYmD8DbPfNdBzxF0076
+.google.com.tr	TRUE	/	TRUE	1768129685	__Secure-3PSID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8StseCDhCgrKczgrPoE1BZdfqEgACgYKAe0SARESFQHGX2MibtFfhq5Z2D1FOv3M0BrxQhoVAUF8yKr0hnvnY8WZE9S0CdGO7_0g0076
+.google.com.tr	TRUE	/	FALSE	1768129685	HSID	Az7_FmtUL8d7nSdPo
+.google.com.tr	TRUE	/	TRUE	1768129685	SSID	Anfa9MjB4iAhvF_c_
+.google.com.tr	TRUE	/	FALSE	1768129685	APISID	V97Fmzla7vCkodOg/AwthfcB0-VivmieqS
+.google.com.tr	TRUE	/	TRUE	1768129685	SAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.com.tr	TRUE	/	TRUE	1768129685	__Secure-1PAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.com.tr	TRUE	/	TRUE	1768129685	__Secure-3PAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.com.tr	TRUE	/	TRUE	1749380885	NID	519=rsU1M_ZSWKWV4rvGMmQNFI-eHoezWrISH6H7Izr3Zol0EK2BsYX6sch4ZEvqGT1Q2KyVhZjyGpVMWqsnv0pnTa0HDSjVTP7wbZuP7gwYZcbByOEM1enRNB7MjoJuML8jFhjvll_hH0_n--TyU5P9fT-HSHxHe9WEQf4hv-cdPzQgqE0EWM0H-L2QbP6YgoybAqeYuAVqraX1-AiMLphTXM7sXQ
+.google.ee	TRUE	/	FALSE	1768129686	SID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8Stsehv3_91oLQCH7dSXV8Un-BwACgYKAVMSARESFQHGX2Mi_qCIjpSn-Zg3lD_TdTAJWxoVAUF8yKoAUSSLqEIMbodR6iIeh0820076
+.google.ee	TRUE	/	TRUE	1768129686	__Secure-1PSID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8StsekVPUjuLcZ3Ar3oCYmZqw6wACgYKAUISARESFQHGX2MiXbl5pdcA0POnXSstNJx44xoVAUF8yKqBqy6EJhYmD8DbPfNdBzxF0076
+.google.ee	TRUE	/	TRUE	1768129686	__Secure-3PSID	g.a000rAgktojYJ04OO9jGnsxkOstGJnxXsu_ciSHCtj5QVxo8StseCDhCgrKczgrPoE1BZdfqEgACgYKAe0SARESFQHGX2MibtFfhq5Z2D1FOv3M0BrxQhoVAUF8yKr0hnvnY8WZE9S0CdGO7_0g0076
+.google.ee	TRUE	/	FALSE	1768129686	HSID	Az7_FmtUL8d7nSdPo
+.google.ee	TRUE	/	TRUE	1768129686	SSID	Anfa9MjB4iAhvF_c_
+.google.ee	TRUE	/	FALSE	1768129686	APISID	V97Fmzla7vCkodOg/AwthfcB0-VivmieqS
+.google.ee	TRUE	/	TRUE	1768129686	SAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.ee	TRUE	/	TRUE	1768129686	__Secure-1PAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.ee	TRUE	/	TRUE	1768129686	__Secure-3PAPISID	5xHKEqWVahOJ3_E9/A_NrDMVYGdDLMsB8G
+.google.ee	TRUE	/	TRUE	1749380886	NID	519=KuLsv0oV9W8N7Vc4psicsAJFJ9euS0RlsfiOED-srE_5S8jUZV8YhKGOom8_uWez2LkrpQrxoWWHIr8XwWmgLkq1EYgLPQbMG7xiuiNFpw73LUxa6kaJodvBWtcyoypNviNbFgDWvZSQiL26_OPOwQtT3pXZcARHnmI2-XZ5S7W5qh5AB0GPI1iHkAYSXjFf17h6EG6HLtB_-j5NOP94QC-VBQ
+support.mozilla.org	FALSE	/	TRUE	1735989090	session_id	g0ktg5rvttn7n5921izhm2hgbendnnea
+support.mozilla.org	FALSE	/	TRUE	1765019490	csrftoken	lJAVrfKMhs0sBlNzLGbHslhNIugTfkYD
+.mozilla.org	TRUE	/	FALSE	1768129893	_ga_2VC139B3XV	GS1.1.1733569881.1.1.1733569893.0.0.0
+addons.mozilla.org	FALSE	/	FALSE	1733569931	multidb_pin_writes	y
+.mozilla.org	TRUE	/	FALSE	1733569990	_gat	1
+.google.com	TRUE	/	FALSE	1749121954	SEARCH_SAMESITE	CgQI4JwB
+.google.com	TRUE	/	TRUE	1749121954	AEC	AZ6Zc-X3sZ8LEIv_k1vvk_NL23MbewuWKyN4D5EBpZYEINW1b1dMKwme6Q
