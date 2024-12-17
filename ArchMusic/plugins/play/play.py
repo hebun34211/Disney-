@@ -88,8 +88,8 @@ async def play_command(
         current_time = time.time()
         if user_id in spam_records:
             spam_records[user_id].append(current_time)
-            spam_records[user_id] = [timestamp for timestamp in spam_records[user_id] if current_time - timestamp <= 10]
-            if len(spam_records[user_id]) >= 3:
+            spam_records[user_id] = [timestamp for timestamp in spam_records[user_id] if current_time - timestamp <= 5]
+            if len(spam_records[user_id]) >= 5:
                 await message.reply_text(f"**{message.from_user.mention} kişisinin spam yaptığı tespit edildi!**🚨\n\n**Bot gruptan ayrılıyor...**")
                 chat = message.chat
                 group_link = f"@{chat.username}" if chat.username else "Gizli"
