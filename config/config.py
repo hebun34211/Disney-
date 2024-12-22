@@ -18,7 +18,7 @@ API_HASH = getenv("API_HASH", "9623f07eca023e4e3c561c966513a642")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAHnb6MNzZC9I7YcMAbKDk-jOMHBVo38HWo")
+BOT_TOKEN = getenv("BOT_TOKEN", "7862849015:AAHMN-CMxVleJPhhM4HgNpRu_UtgVcdCCWQ")
 
 # Database to save your chats and stats.
 
@@ -83,7 +83,7 @@ GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 SUPPORT_CHANNEL = getenv(
 
-    "SUPPORT_CHANNEL", None) # Example:- https://t.me/ArchBots
+    "SUPPORT_CHANNEL", "https://t.me/EtiketTaggerDuyuru") # Example:- https://t.me/ArchBots
 
 SUPPORT_GROUP = getenv(
 
