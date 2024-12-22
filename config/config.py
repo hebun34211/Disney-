@@ -42,7 +42,7 @@ SONG_DOWNLOAD_DURATION = int(
 
 # You'll need a Private Group ID for this.
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002495682262"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002284038522"))
 
 # A name for your Music bot.
 
@@ -52,12 +52,11 @@ MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","disnepmuzik")
 
 OWNER_ID = list(
 
-    map(int, getenv("OWNER_ID", "8199829793").split())
+    map(int, getenv("OWNER_ID", "7465402367").split())
 
 )  # Input type must be interger
 
 # Get it from http://dashboard.heroku.com/account
-
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 # You have to Enter the app name which you gave to identify your  Music Bot in Heroku.
