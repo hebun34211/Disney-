@@ -18,7 +18,7 @@ API_HASH = getenv("API_HASH", "9623f07eca023e4e3c561c966513a642")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN","7862849015:AAHgVgWC7qImyJXtxL3pn5I9bzz33jIxT_Q")
+BOT_TOKEN = getenv("BOT_TOKEN","7794444341:AAHC7yI7W6Hyd62_0gf6d6HRr9mzYcnpZQQ:")
 
 # Database to save your chats and stats.
 
@@ -42,17 +42,17 @@ SONG_DOWNLOAD_DURATION = int(
 
 # You'll need a Private Group ID for this.
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002284038522"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002482102477"))
 
 # A name for your Music bot.
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","disnepmuzik")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","netfixmusic")
 
 # Your User ID.
 
 OWNER_ID = list(
 
-    map(int, getenv("OWNER_ID", "7465402367").split())
+    map(int, getenv("OWNER_ID", "8109752681").split())
 
 )  # Input type must be interger
 
@@ -83,7 +83,7 @@ GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 SUPPORT_CHANNEL = getenv(
 
-    "SUPPORT_CHANNEL", "https://t.me/EtiketTaggerDuyuru") # Example:- https://t.me/ArchBots
+    "SUPPORT_CHANNEL", "") # Example:- https://t.me/ArchBots
 
 SUPPORT_GROUP = getenv(
 
@@ -183,7 +183,7 @@ SET_CMDS = getenv("SET_CMDS", False)
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
 
-STRING1 = getenv("STRING_SESSION", "BADNvmIAkfVDvSnUr7xDAdf5cHmP_T-0gqswC3y5sloeEsipsGm1g7ixTLBdfrQ8gkAai_oVu--pZJB8v1dvPksiji_GNHK9PqsYM9y6REBzDyjZ-5dUhJJs36l8Kij2OGF10Q-ejYf3JgI_qOrQLskRs3oQM3xC0z_9qchjL6KMw1262M4x5ak8aga7dvf3JJ9B3bmejMVbfoyhzNB9Cl9OquhAhZAyRejOwnP7W2SugkoKnXCR-NX5uogUD2BVNAJH4KfcqwyFlvdi8Z1RezL0Q36EZHHOCBjJ9jEVzZAIXnFw9TdaHMETCKbF_WeeWXnmwlG8X9u4EEN5eVdl9RmkQqdA0QAAAAHOf40UAA")
+STRING1 = getenv("STRING_SESSION", "BAGRUPoAbyd4krYjdpeyxVz2DAPMluiFyJz2NoNr-xqk5kC79EFAp4I8E4Sfua5I5bGMtlJZ3Aw2F3Xdf5ZvPQmk3ZdcEbAuJL4ubS40MZ8k4K0Ai_8Z2TB-VkTvXAQ6YncdOsd1OtOcLpvcV3Mvp05iWFCp5xd2nibaZLFwB6g-i7yrlar0M6uXiVK88smboS-AMdi-yuzJyqIAIYEVNwQNf6fR53OShsQkqqE644pRukVuBeJEf-aFdAofp-qUUqmMc0ADSx8is9-Odk7agaVIuH6HaERrHekvgvJfTsKILpm5dCnXqhNgZhAnYgVRKxu1NpIdBxwQv9rOJS6pqVw5l8PaygAAAAHOtvcJAA")
 
 STRING2 = getenv("STRING_SESSION2", None)
 
