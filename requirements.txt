@@ -12,7 +12,7 @@ motor
 ntgcalls
 pillow
 psutil
-py-tgcalls==0.9.7
+py-tgcalls==2.0.2
 pykeyboard
 kurigram==2.1.37
 python-dotenv
