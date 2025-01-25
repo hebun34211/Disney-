@@ -1,226 +1,88 @@
-import io
+import os, logging, asyncio
+from Plugins import ArchMusic 
+from telethon import events, Button
+from telethon.sessions import StringSession
+from telethon.tl.types import ChannelParticipantsAdmins
+from Configs import *
+from asyncio import sleep 
+import time, random
 
-from atag.py import atag.py
-from pyrogram import filters
-from ArchMusic import app
+# Gerekli silmeyiniz. 
+anlik_calisan = []
+rxyzdev_tagTot = {}
+rxyzdev_initT = {}
 
-
-from pyrogram import Client, filters
-from pyrogram.enums import *
-from pyrogram.types import (
-    CallbackQuery,
-    ChatMember,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-)
-
-
-
-from ...database import get_count, get_duration
-from ...languages import get_str, lan
-from ...helpers import cbblock, cbadmin  # noqa
-from ...helpers import admin, admincount, block, clean_mode, command, reload, notify
-
-
-@Client.on_message(command(commands=["atag", f"atag@{BOT_USERNAME}", "admintag", f"admintag@{BOT_USERNAME}"]))
-@admin
-@block
-async def atag(client: Client, message: Message):
-    global chatsTagStartReasons
-    global workingsChats
-    global chatsAdmins
-    user_id = message.from_user.id
-    chat_id = message.chat.id
-    lang = await get_str(chat_id)
-    LAN = lan(lang)
-
-    if message.chat.type == ChatType.PRIVATE:
+@Maho.on(events.NewMessage(pattern="^/yt ?(.*)"))
+async def mentionalladmin(event):
+  global anlik_calisan 
+  rxyzdev_tagTot[event.chat_id] = 0
+  if event.is_private:
+    return await event.respond("**▸ʜᴀᴛᴀ ʙᴜ ʙɪʀ ɢʀᴜᴘ ᴋᴏᴍᴜᴛᴜᴅᴜʀ**")
+  
+  admins = []
+  async for admin in Maho.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
+    admins.append(admin.id)
+  if not event.sender_id in admins:
+    return await event.respond("**▸sᴀɴɪʀɪᴍ ɢʀᴜᴘᴛᴀ ʏᴏɴᴇᴛɪᴄɪ ᴅᴇɪʟsɪɴɪᴢ**")
+  
+  if event.pattern_match.group(1):
+    mode = "text_on_cmd"
+    msg = event.pattern_match.group(1)
+  elif event.reply_to_msg_id:
+    mode = "text_on_reply"
+    msg = event.reply_to_msg_id
+    if msg == None:
+        return await event.respond("🇭 🇦 🇹 🇦")
+  elif event.pattern_match.group(1) and event.reply_to_msg_id:
+    return await event.respond("Bana bir metin verin.")
+  else:
+    return await event.respond("**▸ʜᴇʏ ᴇᴛɪᴋᴇᴛʟᴇᴍᴇᴍ ɪᴄɪɴ sᴇʙᴇᴘ ᴠᴇʀᴍᴇʟɪsɪɴ ʙᴀɴᴀ**")
+  
+  if mode == "text_on_cmd":
+    anlik_calisan.append(event.chat_id)
+    usrnum = 0
+    usrtxt = ""
+    await event.respond("**꙳ᴇᴛɪᴋᴇᴛ ɪsʟᴇᴍɪ ʙᴀsʟᴀᴅɪ꙳**")
+        
+    async for usr in Maho.iter_participants(event.chat_id,filter=ChannelParticipantsAdmins):
+      rxyzdev_tagTot[event.chat_id] += 1
+      usrnum += 1
+      usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}),"
+      if event.chat_id not in anlik_calisan:
         return
-
-
-    if chat_id in workingsChats:
-        c = await message.reply_text(
-            LAN.ZATEN_CALISIYORUM.format(message.from_user.mention)
-        )
-        await clean_mode(message.chat.id, c, message)
-        return
-
-    else:
-        if message.reply_to_message:
-            if message.reply_to_message.text:
-                reason = message.reply_to_message.text
-                tip = "1"
-            else:
-                reason = ""
-                tip = "0"
-        else:
-            if len(message.command) <= 1:
-                reason = ""
-                tip = "0"
-            else:
-                reason = message.text.split(None, 1)[1]
-                tip = "1"
-        COUNT = await get_count(chat_id)
-        chatsTagStartReasons[chat_id] = reason
-        m = await client.send_message(
-            chat_id,
-            LAN.ASK_ADMINS_TAG,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            LAN.TEKLI, callback_data=f"atag 1|{user_id}|{tip}"
-                        ),
-                        InlineKeyboardButton(
-                            LAN.COKLU.format(COUNT),
-                            callback_data=f"atag {COUNT}|{user_id}|{tip}",
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            "❌", callback_data=f"atag 0|{user_id}|{tip}"
-                        ),
-                    ],
-                ],
-            ),
-        )
-        await sleep(15)
-        if chat_id not in workingsChats:
-            try:
-                await m.edit(
-                    LAN.ASK_ADMINS_TAG_TIMEOUT.format(
-                        message.from_user.mention, "`/atag`"
-                    )
-                )
-            except Exception:
-                return
-            await clean_mode(message.chat.id, m, message)
-            return
-        else:
-            return
-
-
-@Client.on_callback_query(filters.regex(pattern=r"atag"))
-@cbblock
-async def acommands(bot: Client, query: CallbackQuery):
-    global chatsAdmins
-    global chatsTagStartReasons
-    global workingsChats
-    chat = query.message.chat.id
-    DURATION = await get_duration(chat)
-    lang = await get_str(chat)
-    LAN = lan(lang)
-
-    q = str(query.data)
-    typed_ = q.split()[1]
-    sayi = int(typed_.split("|")[0])
-    useer_id = typed_.split("|")[1]
-    tip = typed_.split("|")[2]
-
-    if sayi == 0:
-        del chatsTagStartReasons[chat]
-        await query.message.edit_text(
-            LAN.CALISMA_DURDUR.format(query.from_user.mention)
-        )
-        await sleep(int(DURATION))
-        await query.message.delete()
-        return
-
-    if chat in workingsChats:
-        await query.message.edit(
-            LAN.ZATEN_CALISIYORUM.format(query.message.from_user.mention)
-        )
-        await clean_mode(query.message.chat.id, query.message)
-        return
-
-    if tip == "1":
-        reason = chatsTagStartReasons.get(chat)
-    elif tip == "0":
-        reason = ""
-
-    name = await bot.get_users(int(useer_id))
-    if int(useer_id) == int(query.from_user.id):
-        if chat not in workingsChats:
-            workingsChats.update({chat: query.message.chat})
-        await query.message.delete()
-        bots, deleted, toplam = await admincount(bot, chat)
-        etiketlenecek = toplam
-        buton = ADs[0] if ADs else None
-
-        started = await bot.send_message(
-            chat,
-            LAN.TAG_START.format(
-                query.from_user.mention, LAN.ADMIN_TAG, etiketlenecek, int(DURATION)
-            ),
-            reply_markup=buton,
-        )
-        await notify(bot, "atag", query.from_user, query.message.chat, reason)
+      if usrnum == 5:
+        await Maho.send_message(event.chat_id, f"📢 ~ **{msg}**\n\n{usrtxt}")
+        await asyncio.sleep(3)
         usrnum = 0
         usrtxt = ""
-        etiketlenen = 0
+        
+    sender = await event.get_sender()
+    rxyzdev_initT = f"{sender.first_name}"      
+    if event.chat_id in rxyzdev_tagTot:
+           a = await event.respond(f" **▸ᴇᴛɪᴋᴇᴛʟᴇᴍᴇ ɪsʟᴇᴍɪ ʙᴀsᴀʀɪʏʟᴀ ᴅᴜʀᴅᴜʀᴜʟᴅᴜ\n\n▸ᴇᴛɪᴋᴇᴛʟᴇɴᴇɴ ᴋᴜʟʟᴀɴɪᴄɪ sᴀʏɪsɪ : {rxyzdev_tagTot[event.chat_id]}**")
+           await sleep(10)
+           await a.delete()
 
-        async for usr in bot.get_chat_members(
-            chat, filter=ChatMembersFilter.ADMINISTRATORS
-        ):  #! type: ChatMember
-            usr: ChatMember
-            if usr.user.is_bot:
-                pass
-            elif usr.user.is_deleted:
-                pass
-            elif usr.user.id in premiumUsers:
-                continue #* Geri dön sensiz yaşayamam
-            else:
-                usrnum += 1
-                usrtxt += (
-                    f"@{usr.user.username} ,"
-                    if usr.user.username
-                    else f"[{usr.user.first_name}](tg://user?id={usr.user.id}) ,"
-                )
-                etiketlenen += 1
-
-                if usrnum == int(sayi):
-                    if sayi == 1:
-                        text = f"📢 **{reason}** {usrtxt}"
-                    else:
-                        text = f"📢 **{reason}**\n\n{usrtxt}"
-                    await bot.send_message(chat, text=text)
-                    await sleep(int(DURATION))
-                    usrnum = 0
-                    usrtxt = ""
-
-                if etiketlenen == etiketlenecek:
-                    workingsChats.pop(chat)
-                    del chatsTagStartReasons[chat]
-                    stoped = await bot.send_message(
-                        chat,
-                        LAN.TAG_STOPED.format(
-                            LAN.ADMIN_TAG,
-                            etiketlenen,
-                            int(DURATION),
-                            query.from_user.mention,
-                        ),
-                    )
-                    await clean_mode(query.message.chat.id, started, stoped)
-                    return
-
-                if chat not in workingsChats:
-                    del chatsTagStartReasons[chat]
-                    stopped = await bot.send_message(
-                        chat,
-                        LAN.TAG_STOPED.format(
-                            LAN.ADMIN_TAG,
-                            etiketlenen,
-                            int(DURATION),
-                            query.from_user.mention,
-                        ),
-                    )
-                    await clean_mode(query.message.chat.id, started, stopped)
-                    return
-
-    else:
-        return await bot.answer_callback_query(
-            callback_query_id=query.id,
-            text=LAN.ETAG_DONT_U.format(name.first_name),
-            show_alert=True,
-        )
+  if mode == "text_on_reply":
+    anlik_calisan.append(event.chat_id)
+ 
+    usrnum = 0
+    usrtxt = ""
+    async for usr in Maho.iter_participants(event.chat_id,filter=ChannelParticipantsAdmins):
+      rxyzdev_tagTot[event.chat_id] += 1
+      usrnum += 1
+      usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}),"
+      if event.chat_id not in anlik_calisan:
+        return
+      if usrnum == 5:
+        await Maho.send_message(event.chat_id, usrtxt, reply_to=msg)
+        await asyncio.sleep(3)
+        usrnum = 0
+        usrtxt = ""
+     
+    sender = await event.get_sender()
+    rxyzdev_initT = f"{sender.first_name}"      
+    if event.chat_id in rxyzdev_tagTot:
+           a = await event.respond(f"**▸ᴇᴛɪᴋᴇᴛʟᴇᴍᴇ ɪsʟᴇᴍɪ ʙᴀsᴀʀɪʏʟᴀ ᴅᴜʀᴅᴜʀᴜʟᴅᴜ\n\n▸ᴇᴛɪᴋᴇᴛʟᴇɴᴇɴ ᴋᴜʟʟᴀɴɪᴄɪ sᴀʏɪsɪ : {rxyzdev_tagTot[event.chat_id]}**")
+           await sleep(10)
+           await a.delete()
