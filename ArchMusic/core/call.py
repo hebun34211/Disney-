@@ -21,9 +21,9 @@ from pytgcalls.types import ChatUpdate, MediaStream, Update
 from pytgcalls.types import StreamAudioEnded
 
 import config
-from AlexaMusic import LOGGER, YouTube, app
-from AlexaMusic.misc import db
-from AlexaMusic.utils.database import (
+from ArchMusic import LOGGER, YouTube, app
+from ArchMusic.misc import db
+from ArchMusic.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_assistant,
@@ -37,10 +37,10 @@ from AlexaMusic.utils.database import (
     remove_active_video_chat,
     set_loop,
 )
-from AlexaMusic.utils.exceptions import AssistantErr
-from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
-from AlexaMusic.utils.stream.autoclear import auto_clean
-from AlexaMusic.utils.thumbnails import gen_thumb
+from ArchMusic.utils.exceptions import AssistantErr
+from ArchMusic.utils.inline.play import stream_markup, telegram_markup
+from ArchMusic.utils.stream.autoclear import auto_clean
+from ArchMusic.utils.thumbnails import gen_thumb
 from strings import get_string
 
 autoend = {}
@@ -594,4 +594,4 @@ class Call(PyTgCalls):
             await self.change_stream(client, update.chat_id)
 
 
-Alexa = Call()
+ArchMusic = Call()
