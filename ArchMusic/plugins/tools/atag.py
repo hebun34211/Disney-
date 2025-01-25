@@ -1,5 +1,5 @@
 import os, logging, asyncio
-from Plugins import ArchMusic 
+from import ArchMusic 
 from telethon import events, Button
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
