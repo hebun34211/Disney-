@@ -11,7 +11,9 @@ from pyrogram.types import (
     Message,
 )
 
-from Config import *
+from pyrogram import filters
+
+from ArchMusic import app
 
 from ...database import get_count, get_duration
 from ...languages import get_str, lan
