@@ -1,18 +1,12 @@
-#
-# Copyright (C) 2021-2023 by ArchBots@Github, < https://github.com/ArchBots >.
-#
-# This file is part of < https://github.com/ArchBots/ArchMusic > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/ArchBots/ArchMusic/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+# Copyright (C) 2025 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
+
+
 
 import re
 from os import path
 
 from yt_dlp import YoutubeDL
-
 
 from ArchMusic.utils.formatters import seconds_to_min
 
