@@ -59,12 +59,13 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"Asistan İstemcilerini Başlatma")
+        LOGGER(__name__).info(f"Starting Assistant Clients")
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("")
-                
+                await self.one.join_chat("ARCH_SUPPORTS")
+                await self.one.join_chat("ARCH_SUPPORTS")
+                await self.one.join_chat("ARCH_SUPPORTS")
             except:
                 pass
             assistants.append(1)
@@ -88,13 +89,14 @@ class Userbot(Client):
             else:
                 self.one.name = get_me.first_name
             LOGGER(__name__).info(
-                f"Asistan şu şekilde başladı: {self.one.name}"
+                f"Assistant Started as {self.one.name}"
             )
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("")
-                 
+                await self.two.join_chat("ARCH_SUPPORTS")
+                await self.two.join_chat("ARCH_SUPPORTS")
+                await self.two.join_chat("ARCH_SUPPORTS")
             except:
                 pass
             assistants.append(2)
@@ -118,13 +120,14 @@ class Userbot(Client):
             else:
                 self.two.name = get_me.first_name
             LOGGER(__name__).info(
-                f"Asistan 2 başlatildi{self.two.name}"
+                f"Assistant Two Started as {self.two.name}"
             )
         if config.STRING3:
             await self.three.start()
             try:
-                await self.three.join_chat("")
-                 
+                await self.three.join_chat("ARCH_SUPPORTS")
+                await self.three.join_chat("ARCH_SUPPORTS")
+                await self.three.join_chat("ARCH_SUPPORTS")
             except:
                 pass
             assistants.append(3)
@@ -148,13 +151,14 @@ class Userbot(Client):
             else:
                 self.three.name = get_me.first_name
             LOGGER(__name__).info(
-                f"Asistan 3 başlatildi {self.three.name}"
+                f"Assistant Three Started as {self.three.name}"
             )
         if config.STRING4:
             await self.four.start()
             try:
-                await self.four.join_chat("")
-                
+                await self.four.join_chat("ARCH_SUPPORTS")
+                await self.four.join_chat("ARCH_SUPPORTS")
+                await self.four.join_chat("ARCH_SUPPORTS")
             except:
                 pass
             assistants.append(4)
@@ -178,13 +182,15 @@ class Userbot(Client):
             else:
                 self.four.name = get_me.first_name
             LOGGER(__name__).info(
-                f"Asistan 4 başlatildi {self.four.name}"
+                f"Assistant Four Started as {self.four.name}"
             )
         if config.STRING5:
             await self.five.start()
             try:
-                await self.five.join_chat("")
-                
+                await self.five.join_chat("ARCH_SUPPORTS")
+                await self.five.join_chat("ARCH_SUPPORTS")
+                await self.five.join_chat("ARCH_SUPPORTS")
+            except:
                 pass
             assistants.append(5)
             try:
@@ -207,5 +213,5 @@ class Userbot(Client):
             else:
                 self.five.name = get_me.first_name
             LOGGER(__name__).info(
-                f"Asistan 5 başlatildi {self.five.name}"
+                f"Assistant Five Started as {self.five.name}"
             )
