@@ -40,7 +40,7 @@ from pyrogram import filters
 
 from ArchMusic import app
 
-from ...languages import get_str, lan
+
 from ...helpers import admin, block, clean_mode, reload, jokes
 
 commandList = [
