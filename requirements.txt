@@ -25,9 +25,3 @@ unidecode
 yt-dlp>=2025.1.15
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
 gtts
-pymongo
-requests
-tgcrypto
-telethon
-python-dotenv
-pyrogram==2.0.99
