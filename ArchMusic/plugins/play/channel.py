@@ -146,11 +146,11 @@ async def ktag(client, message):
             continue
         usrnum += 1
         total_tagged += 1
-        usrtxt += f"\n• [{user.first_name}](tg://user?id={user.id})"
+        usrtxt += f"• [{user.first_name}](tg://user?id={user.id})\n"
         if message.chat.id not in rose_tagger or rose_tagger[message.chat.id] != start_msg.id:
             return
         if usrnum == nums:
-            await client.send_message(message.chat.id, f"📢 {usrtxt}")
+            await client.send_message(message.chat.id, f"📢\n{usrtxt}")
             usrnum = 0
             usrtxt = ""
             await asyncio.sleep(5)
