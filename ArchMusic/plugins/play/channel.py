@@ -12,6 +12,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 import random
+import asyncio
 from config import BANNED_USERS
 from strings import get_command
 from ArchMusic import app
