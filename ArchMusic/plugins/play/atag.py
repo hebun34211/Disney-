@@ -109,7 +109,7 @@ async def atag(client, message):
 
 
 @Client.on_callback_query(filters.regex(pattern=r"atag"))
-@cbblock
+
 async def acommands(bot: Client, query: CallbackQuery):
     global chatsAdmins
     global chatsTagStartReasons
