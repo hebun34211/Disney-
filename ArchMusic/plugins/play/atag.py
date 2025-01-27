@@ -40,7 +40,31 @@ async def atag(client, message):
         await message.reply("⚠️ **Şu anda zaten bir etiketleme işlemi devam ediyor.**")
         return
 
+args = message.command
+    if len(args) > 1:
+        msg_content = " ".join(args[1:])
+    elif message.reply_to_message:
+        msg_content = message.reply_to_message.text
+        if msg_content is None:
+            await message.reply("❗** Eski mesajı göremiyorum!**")
+            return
+    else:
+        msg_content = ""
 
+    total_members = 0
+    async for member in client.get_chat_members(message.chat.id):
+        user = member.user
+        if not user.is_bot and not user.is_deleted:
+            total_members += 1
+
+    num = 3
+    estimated_time = (total_members // num) * 5
+
+    start_msg = await message.reply(f"""
+🌟 **Etiketleme işlemi başlıyor.**
+👥 **Toplam Etiketlenecek Üye Sayısı: {total_members}**
+⏳ **Tahmini Süre: {estimated_time // 60} dakika**
+""")
 
     if message.chat.type == ChatType.PRIVATE:
         return
