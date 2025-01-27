@@ -1,5 +1,5 @@
 from pyrogram import filters
-from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
+from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType, COMMAND, chatsAdmins, chatsTagStartReasons, workingsChats, premiumUsers
 from pyrogram.types import Message
 import random
 import asyncio
