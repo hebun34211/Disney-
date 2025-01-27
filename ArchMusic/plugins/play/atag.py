@@ -22,7 +22,7 @@ active_tags = {}
 
 
 @app.on_message(filters.command("atag") & filters.group)
-async def ktag(client, message):
+async def atag(client, message):
         
     if message.chat.type == 'private':
         await message.reply("❗ **Bu komutu sadece gruplarda kullanabilirsiniz!**")
