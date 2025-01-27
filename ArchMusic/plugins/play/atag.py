@@ -39,7 +39,8 @@ from ArchMusic import app
 from ArchMusic.utils.database import set_cmode
 from ArchMusic.utils.decorators.admins import AdminActual
 
-from ...helpers import admin,  jokes
+from ...helpers import  jokes
+
 commandList = [
     "dice",
     "zar",
