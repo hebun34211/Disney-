@@ -33,7 +33,7 @@ from pyrogram import Client, filters
 from pyrogram.enums import *
 from pyrogram.types import Message
 
-from Config import *
+
 from strings import get_command
 from ArchMusic import app
 from ArchMusic.utils.database import set_cmode
