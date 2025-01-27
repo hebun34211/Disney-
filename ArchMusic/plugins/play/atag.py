@@ -11,7 +11,7 @@ from ArchMusic.utils.decorators.admins import AdminActual
 
 
 app.on_message(filters.command(["slap", "sille"]) & filters.group)
-async def slap(bot: Client, message: Message):
+async def slap(client, message):
     if is_user_blocked(message.from_user.id):
         await message.reply("**Üzgünüm, bu komutu kullanma yetkiniz engellendi.** 🚫")
         return
