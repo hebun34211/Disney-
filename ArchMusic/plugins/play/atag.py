@@ -140,7 +140,7 @@ slapMessages = [
 
 
 @Client.on_message(filters.command("slap"))
-@block
+
 async def slap(bot: Client, message: Message):
 
     slapper = (
