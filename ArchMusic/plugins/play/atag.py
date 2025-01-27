@@ -38,7 +38,7 @@ from strings import get_command
 from ArchMusic import app
 from ArchMusic.utils.database import set_cmode
 from ArchMusic.utils.decorators.admins import AdminActual
-from strings import get_command,jokes
+from strings import get_command
 
 
 commandList = [
