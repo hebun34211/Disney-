@@ -1,9 +1,11 @@
 import os, logging, asyncio
-from Plugins import ArchMusic
+from ArchMusic import app
+from ArchMusic.utils.database import set_cmode
+from ArchMusic.utils.decorators.admins import AdminActual
 from telethon import events, Button
 from telethon.sessions import StringSession
 from telethon.tl.types import ChannelParticipantsAdmins
-from asyncio import sleep 
+ 
 
 import time, random 
 
