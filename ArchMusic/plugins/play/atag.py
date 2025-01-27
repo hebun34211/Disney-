@@ -1,27 +1,13 @@
-# -*- coding >
-#
-# Her hakkı saklıdır.
-#
-# ========================================================================
-
-from asyncio import sleep
-
-from pyrogram import Client, filters
-from pyrogram.enums import *
-from pyrogram.types import (
-    CallbackQuery,
-    ChatMember,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-)
-
-from pyrogram.enums import ADs, COMMAND, chatsAdmins, chatsTagStartReasons, workingsChats, premiumUsers
+from pyrogram import filters
+from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
-from ...database import get_count, get_duration
-
-from ...helpers import admin, block, cbblock, clean_mode, count, reload, notify  # noqa
-
+import random
+import asyncio
+from config import BANNED_USERS
+from strings import get_command
+from ArchMusic import app
+from ArchMusic.utils.database import set_cmode
+from ArchMusic.utils.decorators.admins import AdminActual
 
 @Client.on_message(filters.command(commands=["tag", "utag"], prefixes=COMMAND))
 @admin
