@@ -163,3 +163,23 @@ async def ktag(client, message):
 """)
     active_tags.pop(message.chat.id, None)
 
+
+@app.on_message(filters.command("cancel") & filters.group)
+async def cancel_tag(client, message: Message):
+    admins = []
+    async for member in client.get_chat_members(message.chat.id, filter=ChatMembersFilter.ADMINISTRATORS):
+        admins.append(member.user.id)
+
+    if message.from_user.id not in admins:
+        await message.reply("**Bu komutu kullanmak için yönetici olmalısınız! 😉**")
+        return
+        
+    if message.chat.id in rose_tagger:
+        del rose_tagger[message.chat.id]
+        active_tags.pop(message.chat.id, None)
+        await message.reply(f"⛔ **Etiketleme işlemi durduruldu!**\n\n❤️‍🔥 **İşlem'i durduran: {message.from_user.mention}**")
+    else:
+        await message.reply("ℹ️ **Etiketleme işlemi şu anda aktif değil.**")
+
+
+
