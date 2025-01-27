@@ -21,9 +21,6 @@ from ArchMusic.utils.decorators.admins import AdminActual
 
 
 @app.on_message(filters.command("atag") & filters.group)
-async def atag(client, message):
-@admin
-@block
 async def atag(client: Client, message: Message):
     global chatsTagStartReasons
     global workingsChats
