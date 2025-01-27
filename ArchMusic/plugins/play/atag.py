@@ -1,27 +1,31 @@
-#
-# Copyright (C) 2021-2023 by ArchBots@Github, < https://github.com/ArchBots >.
-#
-# This file is part of < https://github.com/ArchBots/ArchMusic > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/ArchBots/ArchMusic/blob/master/LICENSE >
-#
-# All rights reserved.
-#
+ 
 
-from pyrogram import filters
-from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
-from pyrogram.types import Message
-import random
-import asyncio
-from config import BANNED_USERS
-from strings import get_command
+from asyncio import sleep
+
+from pyrogram import Client, filters
+from pyrogram.enums import *
+from pyrogram.types import (
+    CallbackQuery,
+    ChatMember,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+)
+
+
 from ArchMusic import app
 from ArchMusic.utils.database import set_cmode
 from ArchMusic.utils.decorators.admins import AdminActual
+from ...database import get_count, get_duration
+from ...languages import get_str, lan
+from ...helpers import cbblock, cbadmin  # noqa
+from ...helpers import admin, admincount, block, clean_mode, command, reload, notify
 
 
-@app.on_message(filters.command("atag") & filters.group)
-async def ktag(client, message):
+@Client.on_message(command(commands=["atag", f"atag@{BOT_USERNAME}", "admintag", f"admintag@{BOT_USERNAME}"]))
+@admin
+@block
+async def atag(client: Client, message: Message):
     global chatsTagStartReasons
     global workingsChats
     global chatsAdmins
