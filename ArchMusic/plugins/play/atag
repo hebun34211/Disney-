@@ -1,49 +1,24 @@
-# -*- coding: utf-8 -*-
-
-# (c) @aylak-github (Github) | https://t.me/ayIak | @BasicBots (Telegram)
-
-# ==============================================================================
 #
-# Project: CallToneBot
-# Copyright (C) 2021-2022 by aylak-github@Github, < https://github.com/aylak-github >.
+# Copyright (C) 2021-2023 by ArchBots@Github, < https://github.com/ArchBots >.
 #
-# This file is part of < https://github.com/aylak-github/CallTone > project,
+# This file is part of < https://github.com/ArchBots/ArchMusic > project,
 # and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/aylak-github/CallTone/blob/master/LICENSE >
+# Please see < https://github.com/ArchBots/ArchMusic/blob/master/LICENSE >
 #
 # All rights reserved.
 #
-# ==============================================================================
-#
-# Proje: CallToneBot
-# Telif Hakkı (C) 2021-2022 aylak-Github@Github, <https://github.com/aylak-github>.
-#
-# Bu dosya <https://github.com/aylak-github/CallTone> projesinin bir parçası,
-# ve "GNU V3.0 Lisans Sözleşmesi" kapsamında yayınlanır.
-# Lütfen bkz. < https://github.com/aylak-github/CallTone/blob/master/LICENSE >
-#
-# Her hakkı saklıdır.
-#
-# ========================================================================
 
-from asyncio import sleep
+from pyrogram import filters
+from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
+from pyrogram.types import Message
+import random
+import asyncio
+from config import BANNED_USERS
+from strings import get_command
+from ArchMusic import app
+from ArchMusic.utils.database import set_cmode
+from ArchMusic.utils.decorators.admins import AdminActual
 
-from pyrogram import Client, filters
-from pyrogram.enums import *
-from pyrogram.types import (
-    CallbackQuery,
-    ChatMember,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-)
-
-from Config import *
-
-from ...database import get_count, get_duration
-from ...languages import get_str, lan
-from ...helpers import cbblock, cbadmin  # noqa
-from ...helpers import admin, admincount, block, clean_mode, command, reload, notify
 
 
 @Client.on_message(command(commands=["atag", f"atag@{BOT_USERNAME}", "admintag", f"admintag@{BOT_USERNAME}"]))
