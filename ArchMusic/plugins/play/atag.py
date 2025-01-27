@@ -20,8 +20,8 @@ from ArchMusic.utils.database import set_cmode
 from ArchMusic.utils.decorators.admins import AdminActual
 
 
-
-@Client.on_message(command(commands=["atag", f"atag@{BOT_USERNAME}", "admintag", f"admintag@{BOT_USERNAME}"]))
+@app.on_message(filters.command("atag") & filters.group)
+async def atag(client, message):
 @admin
 @block
 async def atag(client: Client, message: Message):
