@@ -10,7 +10,7 @@ from ArchMusic.utils.database import set_cmode
 from ArchMusic.utils.decorators.admins import AdminActual
 
 
-app.on_message(filters.command(["slap", "sille"]) & filters.group)
+app.on_message(filters.command("slap") & filters.group)
 async def slap(client, message):
     if is_user_blocked(message.from_user.id):
         await message.reply("**Üzgünüm, bu komutu kullanma yetkiniz engellendi.** 🚫")
