@@ -1,257 +1,52 @@
- 
-
-from asyncio import sleep
-
-from pyrogram import Client, filters
-from pyrogram.enums import *
-from pyrogram.types import (
-    CallbackQuery,
-    ChatMember,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-)
-
-
+from pyrogram import filters
+from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
+from pyrogram.types import Message
+import random
+import asyncio
+from config import BANNED_USERS
+from strings import get_command
 from ArchMusic import app
 from ArchMusic.utils.database import set_cmode
 from ArchMusic.utils.decorators.admins import AdminActual
 
-rose_tagger = {}
-active_tags = {}
 
-
-@app.on_message(filters.command("atag") & filters.group)
-async def atag(client, message):
+app.on_message(filters.command(["slap", "sille"]) & filters.group)
+async def slap(bot: Client, message: Message):
+    if is_user_blocked(message.from_user.id):
+        await message.reply("**Üzgünüm, bu komutu kullanma yetkiniz engellendi.** 🚫")
+        return
         
-    if message.chat.type == 'private':
-        await message.reply("❗ **Bu komutu sadece gruplarda kullanabilirsiniz!**")
+    chat = message.chat
+    if not message.reply_to_message:
+        await message.reply_text("🚫 **Bir kullanıcıya cevap verin!**")
         return
-
-    admins = []
-    async for member in client.get_chat_members(message.chat.id, filter=ChatMembersFilter.ADMINISTRATORS):
-        admins.append(member.user.id)
-
-    if message.from_user.id not in admins:
-        await message.reply("❗ **Bu komutu kullanmak için yönetici olmalısınız!**")
+    if message.reply_to_message.from_user.id == OWNER_ID:
+        await message.reply_text(f"{random.choice(dontslapown)}")
         return
-
-    if message.chat.id in active_tags:
-        await message.reply("⚠️ **Şu anda zaten bir etiketleme işlemi devam ediyor.**")
+    if message.reply_to_message.from_user.id == BOT_ID:
+        await message.reply_text(f"{random.choice(dontslapme)}")
         return
+    
 
-args = message.command
-    if len(args) > 1:
-        msg_content = " ".join(args[1:])
-    elif message.reply_to_message:
-        msg_content = message.reply_to_message.text
-        if msg_content is None:
-            await message.reply("❗** Eski mesajı göremiyorum!**")
-            return
-    else:
-        msg_content = ""
+    atan = message.from_user
+    yiyen = message.reply_to_message.from_user
 
-    total_members = 0
-    async for member in client.get_chat_members(message.chat.id):
-        user = member.user
-        if not user.is_bot and not user.is_deleted:
-            total_members += 1
+    atan_mesaj = f"[{atan.first_name}](tg://user?id={atan.id})"
+    yiyen_mesaj = f"[{yiyen.first_name}](tg://user?id={yiyen.id})"
 
-    num = 3
-    estimated_time = (total_members // num) * 5
+    goktug = random.choice(slapmessage)
+    await message.reply_text(
+        goktug.format(atan_mesaj, yiyen_mesaj),
+    )
 
-    start_msg = await message.reply(f"""
-🌟 **Etiketleme işlemi başlıyor.**
-👥 **Toplam Etiketlenecek Üye Sayısı: {total_members}**
-⏳ **Tahmini Süre: {estimated_time // 60} dakika**
-""")
-
-    if message.chat.type == ChatType.PRIVATE:
-        return
-
-
-    if chat_id in workingsChats:
-        c = await message.reply_text(
-            LAN.ZATEN_CALISIYORUM.format(message.from_user.mention)
-        )
-        await clean_mode(message.chat.id, c, message)
-        return
-
-    else:
-        if message.reply_to_message:
-            if message.reply_to_message.text:
-                reason = message.reply_to_message.text
-                tip = "1"
-            else:
-                reason = ""
-                tip = "0"
-        else:
-            if len(message.command) <= 1:
-                reason = ""
-                tip = "0"
-            else:
-                reason = message.text.split(None, 1)[1]
-                tip = "1"
-        COUNT = await get_count(chat_id)
-        chatsTagStartReasons[chat_id] = reason
-        m = await client.send_message(
-            chat_id,
-            LAN.ASK_ADMINS_TAG,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            LAN.TEKLI, callback_data=f"atag 1|{user_id}|{tip}"
-                        ),
-                        InlineKeyboardButton(
-                            LAN.COKLU.format(COUNT),
-                            callback_data=f"atag {COUNT}|{user_id}|{tip}",
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            "❌", callback_data=f"atag 0|{user_id}|{tip}"
-                        ),
-                    ],
-                ],
-            ),
-        )
-        await sleep(15)
-        if chat_id not in workingsChats:
-            try:
-                await m.edit(
-                    LAN.ASK_ADMINS_TAG_TIMEOUT.format(
-                        message.from_user.mention, "`/atag`"
-                    )
-                )
-            except Exception:
-                return
-            await clean_mode(message.chat.id, m, message)
-            return
-        else:
-            return
-
-
-@Client.on_callback_query(filters.regex(pattern=r"atag"))
-
-async def acommands(bot: Client, query: CallbackQuery):
-    global chatsAdmins
-    global chatsTagStartReasons
-    global workingsChats
-    chat = query.message.chat.id
-    DURATION = await get_duration(chat)
-    lang = await get_str(chat)
-    LAN = lan(lang)
-
-    q = str(query.data)
-    typed_ = q.split()[1]
-    sayi = int(typed_.split("|")[0])
-    useer_id = typed_.split("|")[1]
-    tip = typed_.split("|")[2]
-
-    if sayi == 0:
-        del chatsTagStartReasons[chat]
-        await query.message.edit_text(
-            LAN.CALISMA_DURDUR.format(query.from_user.mention)
-        )
-        await sleep(int(DURATION))
-        await query.message.delete()
-        return
-
-    if chat in workingsChats:
-        await query.message.edit(
-            LAN.ZATEN_CALISIYORUM.format(query.message.from_user.mention)
-        )
-        await clean_mode(query.message.chat.id, query.message)
-        return
-
-    if tip == "1":
-        reason = chatsTagStartReasons.get(chat)
-    elif tip == "0":
-        reason = ""
-
-    name = await bot.get_users(int(useer_id))
-    if int(useer_id) == int(query.from_user.id):
-        if chat not in workingsChats:
-            workingsChats.update({chat: query.message.chat})
-        await query.message.delete()
-        bots, deleted, toplam = await admincount(bot, chat)
-        etiketlenecek = toplam
-        buton = ADs[0] if ADs else None
-
-        started = await bot.send_message(
-            chat,
-            LAN.TAG_START.format(
-                query.from_user.mention, LAN.ADMIN_TAG, etiketlenecek, int(DURATION)
-            ),
-            reply_markup=buton,
-        )
-        await notify(bot, "atag", query.from_user, query.message.chat, reason)
-        usrnum = 0
-        usrtxt = ""
-        etiketlenen = 0
-
-        async for usr in bot.get_chat_members(
-            chat, filter=ChatMembersFilter.ADMINISTRATORS
-        ):  #! type: ChatMember
-            usr: ChatMember
-            if usr.user.is_bot:
-                pass
-            elif usr.user.is_deleted:
-                pass
-            elif usr.user.id in premiumUsers:
-                continue #* Geri dön sensiz yaşayamam
-            else:
-                usrnum += 1
-                usrtxt += (
-                    f"@{usr.user.username} ,"
-                    if usr.user.username
-                    else f"[{usr.user.first_name}](tg://user?id={usr.user.id}) ,"
-                )
-                etiketlenen += 1
-
-                if usrnum == int(sayi):
-                    if sayi == 1:
-                        text = f"📢 **{reason}** {usrtxt}"
-                    else:
-                        text = f"📢 **{reason}**\n\n{usrtxt}"
-                    await bot.send_message(chat, text=text)
-                    await sleep(int(DURATION))
-                    usrnum = 0
-                    usrtxt = ""
-
-                if etiketlenen == etiketlenecek:
-                    workingsChats.pop(chat)
-                    del chatsTagStartReasons[chat]
-                    stoped = await bot.send_message(
-                        chat,
-                        LAN.TAG_STOPED.format(
-                            LAN.ADMIN_TAG,
-                            etiketlenen,
-                            int(DURATION),
-                            query.from_user.mention,
-                        ),
-                    )
-                    await clean_mode(query.message.chat.id, started, stoped)
-                    return
-
-                if chat not in workingsChats:
-                    del chatsTagStartReasons[chat]
-                    stopped = await bot.send_message(
-                        chat,
-                        LAN.TAG_STOPED.format(
-                            LAN.ADMIN_TAG,
-                            etiketlenen,
-                            int(DURATION),
-                            query.from_user.mention,
-                        ),
-                    )
-                    await clean_mode(query.message.chat.id, started, stopped)
-                    return
-
-    else:
-        return await bot.answer_callback_query(
-            callback_query_id=query.id,
-            text=LAN.ETAG_DONT_U.format(name.first_name),
-            show_alert=True,
-        )
+    await bot.send_message(
+        LOG_CHANNEL,
+        f"""
+👤 Kullanan : [{atan.first_name}](tg://user?id={atan.id})
+💥 Kullanıcı Id : {atan.id}
+🪐 Kullanılan Grup : {chat.title}
+💡 Grup ID : {chat.id}
+◀️ Grup Link : @{chat.username}
+📚 Kullanılan Modül : {message.text}
+"""
+    )
