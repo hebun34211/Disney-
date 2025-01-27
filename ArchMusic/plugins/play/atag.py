@@ -48,20 +48,6 @@ import datetime
 
 #-----------------------------------------------------------------------------
 
-logging.basicConfig(
-    level=logging.INFO, format="%(name)s - [%(levelname)s] - %(message)s"
-)
-LOGGER = logging.getLogger(__name__)
-
-API_ID = int(os.environ.get("API_ID", "28217326"))
-API_HASH = os.environ.get("API_HASH", "4800b862b4094e96f42a0b5dc2a558f8")
-BOT_TOKEN = os.environ.get("TOKEN", "7652184054:AAHgFjtW5oBjSNEVDLx5SOryQiMJ3kMgWwE")  
-
-BOT_ID = int(os.environ.get("BOT_ID", "7442492919"))  
-
-BOT_USERNAME = os.environ.get("BOT_USERNAME", "fearlesbot")  
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002326740863"))  
-OWNER_ID = 7442492919  # Sahip hesabın id'si
 
 
 
