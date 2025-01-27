@@ -58,7 +58,7 @@ commandList = [
 
 
 @Client.on_message(filters.command(commandList))
-@block
+
 async def games(c: Client, m: Message):
     "🎲", "🎯", "🏀", "⚽", "🎳", "🎰"
 
