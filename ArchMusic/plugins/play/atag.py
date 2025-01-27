@@ -14,16 +14,22 @@ anlik_calisan = []
 rxyzdev_tagTot = {}
 rxyzdev_initT = {}
 # ---------------------------- Komutlar ---------------------------
-@ArchMusic.on(events.NewMessage(pattern="^/cancel$"))
-async def cancel_spam(event):
-  if not event.chat_id in anlik_calisan:
-    return
-  else:
-    try:
-      anlik_calisan.remove(event.chat_id)
-    except:
-      pass
-    return await event.respond('✅ Etiket işlemi başarıyla durduruldu.')
+@app.on_message(filters.command("cancel") & filters.group)
+async def cancel_tag(client, message: Message):
+    admins = []
+    async for member in client.get_chat_members(message.chat.id, filter=ChatMembersFilter.ADMINISTRATORS):
+        admins.append(member.user.id)
+
+    if message.from_user.id not in admins:
+        await message.reply("**Bu komutu kullanmak için yönetici olmalısınız! 😉**")
+        return
+        
+    if message.chat.id in rose_tagger:
+        del rose_tagger[message.chat.id]
+        active_tags.pop(message.chat.id, None)
+        await message.reply(f"⛔ **Etiketleme işlemi durduruldu!**\n\n❤️‍🔥 **İşlem'i durduran: {message.from_user.mention}**")
+    else:
+        await message.reply("ℹ️ **Etiketleme işlemi şu anda aktif değil.**")
 
 # -------------------Tagger-------------------------------
 @ArchMusic.on(events.NewMessage(pattern="^/tag ?(.*)"))
