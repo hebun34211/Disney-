@@ -17,19 +17,30 @@ from ArchMusic import app
 from ArchMusic.utils.database import set_cmode
 from ArchMusic.utils.decorators.admins import AdminActual
 
+rose_tagger = {}
+active_tags = {}
 
 
-@Client.on_message(command(commands=["atag", f"atag@{BOT_USERNAME}", "admintag", f"admintag@{BOT_USERNAME}"]))
-@admin
-@block
-async def atag(client: Client, message: Message):
-    global chatsTagStartReasons
-    global workingsChats
-    global chatsAdmins
-    user_id = message.from_user.id
-    chat_id = message.chat.id
-    lang = await get_str(chat_id)
-    LAN = lan(lang)
+@app.on_message(filters.command("atag") & filters.group)
+async def ktag(client, message):
+        
+    if message.chat.type == 'private':
+        await message.reply("❗ **Bu komutu sadece gruplarda kullanabilirsiniz!**")
+        return
+
+    admins = []
+    async for member in client.get_chat_members(message.chat.id, filter=ChatMembersFilter.ADMINISTRATORS):
+        admins.append(member.user.id)
+
+    if message.from_user.id not in admins:
+        await message.reply("❗ **Bu komutu kullanmak için yönetici olmalısınız!**")
+        return
+
+    if message.chat.id in active_tags:
+        await message.reply("⚠️ **Şu anda zaten bir etiketleme işlemi devam ediyor.**")
+        return
+
+
 
     if message.chat.type == ChatType.PRIVATE:
         return
