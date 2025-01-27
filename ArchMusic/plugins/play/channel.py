@@ -11,7 +11,7 @@
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
-
+import random
 from config import BANNED_USERS
 from strings import get_command
 from ArchMusic import app
@@ -145,7 +145,7 @@ async def ktag(client, message):
             continue
         usrnum += 1
         total_tagged += 1
-        usrtxt += f"• [{random.choice(karakter)}](tg://user?id={user.id})\n"
+        usrtxt += f"• [{user.first_name}](tg://user?id={user.id})\n"
         if message.chat.id not in rose_tagger or rose_tagger[message.chat.id] != start_msg.id:
             return
         if usrnum == nums:
