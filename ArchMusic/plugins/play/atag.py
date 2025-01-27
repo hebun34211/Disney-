@@ -16,8 +16,7 @@ from pyrogram.types import (
 from ArchMusic import app
 from ArchMusic.utils.database import set_cmode
 from ArchMusic.utils.decorators.admins import AdminActual
-from ...database import get_count, get_duration
-from ...languages import get_str, lan
+
 from ...helpers import cbblock, cbadmin  # noqa
 from ...helpers import admin, admincount, block, clean_mode, command, reload, notify
 
