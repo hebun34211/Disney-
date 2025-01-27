@@ -26,151 +26,224 @@
 #
 # ========================================================================
 
-import os
-import random
+from asyncio import sleep
 
 from pyrogram import Client, filters
 from pyrogram.enums import *
-from pyrogram.types import Message
+from pyrogram.types import (
+    CallbackQuery,
+    ChatMember,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+)
+
+from  import ADs, COMMAND, chatsAdmins, chatsTagStartReasons, workingsChats, premiumUsers
+
+from ...database import get_count, get_duration
+from ...languages import get_str, lan
+from ...helpers import admin, block, cbblock, clean_mode, count, reload, notify  # noqa
 
 
-from strings import get_command
-from ArchMusic import app
-from ArchMusic.utils.database import set_cmode
-from ArchMusic.utils.decorators.admins import AdminActual
-from strings import get_command
+@Client.on_message(filters.command(commands=["tag", "utag"], prefixes=COMMAND))
+@admin
+@block
+async def tag(client: Client, message: Message):
+    global workingsChats
+    global chatsTagStartReasons
+    chat_id = message.chat.id
+    lang = await get_str(chat_id)
+    LAN = lan(lang)
+    user_id = message.from_user.id
 
+    if message.chat.type == ChatType.PRIVATE:
+        return
 
-commandList = [
-    "dice",
-    "zar",
-    "dart",
-    "basketball",
-    "basket" "football",
-    "futbool",
-    "gol",
-    "bowling",
-    "slot",
-    "coin",
-    "roll",
-    "joke",
-    "saka",
-]
-
-
-@Client.on_message(filters.command(commandList))
-
-async def games(c: Client, m: Message):
-    "🎲", "🎯", "🏀", "⚽", "🎳", "🎰"
-
-    command = m.command[0]
-
-    if command == "dice" or command == "zar":
-        return await c.send_dice(m.chat.id, emoji="🎲")
-
-    elif command == "dart" or command == "basketball":
-        return await c.send_dice(m.chat.id, emoji="🎯")
-
-    elif command == "basket":
-        return await c.send_dice(m.chat.id, emoji="🏀")
-
-    elif command == "football" or command == "futbool" or command == "gol":
-        return await c.send_dice(m.chat.id, emoji="⚽")
-
-    elif command == "bowling":
-        return await c.send_dice(m.chat.id, emoji="🎳")
-
-    elif command == "slot":
-        return await c.send_dice(m.chat.id, emoji="🎰")
-
-    elif command == "coin":
-        return await m.reply(
-            "**Yazı 🪙**" if random.randint(0, 1) == 0 else "**Tura 🪙**"
+    if message.from_user.id not in chatsAdmins[message.chat.id]:
+        not_admin = await message.reply_text(
+            LAN.U_NOT_ADMIN.format(message.from_user.mention)
         )
+        await clean_mode(message.chat.id, not_admin, message)
+        return
 
-    elif command == "roll":
-        return await m.reply("**Uğurlu Rakamınız:** `{}`".format(random.randint(0, 9)))
+    if chat_id in workingsChats:
+        c = await message.reply_text(
+            LAN.ZATEN_CALISIYORUM.format(message.from_user.mention)
+        )
+        await clean_mode(message.chat.id, c, message)
+        return
 
-    elif command == "joke" or command == "saka":
-        return await m.reply_text(random.choice(jokes))
-
-    return
-
-
-slapMessages = [
-    "{}, {}'nin RTX 2080Ti'sini kırdı!",
-    "{}, {} üzerine benzin döktü ve ateşe verdi!",
-    "{}, {}'nin kafasını bir balık dolu kovaya soktu",
-    "{}, {}'nin yüzüne pasta fırlattı!",
-    "{}, {}'nin yüzüne bir kahve döktü!",
-    "{}, {}'nin yüzüne 150TL fırlattı!",
-    "{}, {}'nin yüzüne bir çay döktü!",
-    "{}, {}'nin yüzüne bir su döktü!",
-    "{}, {} için aldığı hediyeyi parçaladı!",
-    "{}, {}'nin yüzüne 200TL fırlattı!",
-    "{}, {}'nin yüzüne bir kola döktü!",
-    "{}, {} üzerine tüplü TV fırlattı!,",
-    "{}, {}'nin kalbini kırdı!",
-    "{}, {}'nin yüzüne bir kahve döktü!",
-    "{}, {}'nin yüzüne 1TL fırlattı!",
-    "{}, {}'nin yüzüne 5TL fırlattı!",
-    "{}, {}'nin yüzüne 10TL fırlattı!",
-    "{}, {}'nin yüzüne 20TL fırlattı!",
-    "{}, {}'nin yüzüne 50TL fırlattı!",
-    "{}, {}'nin yüzüne 100TL fırlattı!",
-    "{}, {}'nin yüzüne 150TL fırlattı!",
-    "{}, {}'nin yüzüne 200TL fırlattı!",
-    "{}, {}'nin yüzüne bira döktü!",
-    "{}, {}'nin yüzüne tokat attı!",
-    "{}, {}'nin kafasını kesti!",
-    "{}, {}'ye çicek verdi ",
-    "{}, {}'nin yanağından öptü",
-    "{}, {}'nin elinden tuttu ve dans etti",
-    "{}, {}'nin agzına bir şeyler attı",
-    "{}, {}'nin saçını çekti",
-    "{}, {}'nin burnunu sıktı",
-    "{}, {}'nin karnına tekme attı",
-    "{}, {}'nin kafasına 💩 attı.",
-    "{}, {}'nin yüzüne makyaj yaptı.",
-    "{}, {}'nin yüzünü boyadı.",
-    "{}, {}'nin saçını kesti.",
-    "{}, {}'nin ayakkabısını çaldı.",
-    "{}, {}'nin ayağına basarak yere düşürdü.",
-    "{}, {}'nin ayağını gıdıkladı.",
-]
-
-
-@Client.on_message(filters.command("slap"))
-
-async def slap(bot: Client, message: Message):
-
-    slapper = (
-        "@" + message.from_user.username
-        if message.from_user.username
-        else message.from_user.mention
-    )
-
-    if message.reply_to_message:
-        if not message.reply_to_message.from_user:
-            return await message.reply_text("**Birini tokatlamak için yanıt verin!**")
-        else:
-            if message.reply_to_message.from_user.id == bot.me.id:
-                return await message.reply_text("**Hey, beni tokatlama!**")
-            else:
-                slapped = (
-                    "@" + message.reply_to_message.from_user.username
-                    if message.reply_to_message.from_user.username
-                    else message.reply_to_message.from_user.mention
-                )
     else:
-        slapper = "@" + BOT_USERNAME
-        slapped = (
-            "@" + message.from_user.username
-            if message.from_user.username
-            else message.from_user.mention
+        if message.reply_to_message:
+            if message.reply_to_message.text:
+                reason = message.reply_to_message.text
+                tip = "1"
+            else:
+                reason = ""
+                tip = "0"
+        else:
+            if len(message.command) <= 1:
+                reason = ""
+                tip = "0"
+            else:
+                reason = message.text.split(None, 1)[1]
+                tip = "1"
+        COUNT = await get_count(chat_id)
+        chatsTagStartReasons[chat_id] = reason
+        m = await client.send_message(
+            chat_id,
+            LAN.ASK_NORMAL_TAG,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            LAN.TEKLI, callback_data=f"tag 1|{user_id}|{tip}"
+                        ),
+                        InlineKeyboardButton(
+                            LAN.COKLU.format(COUNT),
+                            callback_data=f"tag {COUNT}|{user_id}|{tip}",
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            "❌", callback_data=f"tag 0|{user_id}|{tip}"
+                        ),
+                    ],
+                ],
+            ),
         )
+        await sleep(15)
+        if chat_id not in workingsChats:
+            try:
+                await m.edit(
+                    LAN.ASK_ADMINS_TAG_TIMEOUT.format(
+                        message.from_user.mention, "`/atag`"
+                    )
+                )
+            except Exception:
+                return
+            await clean_mode(message.chat.id, m, message)
+            return
+        else:
+            return
 
-    slapMessage = random.choice(slapMessages)
 
-    await message.reply(slapMessage.format(slapper, slapped))
-    return
+@Client.on_callback_query(filters.regex(pattern=r"tag"))
+async def tcommands(bot: Client, query: CallbackQuery):
+    global chatsAdmins
+    global chatsTagStartReasons
+    global workingsChats
+    chat = query.message.chat.id
+    lang = await get_str(chat)
+    LAN = lan(lang)
+    DURATION = await get_duration(chat)
+    q = str(query.data)
+    typed_ = q.split()[1]
+    sayi = int(typed_.split("|")[0])
+    useer_id = typed_.split("|")[1]
+    tip = typed_.split("|")[2]
+
+    if sayi == 0:
+        del chatsTagStartReasons[chat]
+        await query.message.edit_text(
+            LAN.CALISMA_DURDUR.format(query.from_user.mention)
+        )
+        await sleep(DURATION)
+        await query.message.delete()
+        return
+
+    if chat in workingsChats:
+        await query.message.edit(
+            LAN.ZATEN_CALISIYORUM.format(query.message.from_user.mention)
+        )
+        await clean_mode(query.message.chat.id, query.message)
+        return
+
+    if tip == "1":
+        reason = chatsTagStartReasons[chat]
+    elif tip == "0":
+        reason = ""
+
+    name = await bot.get_users(int(useer_id))
+    if int(useer_id) == int(query.from_user.id):
+        if chat not in workingsChats:
+            workingsChats.update({chat: query.message.chat})
+        await query.message.delete()
+        bots, deleted, toplam = await count(bot, chat)
+        etiketlenecek = toplam - (bots + deleted + len(premiumUsers))
+
+        buton = ADs[0] if ADs else None
+
+        started = await bot.send_message(
+            chat,
+            LAN.TAG_START.format(
+                query.from_user.mention, LAN.NORMAL_TAG, etiketlenecek, DURATION
+            ),
+            reply_markup=buton,
+        )
+        await notify(bot, "tag", query.from_user, query.message.chat, reason)
+        usrnum = 0
+        usrtxt = ""
+        etiketlenen = 0
+        async for usr in bot.get_chat_members(chat):
+            usr: ChatMember
+            if usr.user.is_bot:
+                pass
+            elif usr.user.is_deleted:
+                pass
+            elif usr.user.id in premiumUsers:
+                continue #* Geri dön sensiz yaşayamam
+            else:
+                usrnum += 1
+                usrtxt += (
+                    f"@{usr.user.username} ," #"ㅤㅤㅤㅤㅤ"
+                    if usr.user.username
+                    else f"[{usr.user.first_name}](tg://user?id={usr.user.id}) ,"
+                )
+                etiketlenen += 1
+
+                if usrnum == int(sayi):
+                    if sayi == 1:
+                        text = f"📢 **{reason}** {usrtxt}"
+                    else:
+                        text = f"📢 **{reason}**\n\n{usrtxt}"
+                    await bot.send_message(chat, text=text)
+                    await sleep(DURATION)
+                    usrnum = 0
+                    usrtxt = ""
+
+                if etiketlenen == etiketlenecek:
+                    workingsChats.pop(chat)
+                    del chatsTagStartReasons[chat]
+                    stoped = await bot.send_message(
+                        chat,
+                        LAN.TAG_STOPED.format(
+                            LAN.NORMAL_TAG,
+                            etiketlenen,
+                            DURATION,
+                            query.from_user.mention,
+                        ),
+                    )
+                    await clean_mode(query.message.chat.id, started, stoped)
+                    return
+
+                if chat not in workingsChats:
+                    del chatsTagStartReasons[chat]
+                    stopped = await bot.send_message(
+                        chat,
+                        LAN.TAG_STOPED.format(
+                            LAN.NORMAL_TAG,
+                            etiketlenen,
+                            DURATION,
+                            query.from_user.mention,
+                        ),
+                    )
+                    await clean_mode(query.message.chat.id, started, stopped)
+                    return
+
+    else:
+        return await bot.answer_callback_query(
+            callback_query_id=query.id,
+            text=LAN.ETAG_DONT_U.format(name.first_name),
+            show_alert=True,
+        )
