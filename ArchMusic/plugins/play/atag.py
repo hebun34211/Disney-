@@ -64,7 +64,7 @@ async def mentionall(event):
     usrtxt = ""
     await event.respond("**꙳ᴇᴛɪᴋᴇᴛ ɪsʟᴇᴍɪ ʙᴀsʟᴀᴅɪ꙳**")
         
-    async for usr in Maho.iter_participants(event.chat_id, aggressive=False):
+    async for usr in ArchMusic.iter_participants(event.chat_id, aggressive=False):
       rxyzdev_tagTot[event.chat_id] += 1
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}),"
