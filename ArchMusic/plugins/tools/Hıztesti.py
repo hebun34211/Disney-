@@ -1,8 +1,12 @@
+import io
+
+from pyrogram import filters
+from ArchMusic import app
 import asyncio
 import speedtest
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from ...helpers import block, sudo
+
 
 
 def testspeed(m):
