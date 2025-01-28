@@ -4,7 +4,7 @@ from pyrogram import filters
 from ArchMusic import app
 import asyncio
 import speedtest
-from pyrogram import Client, filters,sudo
+from pyrogram import Client, filters
 from pyrogram.types import Message
 
 
@@ -26,8 +26,8 @@ def testspeed(m):
 
 
 @Client.on_message(filters.command(["hiz", "speedtest"]))
-@sudo
-@block
+
+
 async def speedtest_function(client: Client, message: Message):
     m = await message.reply_text("Hız tesi başlatılıyor...")
     loop = asyncio.get_event_loop()
