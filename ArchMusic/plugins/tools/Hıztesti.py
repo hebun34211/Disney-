@@ -4,7 +4,7 @@ from pyrogram import filters
 from ArchMusic import app
 import asyncio
 import speedtest
-from pyrogram import Client, filters
+from pyrogram import Client, filters,sudo
 from pyrogram.types import Message
 
 
