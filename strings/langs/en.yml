@@ -222,7 +222,7 @@ song_11 : "**Yükleme Başladı\n\nYükleme hızı yavaş olabilir. Lütfen bekl
 queue_1 : "→ **Lütfen Bekleyin..** **__Sıra Alınıyor...__** "
 queue_2 : "→ **Sırada Malesef Hiçbir Sey Yok.** "
 queue_3 : "→ <u>**Sıradaki Parçalar:**</u> [**Sıradaki Parçalara Buradan Bakabilirsiniz**]({0})"
-queue_4 : "<blockquote>➠<b> Sıraya Eklendi **#{0} </blockquote>\n\n<blockquote>➠**Şarkı Adı:** {1}\n→ **Süre:** {2}\n→ **İstekte Bulunan:** {3}</blockquote>"
+queue_4 : "<blockquote>➠<b> Sıraya Eklendi **#{0} </blockquote>\n\n<blockquote>➠**Şarkı Adı:** {1}\n➠ **Süre:** {2}\n➠ **İstekte Bulunan:** {3}</blockquote>"
 queue_5 : "**Sırada Sadece Bir Parça Var**, **Lütfen Biraz Daha Parça Ekleyin.**"
 
 # All Streaming Lines
