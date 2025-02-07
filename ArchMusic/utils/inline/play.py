@@ -36,8 +36,8 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
        [
            
             InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f"<blockquote>▣ PanelMarkup None|<blockquote>▣{chat_id}",
+                text=_["blockquote>▣ PL_B_3blockquote>▣ "],
+                callback_data=f" PanelMarkup None|{chat_id}",
             ),
         ],
         
