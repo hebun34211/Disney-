@@ -1,6 +1,8 @@
-import random
+import math
 
-from pyrogram.types import InlineKeyboardButton
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+from ArchMusic.utils.formatters import time_to_seconds
 
     def get_progress_bar(percentage):
     umm = math.floor(percentage)
