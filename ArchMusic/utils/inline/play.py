@@ -1,48 +1,112 @@
 import random
 
 from pyrogram.types import InlineKeyboardButton
-def time_to_sec(time: str):
-    x = time.split(":")
 
-    if len(x) == 2:
-        min = int(x[0])
-        sec = int(x[1])
+    def get_progress_bar(percentage):
+    umm = math.floor(percentage)
 
-        total_sec = (min*60) + sec
-    elif len(x) == 3:
-        hour = int(x[0])
-        min = int(x[1])
-        sec = int(x[2])
+    if 0 < umm <= 10:
+        return "⚪─────────"
+    elif 10 < umm <= 20:
+        return "━⚪────────"
+    elif 20 < umm <= 30:
+        return "━━⚪───────"
+    elif 30 < umm <= 40:
+        return "━━━⚪──────"
+    elif 40 < umm <= 50:
+        return "━━━━⚪─────"
+    elif 50 < umm <= 60:
+        return "━━━━━⚪────"
+    elif 60 < umm <= 70:
+        return "━━━━━━⚪───"
+    elif 70 < umm <= 80:
+        return "━━━━━━━⚪──"
+    elif 80 < umm <= 90:
+        return "━━━━━━━━⚪─"
+    elif 90 < umm <= 100:
+        return "━━━━━━━━━⚪"
+    else:
+        return "───────────"
 
-        total_sec = (hour*60*60) + (min*60) + sec
+def get_progress_bare(percentage):
+    umm = math.floor(percentage)
 
-    return total_sec
+   
+    if 0 < umm <= 10:
+        return "♨ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 𝐁𝖾𝗌𝗍 𝐅𝖾α𝗍υ𝗋𝖾𝗌 ♨"
+    elif 5 <= umm < 20:
+        return "♨ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 𝐅α𝗏ⱺ𝗋𝗂𝗍𝖾 ρᥣα𝗒ᥣ𝗂𝗌𝗍 ♨"
+    elif 10 <= umm < 30:
+        return "♨ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 𝐌𝗂ᥣᥣ𝗂ⱺ𐓣 𝐒ⱺ𐓣𝗀𝗌 ♨"
+    elif 15 <= umm < 40:
+        return "♨ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 𝐄α𝗌𝗂ᥣ𝗒 𝐒𝗍𝗋𝖾αꭑ ♨"
+    elif 20 <= umm < 50:
+        return "♨ 𝐋ⱺω-𝐒ρ𝖾𝖾ᑯ 𝐒𝗍𝗋𝖾αꭑ𝗂𐓣𝗀 ♨"
+    elif 25 <= umm < 60:
+        return "♨ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 𝐁𝗂𝗀 𝐃α𝗍αᑲα𝗌ɦ ♨"
+    elif 30 <= umm < 70:
+        return "♨ 𝐅𝗋𝖾𝖾 𝐃ⱺω𐓣ᥣⱺαᑯ 𝐌υ𝗌𝗂𝖼 ♨"
+    elif 35 <= umm < 80:
+        return "♨ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 𝐅α𝗏ⱺ𝗋𝗂𝗍𝖾 ρᥣα𝗒ᥣ𝗂𝗌𝗍 ♨"
+    elif 40 <= umm < 90:
+        return "♨ 𝐋α𝗀 𝐅𝗋𝖾𝖾 𝐆ααɳα 𝐌υ𝗌𝗂𝖼 ♨"
+    elif 45 <= umm < 100:
+        return "♨ 𝐌υѕι𝚌 𝐒𝗍υᑯ𝗂ⱺ ♨"
+    else:
+        return "♨ 𝐓ɦ𝖾 𝐒ⱺ𐓣𝗀 𝚰𝗌 𝐎𝗏𝖾𝗋 ♨"
 
-def stream_markup_timer(_, videoid, chat_id, played, dur):
-    played_sec = time_to_sec(played)
-    total_sec = time_to_sec(dur)
-
-    x, y = str(round(played_sec/total_sec,1)).split(".")
-    pos = int(y)
-
-    line = ""
-    circle = ""
-
-    bar = line*(pos-1)
-    bar += circle
-    bar += line*(10-len(bar))
-
-    buttons = [
-       [
-           
-            InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f" PanelMarkup None|{chat_id}",
-            ),
-        ],
+def get_progress_baree(percentage):
+    umm = math.floor(percentage)
+    
+    if 0 < umm <= 100:
+        return "᪥⋟ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 ⋞᪥"
+    elif 5 <= umm < 200:
+        return "᪥⋟ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 ⋞᪥"
+    else:
+        return "᪥⋟ 𝐃ɳѕ 𝐌υ𝗌𝗂𝖼 ⋞᪥"
         
+        
+        
+def stream_markup_timer(_, videoid, chat_id, played, dur):
+    played_sec = time_to_seconds(played)
+    duration_sec = time_to_seconds(dur)
+    percentage = (played_sec / duration_sec) * 100
+    bar = get_progress_bar(percentage)
+    bare = get_progress_bare(percentage)
+    baree = get_progress_baree(percentage) # using for getting the bar
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=f"{baree}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text=f"{bare}",
+                callback_data="GetTimer",
+            )
+        ],
+          [
+            InlineKeyboardButton(
+                text="𝐔ρ𝖽αтєѕ", url=f"https://t.me/Dns_Official_Channel"
+            ),
+            InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="𝖢𝗅𝗈𝗌𝖾"
+          ),
+         
+        
+            InlineKeyboardButton(
+                text="𝐒υρρσɾƚ", url=f"https://t.me/DNS_NETWORK"),
+        ],
     ]
-    return buttons  
+    return buttons
+
 
 
 def telegram_markup_timer(_, chat_id, played, dur):
