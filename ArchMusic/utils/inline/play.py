@@ -43,14 +43,14 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     
 
         [
-              InlineKeyboardButton(text="✚ ᴘᴀʀᴄ̧ᴀʏɪ ᴛᴇᴋʀᴀʀʟᴀ ✚", callback_data=f"ADMIN Loop|{chat_id}"),
+            "  <blockquote>▣  InlineKeyboardButton(text="✚ ᴘᴀʀᴄ̧ᴀʏɪ ᴛᴇᴋʀᴀʀʟᴀ ✚", callback_data=f"ADMIN Loop|{chat_id}"),
         ],                 
         [
             InlineKeyboardButton(text="▷",callback_data=f"ADMIN Resume|{chat_id}",),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
             InlineKeyboardButton(text="‣‣", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-             
+           <blockquote>▣  "
         ],
         
         [
@@ -70,7 +70,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 text="30 ▸▸",
                 callback_data=f"ADMIN 4|{chat_id}",
             ),
-            "</blockquote>"
+            
         ],
         
     ]
