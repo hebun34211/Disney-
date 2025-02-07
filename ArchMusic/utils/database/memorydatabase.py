@@ -1,13 +1,12 @@
-# Copyright (C) 2025 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
-# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
-
-""""
-TheTeamAlexa is a project of Telegram bots with variety of purposes.
-Copyright (c) 2021 ~ Present Team Alexa <https://github.com/TheTeamAlexa>
-
-This program is free software: you can redistribute it and can modify
-as you want or you can collabe if you have new ideas.
-"""
+#
+# Copyright (C) 2021-2023 by ArchBots@Github, < https://github.com/ArchBots >.
+#
+# This file is part of < https://github.com/ArchBots/ArchMusic > project,
+# and is released under the "GNU v3.0 License Agreement".
+# Please see < https://github.com/ArchBots/ArchMusic/blob/master/LICENSE >
+#
+# All rights reserved.
+#
 
 
 import config
@@ -21,7 +20,7 @@ playmodedb = mongodb.playmode
 playtypedb = mongodb.playtypedb
 langdb = mongodb.language
 authdb = mongodb.adminauth
-videodb = mongodb.yukkivideocalls
+videodb = mongodb.ArchMusicvideocalls
 onoffdb = mongodb.onoffper
 suggdb = mongodb.suggestion
 autoenddb = mongodb.autoend
@@ -195,7 +194,9 @@ async def get_lang(chat_id: int) -> str:
 
 async def set_lang(chat_id: int, lang: str):
     langm[chat_id] = lang
-    await langdb.update_one({"chat_id": chat_id}, {"$set": {"lang": lang}}, upsert=True)
+    await langdb.update_one(
+        {"chat_id": chat_id}, {"$set": {"lang": lang}}, upsert=True
+    )
 
 
 # Muted
@@ -459,7 +460,12 @@ async def maintenance_on():
 
 # Audio Video Limit
 
-from pytgcalls.types import AudioQuality, VideoQuality
+from pytgcalls.types.input_stream.quality import (HighQualityAudio,
+                                                  HighQualityVideo,
+                                                  LowQualityAudio,
+                                                  LowQualityVideo,
+                                                  MediumQualityAudio,
+                                                  MediumQualityVideo)
 
 
 async def save_audio_bitrate(chat_id: int, bitrate: str):
@@ -479,31 +485,36 @@ async def get_aud_bit_name(chat_id: int) -> str:
 
 async def get_vid_bit_name(chat_id: int) -> str:
     mode = video.get(chat_id)
-    return "Medium" if not mode else mode
+    if not mode:
+        if PRIVATE_BOT_MODE == str(True):
+            return "High"
+        else:
+            return "Medium"
+    return mode
 
 
 async def get_audio_bitrate(chat_id: int) -> str:
     mode = audio.get(chat_id)
     if not mode:
-        return AudioQuality.HIGH
+        return MediumQualityAudio()
     if str(mode) == "High":
-        return AudioQuality.STUDIO
+        return HighQualityAudio()
     elif str(mode) == "Medium":
-        return AudioQuality.HIGH
+        return MediumQualityAudio()
     elif str(mode) == "Low":
-        return AudioQuality.LOW()
+        return LowQualityAudio()
 
 
 async def get_video_bitrate(chat_id: int) -> str:
     mode = video.get(chat_id)
     if not mode:
         if PRIVATE_BOT_MODE == str(True):
-            return VideoQuality.FHD_1080p
+            return HighQualityVideo()
         else:
-            return VideoQuality.HD_720p
+            return MediumQualityVideo()
     if str(mode) == "High":
-        return VideoQuality.QHD_2K
+        return HighQualityVideo()
     elif str(mode) == "Medium":
-        return VideoQuality.FHD_1080p
+        return MediumQualityVideo()
     elif str(mode) == "Low":
-        return VideoQuality.HD_720p
+        return LowQualityVideo()
