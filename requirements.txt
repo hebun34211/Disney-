@@ -12,7 +12,7 @@ motor
 numpy
 pillow
 psutil
-py-tgcall
+py-tgcall==0.9.7
 pykeyboard
 python-dotenv
 pyyaml
