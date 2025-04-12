@@ -18,11 +18,11 @@ API_HASH = getenv("API_HASH", "9623f07eca023e4e3c561c966513a642")
 
 ## Get it from @Botfather in Telegram.
 
-BOT_TOKEN = getenv("BOT_TOKEN","7695898494:AAFRTIDy1KeLcxJw_0KQq391S9T-NIyeVYM")
+BOT_TOKEN = getenv("BOT_TOKEN", "7289316214:AAHxQHOwaG59TsB6lMRCSqsLGrIO8-Z3WOc")
 
 # Database to save your chats and stats.
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Che4721:Che4721@cluster0.88srl.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://cikcid:cikcid@cluster0.6ablf.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0")
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 
@@ -42,17 +42,17 @@ SONG_DOWNLOAD_DURATION = int(
 
 # You'll need a Private Group ID for this.
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002282503013"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002267000505"))
 
 # A name for your Music bot.
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","kalender muaic")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","pars")
 
 # Your User ID.
 
 OWNER_ID = list(
 
-    map(int, getenv("OWNER_ID", "7442492919").split())
+    map(int, getenv("OWNER_ID", "7465402367").split())
 
 )  # Input type must be interger
 
@@ -69,7 +69,7 @@ UPSTREAM_REPO = getenv(
 
     "UPSTREAM_REPO",
 
-    "https://github.com/olurunabirak/c",
+    "https://github.com/kaykay342121/Ddd",
 
 )
 
@@ -83,7 +83,7 @@ GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 SUPPORT_CHANNEL = getenv(
 
-    "SUPPORT_CHANNEL", "") # Example:- https://t.me/ArchBots
+    "SUPPORT_CHANNEL", "https://t.me/EtiketTaggerDuyuru") # Example:- https://t.me/ArchBots
 
 SUPPORT_GROUP = getenv(
 
@@ -183,11 +183,11 @@ SET_CMDS = getenv("SET_CMDS", False)
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
 
-STRING1 = getenv("STRING_SESSION", "BAGFKr4ALAY31Ytvdy_77BuBX7CtUQ3WNc6FUCAM9UWBfJgjNmCP0EgPWnNQo1oGBCMzYNMgCnG5bERI7kYpPSX-0-IaIW3PhdN1lYEjHdmu1jjNwfcPA1qSKtBPCuP_1ubkh1lOUAjQCm4SJ9JT_IQRjEw9JjlNKyQ0V101GEwJgP1Q4sYzcNekE3hj6wSpStzk-DZbQsAZD014QoDyzE8EaqiS2ErRKA3U2gLkSbS26up57_KBMO3a9bUJIFPmqawzWcObWDF753RzByf2O-elKsiG86xM1DUFqVPd9_qjw6a6p9zjVY-Ye4n_RAgN_t1QxptDgwRyPBR4fJqpaEIE5lFnAQAAAAHOtvcJAA")
+STRING1 = getenv("STRING_SESSION", "BAGFKr4AcREYcd59BmKWxtDNXYCHeFYXdPui6hBnsTSzMozEtn_TmIctFzgedcCcc-jErpMLSAfGz4Eg5kKQayim8ZvR2pMcv43ooUYN41aoIEk4ziheVuO7DP7nRB6RHXAkkFPlBnO6jYp2dY805CRXBhT-j6szcrrMWyLkeQAxIDgjZellR1rpRA4Z87D1jvho6EwARUJFfhY8l64bEGEHeq6JsBokpN3plA6Cc5Ml26KC-t400D08kys1jUN9pIPcwGJmeukhiOxkRN2ctmB_EyUYX_Mdcw5JE0WzhxmLYFKtoPiFZOdYADA3usLwk-6GfsVaG_1fV8hCfUyk4exub-3dugAAAAHCQtQBAA")
 
-STRING2 = getenv("STRING_SESSION2", None)
+STRING2 = getenv("STRING_SESSION2", "BAGFKr4ATJi32WLh41HIZ7dkrkvhbTOR9zZ1Y-TOHhpiAUlrJYA03XmTjD2qGvmYP3s7kmkgOLawb51xL3u1dz044PRSZPjvHzLz73OTMc_8SaAt5mn-9R07qudCO_l0z3WJC9SQdVM789KbIA7qsKX-nz2TAPtZMfvfl1hGNk3WCQH0JlTYNb9BYeyRElaaQf5WyTSLyuozdQ5NFgHGQ6zdJKicdYLujZ6uyiazbFWT5Y4dAksUiXA4USKU6ll5pEy-BPTUMdfxr3CCv6T2wlHm-IzyfvHBn68QHVZjKVpQku4NKRRcHr9FIU99oHaeedbYf-pqK3TR4ZhDQz795_P8WlSslQAAAAHH2X8yAA")
 
-STRING3 = getenv("STRING_SESSION3", None)
+STRING3 = getenv("STRING_SESSION3", "BAGFKr4AIgiKKIQM9F923iusKpcGIelyiipUrThqx60aJoXfdpc5mbFp4zCVayXdBSDbYikn3MNmujV9uWeINJdgTKt29mn7uQUEAE3rXaerb-UkZfOtXxok6GMSh_jU-n1fz3UBAREV8V25mHfBa2o7XyLzmPVWbN3S_sem4HwnKn0DrZD5E09q3aQDIIMBL7fh2nqJQ53y7mQH7p4o-QPAHtmEpuki0VPVxV5PVCmGELVlq3oophAQs7IX_TuPaZvVVir6Qnw1e-yDtWauFqhX0uR7AUuloeVxoIwoUF6ywIJOayAmcuJrCOnnLmxfT3-__OZmWtp9tfjlAGxACspjhKJdGgAAAAHeiNjbAA")
 
 STRING4 = getenv("STRING_SESSION4", None)
 
