@@ -28,3 +28,4 @@ git+https://github.com/joetats/youtube_search@master
 pydantic
 httpx==0.25.2
 gtts
+program
