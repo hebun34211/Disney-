@@ -42,11 +42,11 @@ SONG_DOWNLOAD_DURATION = int(
 
 # You'll need a Private Group ID for this.
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002267000505"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1002474970241"))
 
 # A name for your Music bot.
 
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","pars")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","elif")
 
 # Your User ID.
 
