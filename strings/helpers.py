@@ -1,27 +1,27 @@
 #.
 HELP_1  """ <u>**ETİKET KOMUTU:**</u>
 
-🔹 /tag - Grubunuzdaki tüm üyeleri isimleriyle etiketler. 🏷️
+🔹 /tag  Grubunuzdaki tüm üyeleri isimleriyle etiketler. 🏷️
 
-🔹 /atag - Grubunuzdaki tüm yöneticileri etiketler. 🎖️
+🔹 /atag  Grubunuzdaki tüm yöneticileri etiketler. 🎖️
 
-🔹 /btag - Grubunuzdaki tüm üyeleri bayraklarla etiketler. 🎌
+🔹 /btag Grubunuzdaki tüm üyeleri bayraklarla etiketler. 🎌
 
-🔹 /ctag - Grubunuzdaki tüm üyeleri karakter isimleri ile etiketler. 📛
+🔹 /ctag  Grubunuzdaki tüm üyeleri karakter isimleri ile etiketler. 📛
 
-🔹 /etag - Grubunuzdaki tüm üyeleri emojiler ile etiketler. 🎭
+🔹 /etag  Grubunuzdaki tüm üyeleri emojiler ile etiketler. 🎭
 
-🔹 /ftag - Grubunuzdaki tüm üyeleri seçtiğiniz fotoğraf ile etiketler. 📸
+🔹 /ftag Grubunuzdaki tüm üyeleri seçtiğiniz fotoğraf ile etiketler. 📸
 
-🔹 /otag - Grubunuzdaki tüm üyeleri iskambil kartları ile etiketler. ♢
+🔹 /otag  Grubunuzdaki tüm üyeleri iskambil kartları ile etiketler. ♢
 
-🔹 /ptag - Grubunuzdaki tüm üyeleri güzel sözlerle etiketler. 📜
+🔹 /ptag  Grubunuzdaki tüm üyeleri güzel sözlerle etiketler. 📜
 
-🔹 /rtag - Grubunuzdaki tüm üyeleri rastgele renklerle etiketler. 🎨
+🔹 /rtag -Grubunuzdaki tüm üyeleri rastgele renklerle etiketler. 🎨
 
-🔹 /stag - Seçtiğiniz birisini seçtiğiniz sticker ile etiketler. 🎴 (Gizli Etiket😶‍🌫️)
+🔹 /stag Seçtiğiniz birisini seçtiğiniz sticker ile etiketler. 🎴 (Gizli Etiket😶‍🌫️)
 
-🔹 /itag - Seçtiğiniz birisini rastegele bir emoji ile etiketleyin 🎲
+🔹 /itag Seçtiğiniz birisini rastegele bir emoji ile etiketleyin 🎲
 """
 
 
