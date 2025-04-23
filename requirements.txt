@@ -29,4 +29,4 @@ pydantic
 httpx==0.25.2
 gtts
 program
-TEMP_DB_FOLDER
+
