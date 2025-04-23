@@ -15,15 +15,7 @@ HELP_1 = """ <u>**ETİKET KOMUTU:**</u>
 """
 HELP_2 = """ <u>**Eğlence komutları:**</u>
 🎲 Eğlence komutlarım:
-yapay zeka 
 
-/chatmode 
-
-örnek 
-
-aktif et /chatmode aç 
-
-kapat /chatmode kapat
 
 🔹 /dice - Rastgele bir zar atın. 🎲
 
