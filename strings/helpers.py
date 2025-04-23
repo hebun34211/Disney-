@@ -25,7 +25,7 @@ HELP_1  """ <u>**ETİKET KOMUTU:**</u>
 """
 
 
-"""
+
 HELP_2 = """💥<u>**DEGİSTİRME KOMUTLARI:**</u>
 
 ⏸️ /duraklat: Müziği duraklatır.
@@ -98,7 +98,10 @@ HELP_8=  """🥏<u>**BOT KOMUTLARİ
 /delsudo [Username or Reply to a user] sudo listesinde cikarir
  🆘 /sudolist: Sudo kullanıcılarına ulaşır.
 """
-HELP_9 = """🕺**<u>chat mode:</u>**
+
+
+HELP_9  """ <u>**Eğlence komutları:**</u>
+🎲 Eğlence komutlarım:
 yapay zeka 
 
 /chatmode 
@@ -108,11 +111,6 @@ yapay zeka
 aktif et /chatmode aç 
 
 kapat /chatmode kapat
-
-"""
-
-HELP_10  """ <u>**Eğlence komutları:**</u>
-🎲 Eğlence komutlarım:
 
 🔹 /dice - Rastgele bir zar atın. 🎲
 
