@@ -265,8 +265,12 @@ H_B_5 :  "MÜZİK İNDİRME KOMUTU"
 H_B_6 : "🚫ENGELEME LİSTESİ"
 H_B_7 :  " 📭REKLAM"
 H_B_8 : "🤖BOT KOMUTLARI"
-H_B_9:  "💥EKSTRA KOMUTLARI"
-H_B_10: "KAPAT"
+H_B_9 :  "💥chat mode"
+H_B_10:  "ETİKET KOMUTU"
+H_B_11: "Eğlence komutları"
+H_B_12: "KAPAT"
+
+
 #PlayMode
 PM_B_1 : "𝗗𝗶𝗿𝗲𝗰𝘁𝗣𝗹𝗮𝘆"
 PM_B_2 : "𝗜𝗻𝗹𝗶𝗻𝗲𝗠𝗮𝗿𝗸𝘂𝗽"
