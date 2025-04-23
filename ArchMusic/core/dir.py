@@ -11,7 +11,7 @@
 import os
 import sys
 from os import listdir, mkdir
-from config import TEMP_DB_FOLDER
+
 from ..logging import LOGGER
 
 
