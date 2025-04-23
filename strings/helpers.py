@@ -1,10 +1,29 @@
 #.
+HELP_1  """ <u>**ETİKET KOMUTU:**</u>
 
-HELP_1 = """<u>Yetkili kullanıcılar, sohbetinizde yönetici hakları olmadan yönetici komutlarını kullanabilir.</u>
+🔹 /tag - Grubunuzdaki tüm üyeleri isimleriyle etiketler. 🏷️
 
-✧ /yetkiver [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesine ekleyin.
-✧ /yetkial [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesinden çıkarın.
-✧ /yetkililer - Grubun YETKİLİ listesini kontrol edin.
+🔹 /atag - Grubunuzdaki tüm yöneticileri etiketler. 🎖️
+
+🔹 /btag - Grubunuzdaki tüm üyeleri bayraklarla etiketler. 🎌
+
+🔹 /ctag - Grubunuzdaki tüm üyeleri karakter isimleri ile etiketler. 📛
+
+🔹 /etag - Grubunuzdaki tüm üyeleri emojiler ile etiketler. 🎭
+
+🔹 /ftag - Grubunuzdaki tüm üyeleri seçtiğiniz fotoğraf ile etiketler. 📸
+
+🔹 /otag - Grubunuzdaki tüm üyeleri iskambil kartları ile etiketler. ♢
+
+🔹 /ptag - Grubunuzdaki tüm üyeleri güzel sözlerle etiketler. 📜
+
+🔹 /rtag - Grubunuzdaki tüm üyeleri rastgele renklerle etiketler. 🎨
+
+🔹 /stag - Seçtiğiniz birisini seçtiğiniz sticker ile etiketler. 🎴 (Gizli Etiket😶‍🌫️)
+
+🔹 /itag - Seçtiğiniz birisini rastegele bir emoji ile etiketleyin 🎲
+"""
+
 
 """
 HELP_2 = """💥<u>**DEGİSTİRME KOMUTLARI:**</u>
@@ -30,6 +49,9 @@ HELP_3 = """🥏<u>**💥OYNATMA KOMUTU
 
 """
 HELP_4= """🥏<u>** ✨Oynatma Listeleri:
+✧ /yetkiver [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesine ekleyin.
+✧ /yetkial [Kullanıcı adı] - Kullanıcıyı grubun YETKİLİ listesinden çıkarın.
+✧ /yetkililer - Grubun YETKİLİ listesini kontrol edin.
 ❤️‍🩹 /playlist: Oynatma listenizi gösterir.
 🆑 /listemisil: Listeden müzik siler.
 📃 /oynat: Oynatma listesi ekranı açar
@@ -88,31 +110,8 @@ aktif et /chatmode aç
 kapat /chatmode kapat
 
 """
-HELP_10  """ <u>**ETİKET KOMUTU:**</u>
 
-🔹 /tag - Grubunuzdaki tüm üyeleri isimleriyle etiketler. 🏷️
-
-🔹 /atag - Grubunuzdaki tüm yöneticileri etiketler. 🎖️
-
-🔹 /btag - Grubunuzdaki tüm üyeleri bayraklarla etiketler. 🎌
-
-🔹 /ctag - Grubunuzdaki tüm üyeleri karakter isimleri ile etiketler. 📛
-
-🔹 /etag - Grubunuzdaki tüm üyeleri emojiler ile etiketler. 🎭
-
-🔹 /ftag - Grubunuzdaki tüm üyeleri seçtiğiniz fotoğraf ile etiketler. 📸
-
-🔹 /otag - Grubunuzdaki tüm üyeleri iskambil kartları ile etiketler. ♢
-
-🔹 /ptag - Grubunuzdaki tüm üyeleri güzel sözlerle etiketler. 📜
-
-🔹 /rtag - Grubunuzdaki tüm üyeleri rastgele renklerle etiketler. 🎨
-
-🔹 /stag - Seçtiğiniz birisini seçtiğiniz sticker ile etiketler. 🎴 (Gizli Etiket😶‍🌫️)
-
-🔹 /itag - Seçtiğiniz birisini rastegele bir emoji ile etiketleyin 🎲
-"""
-HELP_11  """ <u>**Eğlence komutları:**</u>
+HELP_10  """ <u>**Eğlence komutları:**</u>
 🎲 Eğlence komutlarım:
 
 🔹 /dice - Rastgele bir zar atın. 🎲
