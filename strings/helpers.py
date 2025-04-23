@@ -1,5 +1,5 @@
 #.
-HELP_1  """ <u>**ETİKET KOMUTU:**</u>
+HELP_1 = """ <u>**ETİKET KOMUTU:**</u>
 
 🔹 /tag  Grubunuzdaki tüm üyeleri isimleriyle etiketler
 🔹 /atag  Grubunuzdaki tüm yöneticileri etiketler. 
