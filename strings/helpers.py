@@ -1,6 +1,6 @@
 #.
 HELP_1 = """ <u>**ETİKET KOMUTU:**</u>
-
+  /chatbot yazarak yapak zeka calistirir
 🔹 /tag  Grubunuzdaki tüm üyeleri isimleriyle etiketler
 🔹 /atag  Grubunuzdaki tüm yöneticileri etiketler. 
 🔹 /btag Grubunuzdaki tüm üyeleri bayraklarla etiketler
