@@ -60,7 +60,11 @@ HELP_7= """🥏<u>**REKLAM KOMUTLARI BROADCAST FUNCTION </u>**
 """
 
 HELP_8=  """🥏<u>**BOT KOMUTLARİ
-
+ /start: Başlatma panelini gösterir.
+⚙️ /ayarlar: Ayarlar menüsüne ulaşır.
+🆘 /yardim: Yardım menüsüne ulaşır.
+📡 /ping: Ping süresini ve sistem durumunu gösterir.
+🖲️/restart :Botu Yeniden Başlatır.
 /reboot - Botunuzu yeniden başlatın.
  /update - Botu Güncelle.
 /speedtest - Sunucu hızlarını kontrol edin
@@ -72,11 +76,66 @@ HELP_8=  """🥏<u>**BOT KOMUTLARİ
 /delsudo [Username or Reply to a user] sudo listesinde cikarir
  🆘 /sudolist: Sudo kullanıcılarına ulaşır.
 """
-HELP_9= """ <u>**EKSTRA KOMUTLAR:**</u>
-🌟 /start: Başlatma panelini gösterir.
-⚙️ /ayarlar: Ayarlar menüsüne ulaşır.
-🆘 /yardim: Yardım menüsüne ulaşır.
-📡 /ping: Ping süresini ve sistem durumunu gösterir.
-🖲️/restart :Botu Yeniden Başlatır.
-"""
+HELP_9 = """🕺**<u>chat mode:</u>**
+yapay zeka 
 
+/chatmode 
+
+örnek 
+
+aktif et /chatmode aç 
+
+kapat /chatmode kapat
+
+"""
+HELP_10  """ <u>**ETİKET KOMUTU:**</u>
+
+🔹 /tag - Grubunuzdaki tüm üyeleri isimleriyle etiketler. 🏷️
+
+🔹 /atag - Grubunuzdaki tüm yöneticileri etiketler. 🎖️
+
+🔹 /btag - Grubunuzdaki tüm üyeleri bayraklarla etiketler. 🎌
+
+🔹 /ctag - Grubunuzdaki tüm üyeleri karakter isimleri ile etiketler. 📛
+
+🔹 /etag - Grubunuzdaki tüm üyeleri emojiler ile etiketler. 🎭
+
+🔹 /ftag - Grubunuzdaki tüm üyeleri seçtiğiniz fotoğraf ile etiketler. 📸
+
+🔹 /otag - Grubunuzdaki tüm üyeleri iskambil kartları ile etiketler. ♢
+
+🔹 /ptag - Grubunuzdaki tüm üyeleri güzel sözlerle etiketler. 📜
+
+🔹 /rtag - Grubunuzdaki tüm üyeleri rastgele renklerle etiketler. 🎨
+
+🔹 /stag - Seçtiğiniz birisini seçtiğiniz sticker ile etiketler. 🎴 (Gizli Etiket😶‍🌫️)
+
+🔹 /itag - Seçtiğiniz birisini rastegele bir emoji ile etiketleyin 🎲
+"""
+HELP_11  """ <u>**Eğlence komutları:**</u>
+🎲 Eğlence komutlarım:
+
+🔹 /dice - Rastgele bir zar atın. 🎲
+
+🔹 /coin - Rastgele bir para atın. 🪙
+
+🔹 /slap - Birini tokatlayın. 👋
+
+🔹 /roll - Rastgele bir sayı atın. 🎲
+
+🔹 /joke - Rastgele bir şaka gönderin. 🤣
+
+🔹 /soz - Rastgele bir söz gönderin. 📜
+
+🔹 /tts - Bir metni sesli olarak okutun. 📢
+
+🔹 /sticker - Bir fotoğrafı çıkartmaya dönüştürün. 🎴
+
+🔹 /photo - Bir çıkartmayı fotoğrafa dönüştürün. 📸
+
+🔹 /fileid - Telegram'daki herhangi bir dosyanın ID'sini alın. 🎥
+
+🔹 /qrcode - Bir metni QR koduna dönüştürün. 📱
+
+🔹 /barcode - Bir metni barkoduna dönüştürün. 📱(EAN13)
+"""
