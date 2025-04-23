@@ -257,7 +257,7 @@ S_B_7 : "👮SAHİP"
 S_B_8 : "📚Yardim Komutlari " 
         
 #Help 
-H_B_1 :  " 💦YETKİLİ 𝗞𝗼𝗺𝘂𝘁𝗹𝗮𝗿ı"
+H_B_1 :  "ETİKET KOMUTU"
 H_B_2 :  " ⏭️DEĞİSTİME KOMUTU"
 H_B_3 :  "🥁𝗢𝘆𝗻𝗮𝘁𝗺𝗮 𝗞𝗼𝗺𝘂𝘁𝗹𝗮𝗿ı"
 H_B_4 : "📻OYNATMA LİSTESİ"
@@ -266,9 +266,9 @@ H_B_6 : "🚫ENGELEME LİSTESİ"
 H_B_7 :  " 📭REKLAM"
 H_B_8 : "🤖BOT KOMUTLARI"
 H_B_9 :  "💥chat mode"
-H_B_10:  "ETİKET KOMUTU"
-H_B_11: "Eğlence komutları"
-H_B_12: "KAPAT"
+H_B_10:  "Eğlence komutları"
+H_B_11: "KAPAT"
+
 
 
 #PlayMode
