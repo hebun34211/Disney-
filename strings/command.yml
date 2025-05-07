@@ -21,7 +21,7 @@ STATS_COMMAND : ["jddkdkasdfdsafgh"]
 LANGUAGE_COMMAND : ["lang", "language", "langs", "dil"]
 
 # Play Commands
-PLAY_COMMAND : ["play", "vplay", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce", "oynat", "o", "pl"]
+PLAY_COMMAND : ["play", "vplay","voynat", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce", "oynat", "o", "pl"]
 PLAYMODE_COMMAND : ["playmode"]
 CHANNELPLAY_COMMAND : ["channelplay"]
 STREAM_COMMAND : ["stadsfream", "cstfewream", "strfewaeamforce"]
