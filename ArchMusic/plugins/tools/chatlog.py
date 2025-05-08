@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import LOGGER_ID
+from config import LOG_GROUP_ID
 from ArchMusic import app
 
 PHOTOS = "https://files.catbox.moe/j1d9dn.jpg"
