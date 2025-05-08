@@ -35,7 +35,10 @@ DURATION_LIMIT_MIN = int(
 AYU = ["💞", "🦋", "🔍", "🧪", "⚡️", "🔥", "🎩", "🌈", "🍷", "🥂", "🥃", "🕊️", "🪄", "💌", "🧨"]
 
 # Duration Limit for downloading Songs in MP3 or MP4 format from bot
-
+STICKERS = [
+    "CAACAgUAAx0Cd6nKUAACASBl_rnalOle6g7qS-ry-aZ1ZpVEnwACgg8AAizLEFfI5wfykoCR4h4E",
+    "CAACAgUAAx0Cd6nKUAACATJl_rsEJOsaaPSYGhU7bo7iEwL8AAPMDgACu2PYV8Vb8aT4_HUPHgQ"
+]
 SONG_DOWNLOAD_DURATION = int(
 
     getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
