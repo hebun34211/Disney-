@@ -31,6 +31,8 @@ DURATION_LIMIT_MIN = int(
     getenv("DURATION_LIMIT", "180")
 
 )  # Remember to give value in Minutes
+# ───── Bot Introduction Messages ───── #
+AYU = ["💞", "🦋", "🔍", "🧪", "⚡️", "🔥", "🎩", "🌈", "🍷", "🥂", "🥃", "🕊️", "🪄", "💌", "🧨"]
 
 # Duration Limit for downloading Songs in MP3 or MP4 format from bot
 
