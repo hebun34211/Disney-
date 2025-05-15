@@ -1,7 +1,7 @@
 import httpx
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from AlexaMusic import app
+from ArchMusic import app
 
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
