@@ -1,4 +1,4 @@
-FROM  nikolaik/python-nodejs:python3.10-nodejs19
+FROM  python3.9-nodejs20-alpine
 
 
 RUN apt-get update && \
