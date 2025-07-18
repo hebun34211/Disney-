@@ -1,15 +1,9 @@
-FROM  python3.9-nodejs20-alpine
-
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends ffmpeg git && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
-
-COPY . .
-
-RUN pip install -U uv && uv pip install --system -e .
-
-CMD ["ArchMusic"]
-
+FROM nikolaik/python-nodejs:python3.9-nodejs18
+RUN apt-get update -y && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
+CMD bash start
