@@ -1,21 +1,11 @@
-FROM python:3.7 as pyth
-RUN mkdir /project
-WORKDIR /project
-COPY requirements.txt /project/requirements.txt
+FROM nikolaik/python-nodejs:python3.10-nodejs19
 
-RUN pip install -r requirements.txt
-COPY . /project/
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-FROM node:8-alpine
-WORKDIR /opt/app
-COPY package.json package-lock.json* ./
-RUN npm cache clean --force && npm install
-COPY . /opt/app
-
-ENV PORT 80
-EXPOSE 80
-
-COPY --from=pyth /project /opt/app
-CMD [ "npm", "start" ]
-
-
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install --no-cache-dir -U -r requirements.txt
+CMD bash start
