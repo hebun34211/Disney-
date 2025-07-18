@@ -1,13 +1,21 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs19
+FROM python:3.7 as pyth
+RUN mkdir /project
+WORKDIR /project
+COPY requirements.txt /project/requirements.txt
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+RUN pip install -r requirements.txt
+COPY . /project/
 
-COPY . /app/
-WORKDIR /app/
-RUN python3 -m pip install --upgrade pip setuptools
-RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
+FROM node:8-alpine
+WORKDIR /opt/app
+COPY package.json package-lock.json* ./
+RUN npm cache clean --force && npm install
+COPY . /opt/app
 
-CMD python3 -m ArchMusic
+ENV PORT 80
+EXPOSE 80
+
+COPY --from=pyth /project /opt/app
+CMD [ "npm", "start" ]
+
+
