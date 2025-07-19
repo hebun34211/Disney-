@@ -9,4 +9,4 @@ COPY . /app/
 WORKDIR /app/
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 
-CMD ["python", "bot/_main_.py"]
+CMD ["python", "bot/_main_.py","ArchMusic"]
