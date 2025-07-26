@@ -3,63 +3,69 @@ import psutil
 from ArchMusic import app
 from ArchMusic.utils.database import is_on_off
 from ArchMusic.utils.database.memorydatabase import (
-    get_active_chats, get_active_video_chats
-)
-from ArchMusic.utils.database import get_served_chats
+    get_active_chats, get_active_video_chats)
+from ArchMusic.utils.database import (
+    get_global_tops, get_particulars, get_queries,
+    get_served_chats, get_served_users,
+    get_sudoers, get_top_chats, get_topp_users)
 
 
 async def play_logs(message, streamtype):
     chat_id = message.chat.id
     user = message.from_user
 
-    # Sistem Bilgileri
+    # Grup ve sistem bilgileri
+    sayı = await app.get_chat_members_count(chat_id)
+    toplamgrup = len(await get_served_chats())
+    aktifseslisayısı = len(await get_active_chats())
+    aktifvideosayısı = len(await get_active_video_chats())
     cpu = psutil.cpu_percent(interval=0.5)
-    ram = psutil.virtual_memory().percent
+    mem = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
 
-    # Sohbet Bilgileri
-    member_count = await app.get_chat_members_count(chat_id)
-    total_groups = len(await get_served_chats())
-    active_voice = len(await get_active_chats())
-    active_video = len(await get_active_video_chats())
+    CPU = f"{cpu}%"
+    RAM = f"{mem}%"
+    DISK = f"{disk}%"
 
-    # Kullanıcı adı kontrolü
-    chat_username = f"@{message.chat.username}" if message.chat.username else "🔒 Gizli Grup"
+    # Grup kullanıcı adı kontrolü
+    if message.chat.username:
+        chatusername = f"@{message.chat.username}"
+    else:
+        chatusername = "Gizli Grup"
 
-    # Log kontrolü
+    # Log aktif mi kontrolü
     if await is_on_off(LOG):
         logger_text = f"""
-<b>📢 Yeni Müzik Oynatıldı</b>
+🔊 **Yeni Müzik Oynatıldı**
 
-<b>📌 Grup:</b> {message.chat.title} [`{chat_id}`]
-<b>🔗 Grup Linki:</b> {chat_username}
-<b>👥 Üye Sayısı:</b> <code>{member_count}</code>
+📚 **Grup:** {message.chat.title} [`{chat_id}`]  
+🔗 **Grup Linki:** {chatusername}  
+👥 **Üye Sayısı:** {sayı}  
 
-<b>👤 Kullanıcı:</b> {user.mention}
-<b>✨ Kullanıcı Adı:</b> @{user.username}
-<b>🆔 Kullanıcı ID:</b> <code>{user.id}</code>
+👤 **Kullanıcı:** {user.mention}  
+✨ **Kullanıcı Adı:** @{user.username}  
+🔢 **Kullanıcı ID:** `{user.id}`  
 
-<b>🎶 Sorgu:</b> <code>{message.text}</code>
+🔎 **Sorgu:** {message.text}
 
-<b>📊 Sistem Durumu:</b>
-  ├─ CPU Kullanımı: <b>{cpu}%</b> ♨️
-  ├─ RAM Kullanımı: <b>{ram}%</b> 📂
-  └─ Disk Kullanımı: <b>{disk}%</b> 💾
+💻 **Sistem Durumu**
+├ 🖥️ CPU: `{CPU}`
+├ 🧠 RAM: `{RAM}`
+└ 💾 Disk: `{DISK}`
 
-<b>🗂 Genel Durum:</b>
-  ├─ Toplam Gruplar: <b>{total_groups}</b>
-  ├─ Aktif Sesli Sohbet: <b>{active_voice}</b> 🎙️
-  └─ Aktif Video Sohbet: <b>{active_video}</b> 🎥
+📊 **Genel Durum**
+├ 🌐 Toplam Grup: `{toplamgrup}`
+├ 🔊 Aktif Ses: `{aktifseslisayısı}`
+└ 🎥 Aktif Video: `{aktifvideosayısı}`
 """
-
+        # Log mesajını gönder
         if chat_id != LOG_GROUP_ID:
             try:
                 await app.send_message(
                     LOG_GROUP_ID,
                     logger_text,
                     disable_web_page_preview=True,
-                    parse_mode="html"
                 )
-                await app.set_chat_title(LOG_GROUP_ID, f"🔊 Aktif Ses - {active_voice}")
-            except Exception:
+                await app.set_chat_title(LOG_GROUP_ID, f"🔊 Aktif Ses - {aktifseslisayısı}")
+            except:
                 pass
