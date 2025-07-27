@@ -1,7 +1,11 @@
-# (Telif bölümü ve importlar aynı kalıyor)
+#
+# Copyright (C) 2021-2023 by ArchBots@Github, < https://github.com/ArchBots >.
+# This file is part of < https://github.com/ArchBots/ArchMusic > project,
+# and is released under the "GNU v3.0 License Agreement".
+# Please see < https://github.com/ArchBots/ArchMusic/blob/master/LICENSE >
+#
 
 import asyncio
-
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
@@ -12,7 +16,7 @@ from ArchMusic import app
 from ArchMusic.core.call import ArchMusic
 from ArchMusic.misc import db
 from ArchMusic.utils.database import get_authuser_names, get_cmode
-from ArchMusic.utils.decorators import (ActualAdminCB, AdminActual, language)
+from ArchMusic.utils.decorators import ActualAdminCB, AdminActual, language
 from ArchMusic.utils.formatters import alpha_to_int
 
 RELOAD_COMMAND = get_command("RELOAD_COMMAND")
@@ -27,25 +31,30 @@ async def reload_admin_cache(client, message: Message, _):
         admins = app.get_chat_members(chat_id, filter=ChatMembersFilter.ADMINISTRATORS)
         authusers = await get_authuser_names(chat_id)
         adminlist[chat_id] = []
+
         async for user in admins:
             if user.privileges.can_manage_video_chats:
                 adminlist[chat_id].append(user.user.id)
         for user in authusers:
             user_id = await alpha_to_int(user)
             adminlist[chat_id].append(user_id)
+
         await message.reply_text(_["admin_20"])
 
-        # ✅ Log grubuna bildirim
-        await app.send_message(
-            LOG_GROUP_ID,
-            f"🔄 <b>Yönetici Önbelleği Güncellendi</b>\n"
-            f"👤 <b>Kullanıcı:</b> {message.from_user.mention} [`{message.from_user.id}`]\n"
-            f"🗨️ <b>Sohbet:</b> {message.chat.title} [`{chat_id}`]"
-        )
+        # Log gruba bildirim gönder
+        try:
+            await app.send_message(
+                LOG_GROUP_ID,
+                f"♻️ <b>Admin Cache Yenilendi</b>\n"
+                f"👤 <b>Kullanıcı:</b> {message.from_user.mention} [`{message.from_user.id}`]\n"
+                f"🗨️ <b>Sohbet:</b> {message.chat.title} [`{message.chat.id}`]"
+            )
+        except:
+            pass
 
-    except Exception as e:
+    except:
         await message.reply_text(
-            "Yönetici önbelleği yeniden yüklenemedi. Sohbetinizde Bot'un yönetici olduğundan emin olun."
+            "Yönetici önbelleği yeniden yüklenemedi. Bot'un yönetici olduğundan emin olun."
         )
 
 
@@ -74,11 +83,11 @@ async def restartbot(client, message: Message, _):
             pass
     await mystic.edit_text("Başarıyla yeniden başlatıldı. Şimdi oynamayı deneyin..")
 
-    # ✅ Log grubuna bildirim
+    # Log gruba bildirim gönder
     try:
         await app.send_message(
             LOG_GROUP_ID,
-            f"♻️ <b>Bot Yeniden Başlatıldı</b>\n"
+            f"🔄 <b>Bot Yeniden Başlatıldı</b>\n"
             f"👤 <b>Kullanıcı:</b> {message.from_user.mention} [`{message.from_user.id}`]\n"
             f"🗨️ <b>Sohbet:</b> {message.chat.title} [`{message.chat.id}`]"
         )
@@ -102,19 +111,18 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
     task = lyrical.get(message_id)
     if not task:
         return await CallbackQuery.answer("İndirme zaten tamamlandı.", show_alert=True)
+
     if task.done() or task.cancelled():
-        return await CallbackQuery.answer("İndirme zaten Tamamlandı veya İptal Edildi.", show_alert=True)
-    if not task.done():
-        try:
-            task.cancel()
-            try:
-                lyrical.pop(message_id)
-            except:
-                pass
-            await CallbackQuery.answer("İndirme İptal Edildi", show_alert=True)
-            return await CallbackQuery.edit_message_text(
-                f"İndirme İptal Edildi {CallbackQuery.from_user.mention}"
-            )
-        except:
-            return await CallbackQuery.answer("İndirme durdurulamadı.", show_alert=True)
-    await CallbackQuery.answer("Çalışan görev tanınamadı", show_alert=True)
+        return await CallbackQuery.answer(
+            "İndirme zaten Tamamlandı veya İptal Edildi.", show_alert=True
+        )
+
+    try:
+        task.cancel()
+        lyrical.pop(message_id, None)
+        await CallbackQuery.answer("İndirme İptal Edildi", show_alert=True)
+        return await CallbackQuery.edit_message_text(
+            f"İndirme İptal Edildi {CallbackQuery.from_user.mention}"
+        )
+    except:
+        return await CallbackQuery.answer("İndirme durdurulamadı.", show_alert=True)
