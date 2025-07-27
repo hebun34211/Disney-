@@ -6,6 +6,9 @@
 #
 
 import asyncio
+from datetime import datetime
+import pytz
+
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
@@ -41,11 +44,16 @@ async def reload_admin_cache(client, message: Message, _):
 
         await message.reply_text(_["admin_20"])
 
+        # Saat bilgisi (Europe/Istanbul)
+        turkey_time = datetime.now(pytz.timezone("Europe/Istanbul")).strftime('%Y-%m-%d %H:%M:%S')
+
         # Log gruba bildirim gönder
         try:
             await app.send_message(
                 LOG_GROUP_ID,
                 f"♻️ <b>Admin Cache Yenilendi</b>\n"
+                f"🛠️ <b>Komut:</b> /{RELOAD_COMMAND[0]}\n"
+                f"🕒 <b>Zaman:</b> {turkey_time} (Europe/Istanbul)\n"
                 f"👤 <b>Kullanıcı:</b> {message.from_user.mention} [`{message.from_user.id}`]\n"
                 f"🗨️ <b>Sohbet:</b> {message.chat.title} [`{message.chat.id}`]"
             )
@@ -83,11 +91,16 @@ async def restartbot(client, message: Message, _):
             pass
     await mystic.edit_text("Başarıyla yeniden başlatıldı. Şimdi oynamayı deneyin..")
 
+    # Saat bilgisi (Europe/Istanbul)
+    turkey_time = datetime.now(pytz.timezone("Europe/Istanbul")).strftime('%Y-%m-%d %H:%M:%S')
+
     # Log gruba bildirim gönder
     try:
         await app.send_message(
             LOG_GROUP_ID,
             f"🔄 <b>Bot Yeniden Başlatıldı</b>\n"
+            f"🛠️ <b>Komut:</b> /{RESTART_COMMAND[0]}\n"
+            f"🕒 <b>Zaman:</b> {turkey_time} (Europe/Istanbul)\n"
             f"👤 <b>Kullanıcı:</b> {message.from_user.mention} [`{message.from_user.id}`]\n"
             f"🗨️ <b>Sohbet:</b> {message.chat.title} [`{message.chat.id}`]"
         )
